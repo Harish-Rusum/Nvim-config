@@ -12,25 +12,25 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local plugins = {
-	{"tribela/vim-transparent"},
-	{"catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{"tpope/vim-surround"},
+	{ "tribela/vim-transparent" },
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "tpope/vim-surround" },
 	{
-		'windwp/nvim-autopairs',
+		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		config = true
+		config = true,
 	},
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.6',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.6",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	{"stevearc/oil.nvim"},
+	{ "stevearc/oil.nvim" },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -42,38 +42,38 @@ local plugins = {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
-		}
+		},
 	},
 	{
-		'hrsh7th/nvim-cmp',
+		"hrsh7th/nvim-cmp",
 		requires = {
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-path' },
-			{ 'hrsh7th/cmp-cmdline' },
-			{ 'saadparwaiz1/cmp_luasnip' },
-			{ 'L3MON4D3/LuaSnip' },
-		}
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "hrsh7th/cmp-cmdline" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "L3MON4D3/LuaSnip" },
+		},
 	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{"akinsho/toggleterm.nvim"},
-	{"fgheng/winbar.nvim"},
+	{ "akinsho/toggleterm.nvim" },
+	{ "fgheng/winbar.nvim" },
 	{
-		"williamboman/mason.nvim"
+		"williamboman/mason.nvim",
 	},
-	{"williamboman/mason-lspconfig.nvim"},
-	{"neovim/nvim-lspconfig"},
+	{ "williamboman/mason-lspconfig.nvim" },
+	{ "neovim/nvim-lspconfig" },
 	{
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 	},
-	{"nvimtools/none-ls.nvim"},
-	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-	{"stevearc/dressing.nvim"},
-	{"lewis6991/gitsigns.nvim"},
-	{"ellisonleao/glow.nvim", config = true, cmd = "Glow"},
-	{"ThePrimeagen/harpoon"},
+	{ "nvimtools/none-ls.nvim" },
+	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ "stevearc/dressing.nvim" },
+	{ "lewis6991/gitsigns.nvim" },
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+	{ "ThePrimeagen/harpoon" },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -84,16 +84,15 @@ local plugins = {
 				info = { "DiagnosticInfo", "#F53B6D" },
 				hint = { "DiagnosticHint", "#10B981" },
 				default = { "Identifier", "#7C3AED" },
-				test = { "Identifier", "#FF00FF" }
-			}
-		}
+				test = { "Identifier", "#FF00FF" },
+			},
+		},
 	},
-	{"nacro90/numb.nvim"},
-	{"simeji/winresizer"},
+	{ "nacro90/numb.nvim" },
+	{ "simeji/winresizer" },
 	{
 		"folke/zen-mode.nvim",
-		opts = {
-		}
+		opts = {},
 	},
 	{
 		"folke/twilight.nvim",
@@ -116,12 +115,25 @@ local plugins = {
 				"if_statement",
 			},
 			exclude = {},
-		}
+		},
 	},
 
 	{
-		"rmagatti/auto-session"
-	}
+		"rmagatti/auto-session",
+	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {
+			-- add any options here
+		},
+		lazy = false,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+	},
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "rafamadriz/friendly-snippets" },
+	{"hrsh7th/cmp-nvim-lsp"}
 }
 local opts = {}
 

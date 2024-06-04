@@ -5,6 +5,12 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 	}
 })
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require("lspconfig")
-lspconfig.pyright.setup({})
-lspconfig.lua_ls.setup({})
+lspconfig.pyright.setup({
+	capabilities = capabilities,
+})
+lspconfig.lua_ls.setup({
+	capabilities = capabilities,
+})

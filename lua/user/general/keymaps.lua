@@ -11,6 +11,8 @@ vim.keymap.set("n", "<C-w><RightArrow>", "<C-w><RightArrow>i")
 vim.keymap.set("t", "`", [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader><leader>c", ":Trouble<Enter>1<Enter>", {desc = "diagnostics using trouble"})
 
+vim.keymap.set("v", "<leader>ff", "zf")
+vim.keymap.set("v", "<leader>fo", "zo")
 
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, {desc = "format buffer"})
 vim.keymap.set("n", "<leader>cg", "<cmd>lua vim.lsp.buf.definition()<CR>", {desc = "goto file"})

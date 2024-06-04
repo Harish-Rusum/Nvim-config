@@ -4,4 +4,5 @@ require("which-key").register {
 	["<leader>c"] = {name = "Code",_ = "which_key_ignore"},
 	["<leader>z"] = {name = "ZenMode",_ = "which_key_ignore"},
 	["<leader>h"] = {name = "Harpoon",_ = "which_key_ignore"},
+	["<leader>f"] = {name = "Fold",_ = "which_key_ignore"},
 }

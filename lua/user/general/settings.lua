@@ -1,3 +1,4 @@
+vim.cmd[[set nu]]
 vim.cmd[[set rnu]]
 vim.g.clipboard = {
   copy = {

@@ -133,7 +133,8 @@ local plugins = {
 	},
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "rafamadriz/friendly-snippets" },
-	{"hrsh7th/cmp-nvim-lsp"}
+	{"hrsh7th/cmp-nvim-lsp"},
+	{"nvim-treesitter/nvim-treesitter"},
 }
 local opts = {}
 

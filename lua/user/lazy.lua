@@ -135,7 +135,8 @@ local plugins = {
 	{ "rafamadriz/friendly-snippets" },
 	{"hrsh7th/cmp-nvim-lsp"},
 	{"nvim-treesitter/nvim-treesitter"},
-	{"jvgrootveld/telescope-zoxide"}
+	{"jvgrootveld/telescope-zoxide"},
+	{'arkav/lualine-lsp-progress'}
 }
 local opts = {}
 

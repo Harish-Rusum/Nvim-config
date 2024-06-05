@@ -135,6 +135,7 @@ local plugins = {
 	{ "rafamadriz/friendly-snippets" },
 	{"hrsh7th/cmp-nvim-lsp"},
 	{"nvim-treesitter/nvim-treesitter"},
+	{"jvgrootveld/telescope-zoxide"}
 }
 local opts = {}
 

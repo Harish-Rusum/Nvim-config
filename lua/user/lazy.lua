@@ -136,7 +136,8 @@ local plugins = {
 	{"hrsh7th/cmp-nvim-lsp"},
 	{"nvim-treesitter/nvim-treesitter"},
 	{"jvgrootveld/telescope-zoxide"},
-	{'arkav/lualine-lsp-progress'}
+	{'arkav/lualine-lsp-progress'},
+	{"RRethy/vim-illuminate"},
 }
 local opts = {}
 

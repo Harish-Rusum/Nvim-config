@@ -136,6 +136,7 @@ local plugins = {
 	{"hrsh7th/cmp-nvim-lsp"},
 	{"nvim-treesitter/nvim-treesitter"},
 	{"RRethy/vim-illuminate"},
+	{"kien/ctrlp.vim"},
 }
 local opts = {}
 

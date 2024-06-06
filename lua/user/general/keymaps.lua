@@ -9,7 +9,7 @@ vim.keymap.set("n", "<leader>tt", function() vim.cmd [[ToggleTerm direction=floa
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
 vim.keymap.set("n", "<C-w><RightArrow>", "<C-w><RightArrow>i")
 vim.keymap.set("t", "`", [[<C-\><C-n>]])
-vim.keymap.set("n", "<leader><leader>c", ":Trouble<Enter>1<Enter>", {desc = "diagnostics using trouble"})
+vim.keymap.set("n", "<leader>cd", ":Trouble<Enter>1<Enter>", {desc = "diagnostics using trouble"})
 
 vim.keymap.set("v", "<leader>ff", "zf")
 vim.keymap.set("v", "<leader>fo", "zo")

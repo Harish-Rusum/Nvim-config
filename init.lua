@@ -19,4 +19,3 @@ require("user.plugins.luasnip")
 require("user.plugins.completions")
 
 require("user.general.keymaps")
-

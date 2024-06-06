@@ -1,4 +1,8 @@
-require("mason").setup()
+require('mason').setup {
+    ui = {
+        border = 'rounded' -- Options: "none", "single", "double", "rounded", "solid", "shadow"
+    }
+}
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"pyright",

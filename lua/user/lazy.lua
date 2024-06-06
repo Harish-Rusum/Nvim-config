@@ -138,6 +138,9 @@ local plugins = {
 	{"RRethy/vim-illuminate"},
 	{"kien/ctrlp.vim"},
 }
-local opts = {}
-
+local opts = {
+    ui = {
+        border = "rounded" -- Options: "none", "single", "double", "rounded", "solid", "shadow"
+    }
+}
 require("lazy").setup(plugins, opts)

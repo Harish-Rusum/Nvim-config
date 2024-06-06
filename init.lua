@@ -18,4 +18,6 @@ require("user.plugins.auto-session")
 require("user.plugins.luasnip")
 require("user.plugins.completions")
 
+require("user.popups.template")
+
 require("user.general.keymaps")

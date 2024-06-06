@@ -33,7 +33,7 @@ local theme = {
         c = { bg = colors.none, fg = colors.white }
     },
     replace = {
-        b = { bg = colors.darkgrey, fg = colors.lightgrey },
+        b = { bg = colors.darkgrey, fg = colors.white },
         a = { bg = colors.teal, fg = colors.darkgrey },
         c = { bg = colors.none, fg = colors.white }
     }

@@ -136,6 +136,7 @@ local plugins = {
 	{"nvim-treesitter/nvim-treesitter"},
 	{"RRethy/vim-illuminate"},
 	{"kien/ctrlp.vim"},
+	{"nvim-treesitter/nvim-treesitter-textobjects"}
 }
 local opts = {
 	ui = {

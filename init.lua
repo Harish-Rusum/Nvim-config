@@ -17,6 +17,7 @@ require("user.plugins.gitsigns")
 require("user.plugins.auto-session")
 require("user.plugins.luasnip")
 require("user.plugins.completions")
+require("user.plugins.treesitter")
 
 require("user.popups.remainder")
 

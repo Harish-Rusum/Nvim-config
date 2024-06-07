@@ -1,3 +1,4 @@
+
 function CreatePopup()
     local buf = vim.api.nvim_create_buf(false, true)
 
@@ -22,19 +23,35 @@ function CreatePopup()
     vim.api.nvim_open_win(buf, true, opts)
 end
 
-function TimeDiff(MinFromNow)
+function TimeDiff(timeFromNow, unit)
     local current_time = os.time()
-    local desired_time = current_time + (MinFromNow * 60)
+    local desired_time
+
+    if unit == "minutes" then
+        desired_time = current_time + (timeFromNow * 60)
+    elseif unit == "seconds" then
+        desired_time = current_time + timeFromNow
+    else
+        print("Invalid time unit. Use 'minutes' or 'seconds'.")
+        return -1
+    end
+
     local diff_seconds = desired_time - current_time
     return diff_seconds
 end
 
-function TriggerPopup(MinFromNow)
-    local time_difference = TimeDiff(MinFromNow)
-    if time_difference > 0 then
-        vim.defer_fn(CreatePopup, time_difference * 1000)
-    end
-end
+vim.cmd([[
+function! SetReminder(timeFromNow, unit)
+    let timeFromNow = a:timeFromNow
+    let unit = a:unit
+    let current_time = strftime("%s")
+    let desired_time = current_time + (unit == 'minutes' ? timeFromNow * 60 : timeFromNow)
+    let time_difference = desired_time - current_time
+    if time_difference > 0
+        call timer_start(time_difference * 1000, {-> luaeval('CreatePopup()', [])})
+    endif
+endfunction
 
-vim.cmd([[command! -nargs=1 SetReminder lua TriggerPopup(<args>)]])
+command! -nargs=+ SetReminder call SetReminder(<f-args>)
+]])
 

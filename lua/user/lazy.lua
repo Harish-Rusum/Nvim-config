@@ -138,6 +138,8 @@ local plugins = {
 	{"kien/ctrlp.vim"},
 	{"nvim-treesitter/nvim-treesitter-textobjects"}
 }
+-- PERF: setting a rounded border
+
 local opts = {
 	ui = {
 		border = "rounded"

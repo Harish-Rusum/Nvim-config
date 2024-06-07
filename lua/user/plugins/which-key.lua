@@ -1,3 +1,5 @@
+-- PERF: setting up the preview in the whcih key menu
+
 require("which-key").register {
 	["<leader>t"] = {name = "Telescope/Terminal",_ = "which_key_ignore"},
 	["<leader>b"] = {name = "Buffer",_ = "which_key_ignore"},
@@ -7,19 +9,20 @@ require("which-key").register {
 	["<leader>f"] = {name = "Fold",_ = "which_key_ignore"},
 }
 
+-- PERF: making which key have a rounder border
+
 require("which-key").setup {
-    window = {
-        border = "rounded", -- Options: "none", "single", "double", "rounded", "solid", "shadow"
-        position = "bottom", -- bottom, top
-        margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-        padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-        winblend = 0, -- value between 0-100 0 for fully opaque and 100 for fully transparent
-    },
-    layout = {
-        height = { min = 4, max = 25 }, -- min and max height of the columns
-        width = { min = 20, max = 50 }, -- min and max width of the columns
-        spacing = 3, -- spacing between columns
-        align = "left", -- align columns left, center or right
-    },
-    -- other options
+	window = {
+		border = "rounded",
+		position = "bottom",
+		margin = { 1, 0, 1, 0 },
+		padding = { 2, 2, 2, 2 },
+		winblend = 0,
+	},
+	layout = {
+		height = { min = 4, max = 25 },
+		width = { min = 20, max = 50 },
+		spacing = 3,
+		align = "left",
+	},
 }

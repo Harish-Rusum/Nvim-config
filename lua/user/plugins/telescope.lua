@@ -2,6 +2,8 @@ local telescope = require('telescope')
 
 telescope.setup{
 	defaults = {
+		-- PERF: Telescope layout layout config
+
 		layout_config = {
 			horizontal = {
 				prompt_position = "top",
@@ -20,6 +22,9 @@ telescope.setup{
 				height = 0.85,
 			},
 		},
+
+		-- PERF: Telescope icons and borders
+
 		layout_strategy = "horizontal",
 		sorting_strategy = "ascending",
 		prompt_prefix = "❱ ",

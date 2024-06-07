@@ -1,3 +1,5 @@
+-- PERF: setting up lazypath
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.keymap.set("n", "<leader>bn", ":bnext")
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -6,12 +8,13 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- PERF: loadig in plugins 
 local plugins = {
 	{ "tribela/vim-transparent" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -65,7 +68,7 @@ local plugins = {
 	{ "neovim/nvim-lspconfig" },
 	{
 		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		opts = {},
 		cmd = "Trouble",
 	},
 	{ "nvimtools/none-ls.nvim" },
@@ -98,17 +101,14 @@ local plugins = {
 		"folke/twilight.nvim",
 		opts = {
 			dimming = {
-				alpha = 0.5, -- amount of dimming
-				-- we try to get the foreground from the highlight groups or fallback color
+				alpha = 0.5,
 				color = { "Normal", "#ffffff" },
-				term_bg = "#000000", -- if guibg=NONE, this will be used to calculate text color
-				inactive = false, -- when true, other windows will be fully dimmed (unless they contain the same buffer)
+				term_bg = "#000000",
+				inactive = false,
 			},
-			context = 10, -- amount of lines we will try to show around the current line
-			treesitter = true, -- use treesitter when available for the filetype
-			-- treesitter is used to automatically expand the visible text,
-			-- but you can further control the types of nodes that should always be fully expanded
-			expand = { -- for treesitter, we we always try to expand to the top-most ancestor with these types
+			context = 10,
+			treesitter = true,
+			expand = {
 				"function",
 				"method",
 				"table",
@@ -124,7 +124,6 @@ local plugins = {
 	{
 		"numToStr/Comment.nvim",
 		opts = {
-			-- add any options here
 		},
 		lazy = false,
 	},
@@ -139,8 +138,8 @@ local plugins = {
 	{"kien/ctrlp.vim"},
 }
 local opts = {
-    ui = {
-        border = "rounded" -- Options: "none", "single", "double", "rounded", "solid", "shadow"
-    }
+	ui = {
+		border = "rounded"
+	}
 }
 require("lazy").setup(plugins, opts)

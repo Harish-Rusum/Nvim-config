@@ -48,8 +48,39 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = 'luasnip' },
-	},
-	{
-		{ name = "buffer" },
 	}),
+	formatting = {
+		format = function(entry, vim_item)
+			-- Add custom symbol before the completion item
+			local symbol_map = {
+				Text = "",
+				Method = "",
+				Function = "𝒇",
+				Constructor = "",
+				Field = "",
+				Variable = "",
+				Class = "",
+				Interface = "",
+				Module = "",
+				Property = "",
+				Unit = "塞",
+				Value = "",
+				Enum = "",
+				Keyword = "",
+				Snippet = "",
+				Color = "",
+				File = "",
+				Reference = "",
+				Folder = "",
+				EnumMember = "",
+				Constant = "",
+				Struct = "פּ",
+				Event = "",
+				Operator = "",
+				TypeParameter = ""
+			}
+			vim_item.kind = string.format("%s %s", symbol_map[vim_item.kind] or "", vim_item.kind)
+			return vim_item
+		end,
+	},
 })

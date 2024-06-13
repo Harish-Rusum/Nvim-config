@@ -66,6 +66,7 @@ vim.keymap.set("n", "<leader>ze", ":ZenMode<Enter>:set nornu<Enter>:set nonu<Ent
 vim.keymap.set("n", "<leader>zd", ":ZenMode<Enter>:set nu<Enter>:set rnu<Enter>:IndentBlanklineEnable<Enter>:<Backspace>", { desc = "deactivate zenmode" })
 
 vim.keymap.set("n", "<leader>cp", ":Glow %<Enter>", {desc = "preview for markdown files"})
+vim.keymap.set("i", "<C-w>", "<Esc>diwi", {desc = "preview for markdown files"})
 
 -- PERF: Harpoon keymaps
 vim.keymap.set("n", "<leader>hh", function() vim.cmd [[:lua require("harpoon.ui").toggle_quick_menu()]] end, {desc = "harpoon ui toggle"})

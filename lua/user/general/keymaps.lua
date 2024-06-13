@@ -61,9 +61,9 @@ vim.keymap.set("n", "<leader><leader>p", function()
 	print("Changed root directory to " .. current_dir)
 end, {desc = "changes the root dir to this dir"})
 
-vim.keymap.set("n", "<leader>ze", ":ZenMode<Enter>:set nornu<Enter>:set nonu<Enter>:IndentBlanklineDisable<Enter>:<Backspace>", { desc = "activate zenmode" })
+vim.keymap.set("n", "<leader>ze", ":ZenMode<Enter>:set nornu<Enter>:set nonu<Enter>:<Backspace>", { desc = "activate zenmode" })
 
-vim.keymap.set("n", "<leader>zd", ":ZenMode<Enter>:set nu<Enter>:set rnu<Enter>:IndentBlanklineEnable<Enter>:<Backspace>", { desc = "deactivate zenmode" })
+vim.keymap.set("n", "<leader>zd", ":ZenMode<Enter>:set nu<Enter>:set rnu<Enter>:<Backspace>", { desc = "deactivate zenmode" })
 
 vim.keymap.set("n", "<leader>cp", ":Glow %<Enter>", {desc = "preview for markdown files"})
 vim.keymap.set("i", "<C-w>", "<Esc>diwi", {desc = "preview for markdown files"})

@@ -18,6 +18,7 @@ require("user.plugins.auto-session")
 require("user.plugins.luasnip")
 require("user.plugins.completions")
 require("user.plugins.treesitter")
+require("user.plugins.screenkey")
 
 require("user.popups.remainder")
 

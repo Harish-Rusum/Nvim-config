@@ -136,7 +136,12 @@ local plugins = {
 	{"nvim-treesitter/nvim-treesitter"},
 	{"RRethy/vim-illuminate"},
 	{"kien/ctrlp.vim"},
-	{"nvim-treesitter/nvim-treesitter-textobjects"}
+	{"nvim-treesitter/nvim-treesitter-textobjects"},
+	{
+	    "NStefan002/screenkey.nvim",
+	    lazy = false,
+	    version = "*", -- or branch = "dev", to use the latest commit
+	}
 }
 -- PERF: setting a rounded border
 

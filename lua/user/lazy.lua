@@ -142,6 +142,7 @@ local plugins = {
 	    lazy = false,
 	    version = "*", -- or branch = "dev", to use the latest commit
 	},
+	{"tpope/vim-repeat"}
 }
 -- PERF: setting a rounded border
 

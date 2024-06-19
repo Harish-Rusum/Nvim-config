@@ -1,11 +1,11 @@
--- NOTE: loading ing lazy.nvim stuff 
+-- NOTE: loading ing lazy.nvim stuff
 require("user.lazy")
 
--- NOTE: lsp (language-server-protocol) things 
+-- NOTE: lsp (language-server-protocol) things
 require("user.general.lsp")
 require("user.plugins.none-ls")
 
--- NOTE: completion stuff 
+-- NOTE: completion stuff
 require("user.plugins.luasnip")
 require("user.plugins.completions")
 
@@ -33,7 +33,7 @@ require("user.plugins.toggleterm")
 -- NOTE: mason for installing dependencies
 require("user.plugins.mason")
 
--- NOTE: plugin persisting nvim sessions 
+-- NOTE: plugin persisting nvim sessions
 require("user.plugins.auto-session")
 
 -- NOTE: remainder system

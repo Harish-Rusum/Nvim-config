@@ -1,8 +1,8 @@
-require('screenkey').setup({
+require("screenkey").setup({
 	win_opts = {
 		border = "rounded",
 		width = 30,
-		height = 2
+		height = 2,
 	},
 	compress_after = 5,
 	clear_after = 2,

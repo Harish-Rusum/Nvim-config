@@ -1,7 +1,7 @@
 -- PERF: Vim settings
 
-vim.cmd[[set nu]]
-vim.cmd[[set rnu]]
+vim.cmd([[set nu]])
+vim.cmd([[set rnu]])
 vim.g.clipboard = {
 	copy = {
 		["+"] = "win32yank.exe -i --crlf",

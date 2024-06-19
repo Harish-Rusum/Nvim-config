@@ -1,7 +1,7 @@
 -- PERF: config for treesitter and treesitter-textobjects
 
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = { "cpp", "lua", "vim", "python"},
+require("nvim-treesitter.configs").setup({
+	ensure_installed = { "cpp", "lua", "vim", "python" },
 	sync_install = false,
 	auto_install = true,
 	highlight = {
@@ -29,11 +29,11 @@ require'nvim-treesitter.configs'.setup {
 				["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
 			},
 			selection_modes = {
-				['@parameter.outer'] = 'v', -- charwise
-				['@function.outer'] = 'V', -- linewise
-				['@class.outer'] = '<c-v>', -- blockwise
+				["@parameter.outer"] = "v",
+				["@function.outer"] = "V",
+				["@class.outer"] = "<c-v>",
 			},
 			include_surrounding_whitespace = true,
 		},
 	},
-}
+})

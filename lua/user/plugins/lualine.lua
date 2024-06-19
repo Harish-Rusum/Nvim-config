@@ -10,7 +10,7 @@ local colors = {
 	magenta = "#d488f2",
 	brown = "#eba871",
 	teal = "#3fd1cc",
-	white = "#ffffff"
+	white = "#ffffff",
 }
 
 -- PERF: mapping the colors to the apropriate lualine sections
@@ -19,39 +19,39 @@ local theme = {
 	normal = {
 		b = { bg = colors.darkgrey, fg = colors.white },
 		a = { bg = colors.magenta, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white }
+		c = { bg = colors.none, fg = colors.white },
 	},
 	insert = {
 		b = { bg = colors.darkgrey, fg = colors.white },
 		a = { bg = colors.red, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white }
+		c = { bg = colors.none, fg = colors.white },
 	},
 	command = {
 		b = { bg = colors.darkgrey, fg = colors.white },
 		a = { bg = colors.green, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white }
+		c = { bg = colors.none, fg = colors.white },
 	},
 	visual = {
 		b = { bg = colors.darkgrey, fg = colors.white },
 		a = { bg = colors.brown, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white }
+		c = { bg = colors.none, fg = colors.white },
 	},
 	replace = {
 		b = { bg = colors.darkgrey, fg = colors.white },
 		a = { bg = colors.teal, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white }
-	}
+		c = { bg = colors.none, fg = colors.white },
+	},
 }
 
-require('lualine').setup {
+require("lualine").setup({
 
 	-- PERF: lualine basic options (mainly seperators)
 
 	options = {
 		icons_enabled = true,
 		theme = theme,
-		component_separators = { left = '|', right = '|'},
-		section_separators = { left = '', right = ''},
+		component_separators = { left = "|", right = "|" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
 			statusline = {},
 			winbar = {},
@@ -63,17 +63,17 @@ require('lualine').setup {
 			statusline = 1000,
 			tabline = 1000,
 			winbar = 1000,
-		}
+		},
 	},
 
 	-- PERF: defining lualine sections (mainly the lsp information in the bottom right)
 
 	sections = {
-		lualine_a = {"mode"},
-		lualine_b = {'branch', 'diagnostics'},
-		lualine_c = {''},
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diagnostics" },
+		lualine_c = { "" },
 		lualine_x = {
-			'filetype',
+			"filetype",
 			{
 				function()
 					local clients = vim.lsp.buf_get_clients()
@@ -81,7 +81,7 @@ require('lualine').setup {
 
 					if next(clients) ~= nil then
 						for _, client in pairs(clients) do
-							if client.name ~= 'null-ls' then
+							if client.name ~= "null-ls" then
 								table.insert(client_names, client.name)
 							end
 						end
@@ -100,16 +100,16 @@ require('lualine').setup {
 					end
 
 					if next(client_names) == nil then
-						return ''
+						return ""
 					end
 
-					return '[' .. table.concat(client_names, ', ') .. ']'
+					return "[" .. table.concat(client_names, ", ") .. "]"
 				end,
-				icon = ' ',
-				color = { fg = '#ffffff', gui = 'bold' }
-			}
+				icon = " ",
+				color = { fg = "#ffffff", gui = "bold" },
+			},
 		},
-		lualine_y = {'progress'},
-		lualine_z = {'location'}
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 	},
-}
+})

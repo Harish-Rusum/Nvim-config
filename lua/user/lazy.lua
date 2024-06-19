@@ -14,10 +14,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- PERF: loadig in plugins 
+-- PERF: loadig in plugins
 local plugins = {
 	{ "tribela/vim-transparent" },
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
 	{ "tpope/vim-surround" },
 	{
 		"windwp/nvim-autopairs",
@@ -42,9 +42,6 @@ local plugins = {
 			vim.o.timeoutlen = 300
 		end,
 		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
 		},
 	},
 	{
@@ -75,7 +72,7 @@ local plugins = {
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "stevearc/dressing.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
-	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
+	{ "ellisonleao/glow.nvim",   config = true, cmd = "Glow" },
 	{ "ThePrimeagen/harpoon" },
 	{
 		"folke/todo-comments.nvim",
@@ -132,17 +129,17 @@ local plugins = {
 	},
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "rafamadriz/friendly-snippets" },
-	{"hrsh7th/cmp-nvim-lsp"},
-	{"nvim-treesitter/nvim-treesitter"},
-	{"RRethy/vim-illuminate"},
-	{"kien/ctrlp.vim"},
-	{"nvim-treesitter/nvim-treesitter-textobjects"},
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "nvim-treesitter/nvim-treesitter" },
+	{ "RRethy/vim-illuminate" },
+	{ "kien/ctrlp.vim" },
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
-	    "NStefan002/screenkey.nvim",
-	    lazy = false,
-	    version = "*", -- or branch = "dev", to use the latest commit
+		"NStefan002/screenkey.nvim",
+		lazy = false,
+		version = "*",
 	},
-	{"tpope/vim-repeat"},
+	{ "tpope/vim-repeat" },
 }
 -- PERF: setting a rounded border
 

@@ -1,17 +1,17 @@
 -- PERF: setting up the preview in the whcih key menu
 
-require("which-key").register {
-	["<leader>t"] = {name = "Telescope/Terminal",_ = "which_key_ignore"},
-	["<leader>b"] = {name = "Buffer",_ = "which_key_ignore"},
-	["<leader>c"] = {name = "Code",_ = "which_key_ignore"},
-	["<leader>z"] = {name = "ZenMode",_ = "which_key_ignore"},
-	["<leader>h"] = {name = "Harpoon",_ = "which_key_ignore"},
-	["<leader>f"] = {name = "Fold",_ = "which_key_ignore"},
-}
+require("which-key").register({
+	["<leader>t"] = { name = "Telescope/Terminal", _ = "which_key_ignore" },
+	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
+	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
+	["<leader>z"] = { name = "ZenMode", _ = "which_key_ignore" },
+	["<leader>h"] = { name = "Harpoon", _ = "which_key_ignore" },
+	["<leader>f"] = { name = "Fold", _ = "which_key_ignore" },
+})
 
 -- PERF: making which key have a rounder border
 
-require("which-key").setup {
+require("which-key").setup({
 	window = {
 		border = "rounded",
 		position = "bottom",
@@ -25,4 +25,4 @@ require("which-key").setup {
 		spacing = 3,
 		align = "left",
 	},
-}
+})

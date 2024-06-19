@@ -1,6 +1,6 @@
-local telescope = require('telescope')
+local telescope = require("telescope")
 
-telescope.setup{
+telescope.setup({
 	defaults = {
 		-- PERF: Telescope layout layout config
 
@@ -32,11 +32,10 @@ telescope.setup{
 		entry_prefix = "  ",
 		initial_mode = "insert",
 		border = true,
-		borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' }, -- Rounded borders
-		winblend = 0,  -- Adjust this for transparency level
+		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		winblend = 0,
 		color_devicons = true,
 		use_less = true,
-		set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil
-	}
-}
-
+		set_env = { ["COLORTERM"] = "truecolor" },
+	},
+})

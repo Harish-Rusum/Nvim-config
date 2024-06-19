@@ -4,10 +4,10 @@ function CreatePopup()
 	local buf = vim.api.nvim_create_buf(false, true)
 
 	local lines = {
-		"Reminder!"
+		"Reminder!",
 	}
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-	vim.api.nvim_buf_set_option(buf, 'modifiable', false)
+	vim.api.nvim_buf_set_option(buf, "modifiable", false)
 
 	local width = 60
 	local height = 10
@@ -18,7 +18,7 @@ function CreatePopup()
 		height = height,
 		row = (vim.o.lines - height) / 2,
 		col = (vim.o.columns - width) / 2,
-		border = "rounded"
+		border = "rounded",
 	}
 
 	vim.api.nvim_open_win(buf, true, opts)
@@ -59,4 +59,3 @@ if time_difference > 0
 
 	command! -nargs=+ SetReminder call SetReminder(<f-args>)
 	]])
-

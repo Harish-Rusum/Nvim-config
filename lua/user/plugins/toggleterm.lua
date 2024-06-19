@@ -5,6 +5,6 @@ require('toggleterm').setup {
     float_opts = {
         border = 'rounded',
     },
-    persist_size = true, -- Persist the terminal size between uses
-    shell = "pwsh", -- Use the default shell
+    persist_size = true,
+    shell = "pwsh",
 }

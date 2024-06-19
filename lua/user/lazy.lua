@@ -41,8 +41,7 @@ local plugins = {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-		opts = {
-		},
+		opts = {},
 	},
 	{
 		"hrsh7th/nvim-cmp",
@@ -120,8 +119,7 @@ local plugins = {
 	},
 	{
 		"numToStr/Comment.nvim",
-		opts = {
-		},
+		opts = {},
 		lazy = false,
 	},
 	{
@@ -140,14 +138,14 @@ local plugins = {
 		version = "*",
 	},
 	{ "tpope/vim-repeat" },
-	{"brenoprata10/nvim-highlight-colors"},
-	{"rcarriga/nvim-notify"},
+	{ "brenoprata10/nvim-highlight-colors" },
+	{ "rcarriga/nvim-notify" },
 }
 -- PERF: setting a rounded border
 
 local opts = {
 	ui = {
-		border = "rounded"
-	}
+		border = "rounded",
+	},
 }
 require("lazy").setup(plugins, opts)

@@ -140,6 +140,7 @@ local plugins = {
 		version = "*",
 	},
 	{ "tpope/vim-repeat" },
+	{"brenoprata10/nvim-highlight-colors"}
 }
 -- PERF: setting a rounded border
 

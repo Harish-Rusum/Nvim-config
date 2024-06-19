@@ -140,6 +140,13 @@ local plugins = {
 	{ "tpope/vim-repeat" },
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
+  {
+    'MagicDuck/grug-far.nvim',
+    config = function()
+      require('grug-far').setup({
+      });
+    end
+  },
 }
 -- PERF: setting a rounded border
 

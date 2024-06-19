@@ -47,6 +47,11 @@ vim.keymap.set("t", "`", [[<C-\><C-n>]])
 vim.keymap.set("v", "<leader>ff", "zf")
 vim.keymap.set("v", "<leader>fo", "zo")
 
+-- PERF: make yanking always from the sys clipboard 
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
+
 -- PERF: nice things to have
 
 vim.keymap.set("c", "W", "w")

@@ -1,3 +1,5 @@
+-- PERF: setting up screenkey, (on screen key logger)
+
 require("screenkey").setup({
 	win_opts = {
 		border = "rounded",

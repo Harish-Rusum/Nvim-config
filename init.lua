@@ -10,7 +10,6 @@ require("user.plugins.luasnip")
 require("user.plugins.completions")
 
 -- NOTE: settings and styling of nvim
-require("user.general.settings")
 require("user.general.styling")
 
 -- NOTE: UI plugins (user-interface)

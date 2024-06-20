@@ -1,61 +1,93 @@
--- PERF: function for creating a popup
+local Input = require("nui.input")
+local event = require("nui.utils.autocmd").event
 
+-- Function to create the reminder popup
 function CreatePopup()
-	local buf = vim.api.nvim_create_buf(false, true)
+    local buf = vim.api.nvim_create_buf(false, true)
 
-	local lines = {
-		"Reminder!",
-	}
-	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
-	vim.api.nvim_buf_set_option(buf, "modifiable", false)
+    local lines = {
+        "Reminder!",
+    }
+    vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+    vim.api.nvim_buf_set_option(buf, "modifiable", false)
 
-	local width = 60
-	local height = 10
-	local opts = {
-		style = "minimal",
-		relative = "editor",
-		width = width,
-		height = height,
-		row = (vim.o.lines - height) / 2,
-		col = (vim.o.columns - width) / 2,
-		border = "rounded",
-	}
+    local width = 60
+    local height = 10
+    local opts = {
+        style = "minimal",
+        relative = "editor",
+        width = width,
+        height = height,
+        row = (vim.o.lines - height) / 2,
+        col = (vim.o.columns - width) / 2,
+        border = "rounded",
+    }
 
-	vim.api.nvim_open_win(buf, true, opts)
+    vim.api.nvim_open_win(buf, true, opts)
 end
 
--- PERF: function for getting the diffrence between the desired time and the current time
-
+-- Function to get the difference between the desired time and the current time
 function TimeDiff(timeFromNow, unit)
-	local current_time = os.time()
-	local desired_time
+    local current_time = os.time()
+    local desired_time
 
-	if unit == "minutes" then
-		desired_time = current_time + (timeFromNow * 60)
-	elseif unit == "seconds" then
-		desired_time = current_time + timeFromNow
-	else
-		print("Invalid time unit. Use 'minutes' or 'seconds'.")
-		return -1
-	end
+    if unit == "minutes" then
+        desired_time = current_time + (timeFromNow * 60)
+    elseif unit == "seconds" then
+        desired_time = current_time + timeFromNow
+    else
+        print("Invalid time unit. Use 'minutes' or 'seconds'.")
+        return -1
+    end
 
-	local diff_seconds = desired_time - current_time
-	return diff_seconds
+    local diff_seconds = desired_time - current_time
+    return diff_seconds
 end
 
--- PERF: setting up the actual command
+-- Function to set the reminder using nui.nvim input
+function SetReminder()
+    local input = Input({
+        position = "50%",
+        size = {
+            width = 40,
+        },
+        border = {
+            style = "rounded",
+            text = {
+                top = "Set Reminder",
+                top_align = "center",
+            },
+        },
+        win_options = {
+            winhighlight = "Normal:Normal,FloatBorder:Normal",
+        },
+    }, {
+        prompt = "❱ ",
+        default_value = "",
+        on_submit = function(value)
+            local timeFromNow, unit = value:match("(%d+)%s*(%a+)")
+            timeFromNow = tonumber(timeFromNow)
+            if timeFromNow and (unit == "minutes" or unit == "seconds") then
+                local time_difference = TimeDiff(timeFromNow, unit)
+                if time_difference > 0 then
+                    vim.fn.timer_start(time_difference * 1000, function()
+                        CreatePopup()
+                    end)
+                end
+            else
+                print("Invalid input. Use format '<number> <unit>' where unit is 'minutes' or 'seconds'.")
+            end
+        end,
+    })
 
-vim.cmd([[
-function! SetReminder(timeFromNow, unit)
-let timeFromNow = a:timeFromNow
-let unit = a:unit
-let current_time = strftime("%s")
-let desired_time = current_time + (unit == 'minutes' ? timeFromNow * 60 : timeFromNow)
-let time_difference = desired_time - current_time
-if time_difference > 0
-	call timer_start(time_difference * 1000, {-> luaeval('CreatePopup()', [])})
-	endif
-	endfunction
+    input:mount()
 
-	command! -nargs=+ SetReminder call SetReminder(<f-args>)
-	]])
+    input:on(event.BufLeave, function()
+        input:unmount()
+    end)
+end
+
+-- Setting up the actual command
+vim.api.nvim_create_user_command('SetReminder', function()
+    SetReminder()
+end, {})

@@ -147,11 +147,10 @@ local plugins = {
       });
     end
   },
-	{
-		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
-	}
+  {
+    "MunifTanjim/nui.nvim",
+    event = "VimEnter",  -- Lazy-load on VimEnter event
+  },
 }
 -- PERF: setting a rounded border
 

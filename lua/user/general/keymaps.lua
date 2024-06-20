@@ -29,6 +29,11 @@ vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Renames a variab
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "lsp code actions" })
 vim.keymap.set("n", "e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
+-- PERF: window resizing
+
+vim.keymap.set("n", ">", "<C-w>><C-w>>")
+vim.keymap.set("n", "<", "<C-w><<C-w><")
+
 -- PERF: setting up keymaps for buffers
 
 vim.keymap.set("n", "<leader>bn", ":bnext<Enter>", { desc = "next buffer" })

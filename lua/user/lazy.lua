@@ -147,6 +147,11 @@ local plugins = {
       });
     end
   },
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+	}
 }
 -- PERF: setting a rounded border
 

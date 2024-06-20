@@ -7,8 +7,14 @@
 - stylua (mason)
 
 ## How To use:
+windows : 
 ```
-git clone https://www.github.com/Harish-Rusum/NeovimDotfiles $env:LOCALAPPDATA\nvim 
+git clone https://www.github.com/Harish-Rusum/NeovimDotfiles/ $env:LOCALAPPDATA\nvim 
+```
+
+mac/linux
+```
+git clone https://www.github.com/Harish-Rusum/NoevimDotfiles/ ~/.config/nvim
 ```
 
 # About

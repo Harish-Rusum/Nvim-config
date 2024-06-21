@@ -151,6 +151,9 @@ local plugins = {
     "MunifTanjim/nui.nvim",
     event = "VimEnter",  -- Lazy-load on VimEnter event
   },
+	{
+		"folke/tokyonight.nvim"
+	}
 }
 -- PERF: setting a rounded border
 

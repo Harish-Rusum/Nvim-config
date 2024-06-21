@@ -26,6 +26,7 @@ require("user.plugins.hicolors")
 -- NOTE: search stuff
 require("user.plugins.telescope")
 require("user.plugins.oil")
+require("user.plugins.numb")
 
 -- NOTE: terminal plugin
 require("user.plugins.toggleterm")

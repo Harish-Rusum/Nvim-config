@@ -15,7 +15,7 @@ end, { desc = "live grep" })
 
 vim.keymap.set("n", "<leader>t'", vim.cmd.ToggleTerm, { desc = "Opens a vertical terminal split" })
 vim.keymap.set("n", "<leader>t5", function()
-	vim.cmd([[ToggleTerm direction=vertical size=60]])
+	vim.cmd([[ToggleTerm direction=vertical size=85]])
 end, { desc = "Opens a horizontal  terminal split" })
 vim.keymap.set("n", "<leader>tt", function()
 	vim.cmd([[ToggleTerm direction=float]])

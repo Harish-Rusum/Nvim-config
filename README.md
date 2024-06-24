@@ -19,7 +19,8 @@ git clone https://www.github.com/Harish-Rusum/NoevimDotfiles/ ~/.config/nvim
 
 # Showcase
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/d75f4563-b284-49b6-a825-99a00a673292)
+
+![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/0bfd50eb-5c64-49e2-997b-e2321b7ecdb2)
 
 
 ![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/3f51b955-f487-463b-903e-5c07bad6a3f7)

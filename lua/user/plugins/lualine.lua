@@ -50,6 +50,7 @@ require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = theme,
+		globalstatus = true,
 		component_separators = { left = "|", right = "|" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
@@ -58,7 +59,6 @@ require("lualine").setup({
 		},
 		ignore_focus = {},
 		always_divide_middle = true,
-		globalstatus = false,
 		refresh = {
 			statusline = 1000,
 			tabline = 1000,

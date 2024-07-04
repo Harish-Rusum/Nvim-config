@@ -23,6 +23,8 @@ require("user.plugins.gitsigns")
 require("user.plugins.treesitter")
 require("user.plugins.hicolors")
 
+
+
 -- NOTE: search stuff
 require("user.plugins.telescope")
 require("user.plugins.oil")

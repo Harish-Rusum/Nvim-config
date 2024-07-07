@@ -57,6 +57,10 @@ vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
 
+-- PERF: chtsht
+vim.cmd [[command! Chtsht edit ~/.config/nvim/lua/chtsht.md]]
+vim.cmd [[command! CH edit ~/.config/nvim/lua/chtsht.md]]
+
 -- PERF: nice things to have
 
 vim.keymap.set("c", "W", "w")

@@ -7,6 +7,7 @@ require("which-key").register({
 	["<leader>z"] = { name = "ZenMode", _ = "which_key_ignore" },
 	["<leader>h"] = { name = "Harpoon", _ = "which_key_ignore" },
 	["<leader>f"] = { name = "Fold", _ = "which_key_ignore" },
+	["<leader>s"] = { name = "Set", _ = "which_key_ignore" },
 })
 
 -- PERF: making which key have a rounder border

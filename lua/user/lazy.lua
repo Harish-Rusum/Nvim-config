@@ -55,8 +55,6 @@ local plugins = {
 		},
 	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{ "akinsho/toggleterm.nvim" },
-	{ "fgheng/winbar.nvim" },
 	{
 		"williamboman/mason.nvim",
 	},
@@ -94,27 +92,6 @@ local plugins = {
 		opts = {},
 	},
 	{
-		"folke/twilight.nvim",
-		opts = {
-			dimming = {
-				alpha = 0.5,
-				color = { "Normal", "#ffffff" },
-				term_bg = "#000000",
-				inactive = false,
-			},
-			context = 10,
-			treesitter = true,
-			expand = {
-				"function",
-				"method",
-				"table",
-				"if_statement",
-			},
-			exclude = {},
-		},
-	},
-
-	{
 		"rmagatti/auto-session",
 	},
 	{
@@ -141,19 +118,12 @@ local plugins = {
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
   {
-    'MagicDuck/grug-far.nvim',
-    config = function()
-      require('grug-far').setup({
-      });
-    end
-  },
-  {
     "MunifTanjim/nui.nvim",
-    event = "VimEnter",  -- Lazy-load on VimEnter event
+    event = "VimEnter",
   },
 	{
-		"folke/tokyonight.nvim"
-	}
+		"numToStr/FTerm.nvim"
+	},
 }
 -- PERF: setting a rounded border
 

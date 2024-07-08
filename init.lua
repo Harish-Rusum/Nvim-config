@@ -17,7 +17,6 @@ require("user.general.styling")
 require("user.plugins.lualine")
 require("user.plugins.which-key")
 require("user.plugins.screenkey")
-require("user.plugins.winbar")
 require("user.plugins.bufferline")
 require("user.plugins.gitsigns")
 require("user.plugins.treesitter")
@@ -29,7 +28,7 @@ require("user.plugins.oil")
 require("user.plugins.numb")
 
 -- NOTE: terminal plugin
-require("user.plugins.toggleterm")
+require("user.plugins.fterm")
 
 -- NOTE: mason for installing dependencies
 require("user.plugins.mason")

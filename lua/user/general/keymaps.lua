@@ -13,13 +13,7 @@ end, { desc = "live grep" })
 
 -- PERF: setting up terminal keymaps
 
-vim.keymap.set("n", "<leader>t'", vim.cmd.ToggleTerm, { desc = "Opens a vertical terminal split" })
-vim.keymap.set("n", "<leader>t5", function()
-	vim.cmd([[ToggleTerm direction=vertical size=85]])
-end, { desc = "Opens a horizontal  terminal split" })
-vim.keymap.set("n", "<leader>tt", function()
-	vim.cmd([[ToggleTerm direction=float]])
-end, { desc = "Opens a floating terminal" })
+vim.keymap.set('n','<leader>tt', '<CMD>lua require("FTerm").toggle()<CR>', {desc = "Floating terminal"})
 
 -- PERF: setting up lsp actions
 
@@ -61,13 +55,16 @@ vim.keymap.set("n", "Y", '"+Y')
 vim.cmd [[command! Chtsht edit ~/.config/nvim/lua/chtsht.md]]
 vim.cmd [[command! CH edit ~/.config/nvim/lua/chtsht.md]]
 
+-- PERF: remainder stuff
+
+vim.keymap.set("n", "<leader>sr", ":SetReminder<CR>")
+
 -- PERF: nice things to have
 
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
 vim.keymap.set("n", "s", "^")
 
-vim.keymap.set("n", "<leader><leader>t", ":TransparentToggle<CR>")
 
 vim.keymap.set("n", "<leader>cd", ":Trouble<Enter>1<Enter>", { desc = "diagnostics using trouble" })
 

@@ -107,7 +107,6 @@ local plugins = {
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "RRethy/vim-illuminate" },
-	{ "kien/ctrlp.vim" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{
 		"NStefan002/screenkey.nvim",

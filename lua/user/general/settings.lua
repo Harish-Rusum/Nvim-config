@@ -34,4 +34,4 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     end
   end
 })
-
+vim.cmd [[set cursorline]]

@@ -10,6 +10,10 @@ end, { desc = "fuzzy find files" })
 vim.keymap.set("n", "<leader>tg", function()
 	vim.cmd([[:Telescope live_grep]])
 end, { desc = "live grep" })
+vim.keymap.set("n", "<leader>tc", function()
+	vim.cmd([[:Telescope current_buffer_fuzzy_find]])
+end, { desc = "current buffer fuzzy find" })
+vim.keymap.set("n", "<leader><leader>t", ":Telescope builtin<CR>")
 
 -- PERF: setting up terminal keymaps
 

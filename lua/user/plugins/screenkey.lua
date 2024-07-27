@@ -18,7 +18,7 @@ require("screenkey").setup({
 	display_behind = {},
 	keys = {
 		["<TAB>"] = "󰌒",
-		["<CR>"] = "󰌑",
+		["<CR>"] = "Enter",
 		["<ESC>"] = "Esc",
 		["<SPACE>"] = "␣",
 		["<BS>"] = "󰌥",

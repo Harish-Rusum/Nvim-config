@@ -99,6 +99,4 @@ print(quicksort([3,6,8,10,1,2,1]))
 	}):find()
 end
 
--- Map the picker to a keybinding
-vim.api.nvim_set_keymap('n', '<leader>ts', ':lua colorscheme_picker()<CR>', { noremap = true, silent = true })
 

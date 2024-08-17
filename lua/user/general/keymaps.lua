@@ -68,7 +68,6 @@ vim.keymap.set("n", "<leader>sr", ":SetReminder<CR>")
 
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
-vim.keymap.set("n", "s", "^")
 
 vim.keymap.set("n","<leader>w", ":w<CR>")
 vim.keymap.set("n","<leader>q", ":q<CR>")

@@ -11,12 +11,12 @@
 ## How To use:
 windows : 
 ```
-git clone https://www.github.com/Harish-Rusum/NeovimDotfiles/ $env:LOCALAPPDATA\nvim 
+git clone https://www.github.com/Harish-Rusum/nvim-config/ $env:LOCALAPPDATA\nvim 
 ```
 
 mac/linux
 ```
-git clone https://www.github.com/Harish-Rusum/NoevimDotfiles/ ~/.config/nvim
+git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 ```
 
 # Showcase

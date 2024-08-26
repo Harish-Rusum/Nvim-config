@@ -22,22 +22,23 @@ git clone https://www.github.com/Harish-Rusum/NoevimDotfiles/ ~/.config/nvim
 # Showcase
 
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/0bfd50eb-5c64-49e2-997b-e2321b7ecdb2)
+![image](https://github.com/user-attachments/assets/78340391-ad61-48f8-9cd1-5ae14a4e7ac2)
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/3f51b955-f487-463b-903e-5c07bad6a3f7)
+![image](https://github.com/user-attachments/assets/7c84d279-e2c3-4d5f-8f69-afd9aedb3761)
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/9921a5ca-ae73-4123-96c0-b83e37927daa)
+![image](https://github.com/user-attachments/assets/4e9b4c89-a7a3-43e1-a0ec-363c7454870d)
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/1110e35a-153c-476a-93eb-e79187aa6fd7)
+![image](https://github.com/user-attachments/assets/31b2e353-7f52-475f-a26e-0345fe75062a)
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/21f4bcef-8fad-4467-a68c-3a16042a23bf)
+![image](https://github.com/user-attachments/assets/adfea70c-83e4-47b9-8c2e-d5dc22c97a45)
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/967ce61c-d653-4703-85bb-74bfa61742a9)
+![image](https://github.com/user-attachments/assets/454cbda4-2580-403d-87e1-23ae8121b029)
 
-![image](https://github.com/Harish-Rusum/NeovimDotfiles/assets/154531580/95114100-bb26-4657-9bdb-725933dec3fe)
+![image](https://github.com/user-attachments/assets/820f827b-aa8b-44a0-a296-10ebbe2c6fe5)
 
+![image](https://github.com/user-attachments/assets/41f305a0-6b76-4701-b1a8-7c15c395474c)
 
-
+![image](https://github.com/user-attachments/assets/5e5b0b19-ce83-4b6c-9c3d-0315e62cf731)
 
 # About
 

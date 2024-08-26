@@ -5,11 +5,11 @@ require("nvim-tree").setup({
       show = {
         file = true,
         folder = true,
-        folder_arrow = true,
-        git = true,
+        folder_arrow = false,
+        git = false,
       },
       glyphs = {
-        default = "", 
+        default = "",
         symlink = "",
         folder = {
           arrow_closed = "",

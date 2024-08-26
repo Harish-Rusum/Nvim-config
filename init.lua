@@ -21,6 +21,8 @@ require("user.plugins.bufferline")
 require("user.plugins.gitsigns")
 require("user.plugins.treesitter")
 require("user.plugins.hicolors")
+require("user.plugins.noice")
+-- require("user.scripts.cmdline")
 
 -- NOTE: search stuff
 require("user.plugins.telescope")

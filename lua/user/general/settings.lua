@@ -35,3 +35,6 @@ vim.api.nvim_create_autocmd("InsertEnter", {
   end
 })
 vim.cmd [[set cursorline]]
+require("notify").setup({
+  background_colour = "#000000",
+})

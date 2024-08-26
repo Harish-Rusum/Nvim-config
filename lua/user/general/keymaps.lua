@@ -1,57 +1,45 @@
--- PERF: mapping vim leader
 
+-- PERF: mapping vim leader
 vim.g.mapleader = " "
 
 -- PERF: Telescope keymaps
-
-vim.keymap.set("n", "<leader>tf", function()
-	vim.cmd([[:Telescope fd]])
-end, { desc = "fuzzy find files" })
-vim.keymap.set("n", "<leader>tg", function()
-	vim.cmd([[:Telescope live_grep]])
-end, { desc = "live grep" })
-vim.keymap.set("n", "<leader>tc", function()
-	vim.cmd([[:Telescope current_buffer_fuzzy_find]])
-end, { desc = "current buffer fuzzy find" })
-vim.keymap.set("n", "<leader><leader>t", ":Telescope builtin<CR>")
-vim.keymap.set("n", "<leader>ts", ":lua colorscheme_picker()<CR>")
+vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
+vim.keymap.set("n", "<leader>tg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
+vim.keymap.set("n", "<leader>tc", function() vim.cmd[[:Telescope current_buffer_fuzzy_find]] end, { desc = "Current buffer fuzzy find" })
+vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]] end)
+vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]] end)
 
 -- PERF: setting up terminal keymaps
+vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
 
-vim.keymap.set('n','<leader>tt', '<CMD>lua require("FTerm").toggle()<CR>', {desc = "Floating terminal"})
-
--- PERF: setting up lsp actions
-
-vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "format buffer" })
-vim.keymap.set("n", "<leader>cg", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "goto file" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Renames a variable under the cursor" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "lsp code actions" })
-vim.keymap.set("n", "e", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- PERF: setting up LSP actions
+vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })
+vim.keymap.set("n", "<leader>cg", function() vim.cmd[[lua vim.lsp.buf.definition()]] end, { desc = "Go to definition" })
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
+vim.keymap.set("n", "e", function() vim.cmd[[Oil]] end, { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>e", function() vim.cmd[[NvimTreeToggle]] end, { desc = "Open parent directory in tree format" })
 
 -- PERF: window resizing
-
-vim.keymap.set("n", ">", "<C-w>><C-w>>")
-vim.keymap.set("n", "<", "<C-w><<C-w><")
+vim.keymap.set("n", ">", function() vim.cmd[[<C-w>><C-w>>]] end)
+vim.keymap.set("n", "<", function() vim.cmd[[<C-w><<C-w><]] end)
 
 -- PERF: setting up keymaps for buffers
-
-vim.keymap.set("n", "<leader>bn", ":bnext<Enter>", { desc = "next buffer" })
-vim.keymap.set("n", "<leader>bc", ":bdelete<Enter>", { desc = "close current buffer" })
-vim.keymap.set("n", "<leader>bp", ":bprev<Enter>", { desc = "previous buffer" })
-vim.keymap.set("n", "<Tab>", ":bn<Enter>", { desc = "toggles buffer focus" })
+vim.keymap.set("n", "<leader>bn", function() vim.cmd[[bnext]] end, { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bc", function() vim.cmd[[bdelete]] end, { desc = "Close current buffer" })
+vim.keymap.set("n", "<leader>bp", function() vim.cmd[[bprev]] end, { desc = "Previous buffer" })
+vim.keymap.set("n", "<Tab>", function() vim.cmd[[bn]] end, { desc = "Toggle buffer focus" })
 
 -- PERF: other terminal keybindings
-
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
-vim.keymap.set("n", "<C-w><RightArrow>", "<C-w><RightArrow>i")
+vim.keymap.set("n", "<C-w><RightArrow>", function() vim.cmd[[<C-w><RightArrow>i]] end)
 vim.keymap.set("t", "`", [[<C-\><C-n>]])
 
 -- PERF: setting up keymaps for code folding
+vim.keymap.set("v", "<leader>ff", function() vim.cmd[[zf]] end)
+vim.keymap.set("v", "<leader>fo", function() vim.cmd[[zo]] end)
 
-vim.keymap.set("v", "<leader>ff", "zf")
-vim.keymap.set("v", "<leader>fo", "zo")
-
--- PERF: make yanking always from the sys clipboard 
+-- PERF: make yanking always from the system clipboard
 vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
@@ -61,52 +49,32 @@ vim.cmd [[command! Chtsht edit ~/.config/nvim/lua/chtsht.md]]
 vim.cmd [[command! CH edit ~/.config/nvim/lua/chtsht.md]]
 
 -- PERF: remainder stuff
-
-vim.keymap.set("n", "<leader>sr", ":SetReminder<CR>")
+vim.keymap.set("n", "<leader>sr", function() vim.cmd[[SetReminder]] end)
 
 -- PERF: nice things to have
-
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
 
-vim.keymap.set("n","<leader>w", ":w<CR>")
-vim.keymap.set("n","<leader>q", ":q<CR>")
+vim.keymap.set("n", "<leader>w", function() vim.cmd[[w]] end)
+vim.keymap.set("n", "<leader>q", function() vim.cmd[[q]] end)
 
-vim.keymap.set("n", "<leader>cd", ":Trouble<Enter>1<Enter>", { desc = "diagnostics using trouble" })
+vim.keymap.set("n", "<leader>cd", function() vim.cmd[[Trouble]] end, { desc = "Diagnostics using Trouble" })
 
 vim.keymap.set("n", "<leader><leader>p", function()
-	local current_file = vim.api.nvim_buf_get_name(0)
-	if current_file == "" then
-		print("No file currently open")
-		return
-	end
+    local current_file = vim.api.nvim_buf_get_name(0)
+    if current_file == "" then
+        print("No file currently open")
+        return
+    end
 
-	local current_dir = vim.fn.fnamemodify(current_file, ":p:h")
-	vim.api.nvim_set_current_dir(current_dir)
-	print("Changed root directory to " .. current_dir)
-end, { desc = "changes the root dir to this dir" })
+    local current_dir = vim.fn.fnamemodify(current_file, ":p:h")
+    vim.api.nvim_set_current_dir(current_dir)
+    print("Changed root directory to " .. current_dir)
+end, { desc = "Change root dir to this dir" })
 
-vim.keymap.set(
-	"n",
-	"<leader>ze",
-	":ZenMode<Enter>:set nornu<Enter>:set nonu<Enter>:<Backspace>",
-	{ desc = "activate zenmode" }
-)
-
-vim.keymap.set(
-	"n",
-	"<leader>zd",
-	":ZenMode<Enter>:set nu<Enter>:set rnu<Enter>:<Backspace>",
-	{ desc = "deactivate zenmode" }
-)
-
-vim.keymap.set("n", "<leader>cp", ":Glow %<Enter>", { desc = "preview for markdown files" })
-vim.keymap.set("i", "<C-w>", "<Esc>diwi", { desc = "preview for markdown files" })
+vim.keymap.set("n", "<leader>cp", function() vim.cmd[[Glow %]] end, { desc = "Preview markdown files" })
+vim.keymap.set("i", "<C-w>", "<Esc>diwi", { desc = "Delete a word backwards in insert mode" })
 
 -- PERF: Harpoon keymaps
-vim.keymap.set("n", "<leader>hh", function()
-	vim.cmd([[:lua require("harpoon.ui").toggle_quick_menu()]])
-end, { desc = "harpoon ui toggle" })
-vim.keymap.set("n", "<leader>ha", function()
-	vim.cmd([[:lua require("harpoon.mark").add_file()]])
-end, { desc = "add current file to the harpoon menu" })
+vim.keymap.set("n", "<leader>hh", function() vim.cmd[[lua require("harpoon.ui").toggle_quick_menu()]] end, { desc = "Harpoon UI toggle" })
+vim.keymap.set("n", "<leader>ha", function() vim.cmd[[lua require("harpoon.mark").add_file()]] end, { desc = "Add current file to Harpoon" })

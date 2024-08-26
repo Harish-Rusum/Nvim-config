@@ -1,7 +1,7 @@
 -- PERF: setting up lazypath
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-vim.keymap.set("n", "<leader>bn", ":bnext")
+vim.keymap.set("n", "<leader>bn", function() vim.cmd [[bnext]] end)
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -105,10 +105,7 @@ local plugins = {
 		},
 		config = function()
 			require('auto-session').setup({
-				-- ⚠️ This will only work if Telescope.nvim is installed
-				-- The following are already the default values, no need to provide them if these are already the settings you want.
 				session_lens = {
-					-- If load_on_setup is false, make sure you use `:SessionSearch` to open the picker as it will initialize everything first
 					load_on_setup = true,
 					theme_conf = { border = true },
 					previewer = false,
@@ -158,13 +155,17 @@ local plugins = {
 			-- add any options here
 		},
 		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
 			}
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 	}
 }
 -- PERF: setting a rounded border

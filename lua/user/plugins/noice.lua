@@ -19,5 +19,4 @@ require("noice").setup({
       input = { view = "cmdline_input", icon = "󰥻 " },
     },
   },
-  -- other Noice configuration
 })

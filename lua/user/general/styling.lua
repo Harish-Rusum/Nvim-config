@@ -93,3 +93,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.tabstop = 4
 	end,
 })
+
+vim.cmd("highlight NvimTreeNormal guibg=NONE ctermbg=NONE")
+vim.cmd("highlight NvimTreeEndOfBuffer guibg=NONE ctermbg=NONE")
+vim.cmd("highlight NvimTreeVertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE")
+
+require("notify").setup({
+  background_colour = "#000000",
+})

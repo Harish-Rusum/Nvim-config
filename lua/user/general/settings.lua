@@ -10,29 +10,29 @@ local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = tru
 
 -- Function to check if the buffer has a file path
 local function has_file_path()
-  return vim.api.nvim_buf_get_name(0) ~= ""
+	return vim.api.nvim_buf_get_name(0) ~= ""
 end
 
-vim.api.nvim_create_autocmd({"VimEnter", "InsertLeave"}, {
-  desc = "set relativenumber",
-  group = set_relativenumber_group,
-  pattern = "*",
-  callback = function()
-    if has_file_path() then
-      vim.opt.relativenumber = true
-    end
-  end
+vim.api.nvim_create_autocmd({ "VimEnter", "InsertLeave" }, {
+	desc = "set relativenumber",
+	group = set_relativenumber_group,
+	pattern = "*",
+	callback = function()
+		if has_file_path() then
+			vim.opt.relativenumber = true
+		end
+	end,
 })
 vim.api.nvim_create_autocmd("InsertEnter", {
-  desc = "set number",
-  group = set_number_group,
-  pattern = "*",
-  callback = function()
-    if has_file_path() then
-      vim.opt.relativenumber = false
-      vim.opt.number = true
-    end
-  end
+	desc = "set number",
+	group = set_number_group,
+	pattern = "*",
+	callback = function()
+		if has_file_path() then
+			vim.opt.relativenumber = false
+			vim.opt.number = true
+		end
+	end,
 })
 
-vim.cmd [[set cursorline]]
+vim.cmd([[set cursorline]])

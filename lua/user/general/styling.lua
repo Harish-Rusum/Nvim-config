@@ -99,5 +99,5 @@ vim.cmd("highlight NvimTreeEndOfBuffer guibg=NONE ctermbg=NONE")
 vim.cmd("highlight NvimTreeVertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE")
 
 require("notify").setup({
-  background_colour = "#000000",
+	background_colour = "#000000",
 })

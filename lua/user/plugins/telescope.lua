@@ -42,23 +42,24 @@ telescope.setup({
 
 -- Custom colorscheme picker function with preview
 function _G.colorscheme_picker()
-	require('telescope.pickers').new({}, {
-		prompt_title = 'Colorscheme Picker',
-		finder = require('telescope.finders').new_table({
-			results = vim.fn.getcompletion('', 'color'),
-			entry_maker = function(entry)
-				return {
-					value = entry,
-					display = entry,
-					ordinal = entry,
-				}
-			end,
-		}),
-		sorter = require('telescope.config').values.generic_sorter({}),
-		previewer = require('telescope.previewers').new_buffer_previewer({
-			define_preview = function(self, entry, status)
-				vim.cmd('colorscheme ' .. entry.value)
-				local example_code = [[
+	require("telescope.pickers")
+			.new({}, {
+				prompt_title = "Colorscheme Picker",
+				finder = require("telescope.finders").new_table({
+					results = vim.fn.getcompletion("", "color"),
+					entry_maker = function(entry)
+						return {
+							value = entry,
+							display = entry,
+							ordinal = entry,
+						}
+					end,
+				}),
+				sorter = require("telescope.config").values.generic_sorter({}),
+				previewer = require("telescope.previewers").new_buffer_previewer({
+					define_preview = function(self, entry, status)
+						vim.cmd("colorscheme " .. entry.value)
+						local example_code = [[
 def quicksort(arr):
 		if len(arr) <= 1:
 				return arr
@@ -71,32 +72,31 @@ def quicksort(arr):
 print(quicksort([3,6,8,10,1,2,1]))
 				]]
 
-				vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, vim.split(example_code, '\n'))
-				vim.api.nvim_buf_set_option(self.state.bufnr, 'filetype', 'python')
-			end,
-		}),
-		attach_mappings = function(prompt_bufnr, map)
-			local function change_colorscheme()
-				local entry = require('telescope.actions.state').get_selected_entry()
-				vim.cmd('colorscheme ' .. entry.value)
-			end
+						vim.api.nvim_buf_set_lines(self.state.bufnr, 0, -1, false, vim.split(example_code, "\n"))
+						vim.api.nvim_buf_set_option(self.state.bufnr, "filetype", "python")
+					end,
+				}),
+				attach_mappings = function(prompt_bufnr, map)
+					local function change_colorscheme()
+						local entry = require("telescope.actions.state").get_selected_entry()
+						vim.cmd("colorscheme " .. entry.value)
+					end
 
-			-- Update the colorscheme when the selection changes
-			map('i', '<CR>', function()
-				change_colorscheme()
-				require('telescope.actions').close(prompt_bufnr)
-			end)
-			map('i', '<Down>', function()
-				require('telescope.actions').move_selection_next(prompt_bufnr)
-				change_colorscheme()
-			end)
-			map('i', '<Up>', function()
-				require('telescope.actions').move_selection_previous(prompt_bufnr)
-				change_colorscheme()
-			end)
-			return true
-		end,
-	}):find()
+					-- Update the colorscheme when the selection changes
+					map("i", "<CR>", function()
+						change_colorscheme()
+						require("telescope.actions").close(prompt_bufnr)
+					end)
+					map("i", "<Down>", function()
+						require("telescope.actions").move_selection_next(prompt_bufnr)
+						change_colorscheme()
+					end)
+					map("i", "<Up>", function()
+						require("telescope.actions").move_selection_previous(prompt_bufnr)
+						change_colorscheme()
+					end)
+					return true
+				end,
+			})
+			:find()
 end
-
-

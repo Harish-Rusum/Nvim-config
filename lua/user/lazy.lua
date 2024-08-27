@@ -1,7 +1,9 @@
 -- PERF: setting up lazypath
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-vim.keymap.set("n", "<leader>bn", function() vim.cmd [[bnext]] end)
+vim.keymap.set("n", "<leader>bn", function()
+	vim.cmd([[bnext]])
+end)
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -92,19 +94,19 @@ local plugins = {
 		opts = {},
 	},
 	{
-		'rmagatti/auto-session',
+		"rmagatti/auto-session",
 		lazy = false,
 		dependencies = {
-			'nvim-telescope/telescope.nvim',
+			"nvim-telescope/telescope.nvim",
 		},
 		keys = {
 			-- Will use Telescope if installed or a vim.ui.select picker otherwise
-			{ '<leader>wr', '<cmd>SessionSearch<CR>', desc = 'Session search' },
-			{ '<leader>ws', '<cmd>SessionSave<CR>', desc = 'Save session' },
-			{ '<leader>wa', '<cmd>SessionToggleAutoSave<CR>', desc = 'Toggle autosave' },
+			{ "<leader>wr", "<cmd>SessionSearch<CR>",         desc = "Session search" },
+			{ "<leader>ws", "<cmd>SessionSave<CR>",           desc = "Save session" },
+			{ "<leader>wa", "<cmd>SessionToggleAutoSave<CR>", desc = "Toggle autosave" },
 		},
 		config = function()
-			require('auto-session').setup({
+			require("auto-session").setup({
 				session_lens = {
 					load_on_setup = true,
 					theme_conf = { border = true },
@@ -135,18 +137,20 @@ local plugins = {
 	{ "tpope/vim-repeat" },
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
-  {
-    "MunifTanjim/nui.nvim",
-    event = "VimEnter",
-  },
 	{
-		"numToStr/FTerm.nvim"
+		"MunifTanjim/nui.nvim",
+		event = "VimEnter",
+	},
+	{
+		"numToStr/FTerm.nvim",
 	},
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	},
 	{
 		"folke/noice.nvim",
@@ -157,7 +161,7 @@ local plugins = {
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
-			}
+		},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -166,7 +170,7 @@ local plugins = {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-	}
+	},
 }
 -- PERF: setting a rounded border
 

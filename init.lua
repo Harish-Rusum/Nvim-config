@@ -1,13 +1,11 @@
 -- NOTE: loading lazy.nvim stuff
 require("user.lazy")
 
--- NOTE: lsp (language-server-protocol) things
-require("user.general.lsp")
-require("user.plugins.none-ls")
-
--- NOTE: completion stuff
-require("user.plugins.luasnip")
-require("user.plugins.completions")
+-- NOTE: lsp (language-server-protocol) and autocomplete things
+require("user.lsp.lsp")
+require("user.lsp.none-ls")
+require("user.lsp.luasnip")
+require("user.lsp.completions")
 
 -- NOTE: settings and styling of nvim
 require("user.general.settings")
@@ -22,7 +20,6 @@ require("user.plugins.gitsigns")
 require("user.plugins.treesitter")
 require("user.plugins.hicolors")
 require("user.plugins.noice")
--- require("user.scripts.cmdline")
 
 -- NOTE: search stuff
 require("user.plugins.telescope")
@@ -36,7 +33,7 @@ require("user.plugins.fterm")
 -- NOTE: mason for installing dependencies
 require("user.plugins.mason")
 
--- NOTE: plugin persisting nvim sessions
+-- NOTE: plugin for persisting nvim sessions
 require("user.plugins.auto-session")
 
 -- NOTE: remainder system

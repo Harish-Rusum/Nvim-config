@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
 vim.keymap.set("n", "<leader>tg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
 vim.keymap.set("n", "<leader>tc", function() vim.cmd[[:Telescope current_buffer_fuzzy_find]] end, { desc = "Current buffer fuzzy find" })
-vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]] end)
+vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]] end, {desc = "open telescope builtin"})
 vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]] end)
 
 -- PERF: setting up terminal keymaps
@@ -54,9 +54,9 @@ vim.keymap.set("n", "<leader>sr", function() vim.cmd[[SetReminder]] end)
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
-
-vim.keymap.set("n", "<leader>w", function() vim.cmd[[w]] end)
-vim.keymap.set("n", "<leader>q", function() vim.cmd[[q]] end)
+vim.keymap.set("n", "<leader><leader>c", "i<C-r>=", {desc = "open calculator"})
+vim.keymap.set("n", "<leader>w", function() vim.cmd[[w]] end,{desc = "save file"})
+vim.keymap.set("n", "<leader>q", function() vim.cmd[[q]] end,{desc = "quit file"})
 
 vim.keymap.set("n", "<leader>cd", function() vim.cmd[[Trouble]] end, { desc = "Diagnostics using Trouble" })
 

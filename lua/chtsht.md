@@ -9,7 +9,6 @@ There are four primary modes in Vim: Normal mode, Insert mode, Visual mode, and 
 
 > [!Tip] Insert Mode
 
-> [!Quote] 
 > In Insert mode, you can type text. Press `ESC` to return to Normal mode.
 
 > [!Tip] Visual Mode

@@ -1,10 +1,15 @@
 -- PERF: Vim appearance settings
-
+vim.api.nvim_create_augroup("nobg", { clear = true })
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "catppuccin",
+  desc = "Make all backgrounds transparent",
+  group = "nobg",
 	callback = function()
 		local colors = require("catppuccin.palettes").get_palette("mocha")
 
+    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
 		local function darken(color, percentage)
 			local r = tonumber(color:sub(2, 3), 16)
 			local g = tonumber(color:sub(4, 5), 16)
@@ -93,10 +98,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.tabstop = 4
 	end,
 })
-
-vim.cmd("highlight NvimTreeNormal guibg=NONE ctermbg=NONE")
-vim.cmd("highlight NvimTreeEndOfBuffer guibg=NONE ctermbg=NONE")
-vim.cmd("highlight NvimTreeVertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE")
 
 require("notify").setup({
 	background_colour = "#000000",

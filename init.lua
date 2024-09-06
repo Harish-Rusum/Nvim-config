@@ -24,7 +24,7 @@ require("user.plugins.noice")
 -- NOTE: search stuff
 require("user.plugins.telescope")
 require("user.plugins.oil")
-require("user.plugins.nvim-tree")
+require("user.plugins.neo-tree")
 require("user.plugins.numb")
 
 -- NOTE: terminal plugin

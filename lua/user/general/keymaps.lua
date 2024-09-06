@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>cg", function() vim.cmd[[lua vim.lsp.buf.definition
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
 vim.keymap.set("n", "e", function() vim.cmd[[Oil]] end, { desc = "Open parent directory" })
-vim.keymap.set("n", "<leader>e", function() vim.cmd[[NvimTreeToggle]] end, { desc = "Open parent directory in tree format" })
+vim.keymap.set("n", "<leader>e", function() vim.cmd[[Neotree toggle]] end, { desc = "Open parent directory in tree format" })
 
 -- PERF: window resizing
 vim.keymap.set("n", ">", function() vim.cmd[[<C-w>><C-w>>]] end)

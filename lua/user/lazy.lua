@@ -100,7 +100,6 @@ local plugins = {
 			"nvim-telescope/telescope.nvim",
 		},
 		keys = {
-			-- Will use Telescope if installed or a vim.ui.select picker otherwise
 			{ "<leader>wr", "<cmd>SessionSearch<CR>",         desc = "Session search" },
 			{ "<leader>ws", "<cmd>SessionSave<CR>",           desc = "Save session" },
 			{ "<leader>wa", "<cmd>SessionToggleAutoSave<CR>", desc = "Toggle autosave" },
@@ -156,7 +155,6 @@ local plugins = {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
-			-- add any options here
 		},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
@@ -184,11 +182,10 @@ local plugins = {
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
-		requires = { 
+		requires = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
-			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 			{
 				's1n7ax/nvim-window-picker',
 				version = '2.*',
@@ -197,11 +194,8 @@ local plugins = {
 						filter_rules = {
 							include_current_win = false,
 							autoselect_one = true,
-							-- filter using buffer options
 							bo = {
-								-- if the file type is one of following, the window will be ignored
 								filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-								-- if the buffer type is one of following, the window will be ignored
 								buftype = { 'terminal', "quickfix" },
 							},
 						},
@@ -211,10 +205,10 @@ local plugins = {
 		},
 	},
 	{
-			'MeanderingProgrammer/render-markdown.nvim',
-			opts = {},
-			dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-	}
+		'MeanderingProgrammer/render-markdown.nvim',
+		opts = {},
+		dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+	},
 }
 -- PERF: setting a rounded border
 

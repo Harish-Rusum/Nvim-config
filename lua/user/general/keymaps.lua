@@ -11,6 +11,11 @@ vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]]
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
+vim.keymap.set('n', '<leader>t[', function() vim.cmd[[ToggleTerm direction=vertical size=70]] end, { desc = "vertical split" })
+vim.keymap.set('n', '<leader>t]', function() vim.cmd[[ToggleTerm direction=horizontal size=17]] end, { desc = "horizontal split" })
+
+-- PERF: setting up AI (avante)
+vim.keymap.set('n', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })

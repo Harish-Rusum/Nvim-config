@@ -29,6 +29,7 @@ require("user.plugins.numb")
 
 -- NOTE: terminal plugin
 require("user.plugins.fterm")
+require("user.plugins.toggleterm")
 
 -- NOTE: mason for installing dependencies
 require("user.plugins.mason")

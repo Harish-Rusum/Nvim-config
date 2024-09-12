@@ -22,6 +22,12 @@ vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" }
 vim.keymap.set("n", "<leader>cg", function() vim.cmd[[lua vim.lsp.buf.definition()]] end, { desc = "Go to definition" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
+
+-- PERF: chtshts
+vim.keymap.set("n", "<leader>vc", function() vim.cmd[[e ~/.config/nvim/lua/user/chtshts/chtsht.md]] end, { desc = "Open vim cheat sheat" })
+vim.keymap.set("n", "<leader>vb", function() vim.cmd[[e ~/.config/nvim/lua/user/chtshts/files.md]] end, { desc = "Files in vim chtsht" })
+
+-- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd[[Oil]] end, { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>e", function() vim.cmd[[Neotree toggle]] end, { desc = "Open parent directory in tree format" })
 
@@ -48,10 +54,6 @@ vim.keymap.set("v", "<leader>fo", function() vim.cmd[[zo]] end)
 vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
-
--- PERF: chtsht
-vim.cmd [[command! Chtsht edit ~/.config/nvim/lua/chtsht.md]]
-vim.cmd [[command! CH edit ~/.config/nvim/lua/chtsht.md]]
 
 -- PERF: remainder stuff
 vim.keymap.set("n", "<leader>sr", function() vim.cmd[[SetReminder]] end)

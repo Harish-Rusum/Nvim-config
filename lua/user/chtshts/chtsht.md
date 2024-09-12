@@ -1,42 +1,43 @@
 > [!Tip] Vim Basics
 
-> - Vim operates in multiple modes, each designed for specific tasks.
+> Vim operates in multiple modes, each designed for specific tasks.
 There are four primary modes in Vim: Normal mode, Insert mode, Visual mode, and Command-line mode.
 
 > [!Tip] Normal Mode
 
-> - Normal mode is where you perform motions and actions (sometimes both together). This is the default mode when you open Vim. In this mode, you can navigate through the text using `h`, `j`, `k`, and `l` for left, down, up, and right, respectively, or simply use the arrow keys (which also work in Insert mode).
+> Normal mode is where you perform motions and actions (sometimes both together). This is the default mode when you open Vim. In this mode, you can navigate through the text using `h`, `j`, `k`, and `l` for left, down, up, and right, respectively, or simply use the arrow keys (which also work in Insert mode).
 
 > [!Tip] Insert Mode
 
-> - In Insert mode, you can type text. Press `ESC` to return to Normal mode.
+> In Insert mode, you can type text. Press `ESC` to return to Normal mode.
 
 > [!Tip] Visual Mode
 
-> - Visual mode is essentially a selection mode. You can move the cursor and apply (some) motions and actions. Press `ESC` to return to Normal mode.
+> Visual mode is essentially a selection mode. You can move the cursor and apply (some) motions and actions. Press `ESC` to return to Normal mode.
 
 > [!Tip] Command-line Mode
 
-> - Command-line mode is used to execute Vim commands. While it might not seem very useful at first, it's crucial for running commands efficiently.
+> Command-line mode is used to execute Vim commands. While it might not seem very useful at first, it's crucial for running commands efficiently.
 
 > [!Tip] Vim Motions and Actions
 
 > [!Tip] Vim Motions
 
-> - Motions are commands that move the cursor. Examples include `$` (move to the end of the line) and `0` (move to the first character of the line).
+> Motions are commands that move the cursor. Examples include `$` (move to the end of the line) and `0` (move to the first character of the line).
 
 > [!Tip] Vim Actions
 
-> - An action is a command that modifies text. For example, `x` deletes the character under the cursor. Combining an action with a motion allows you to modify a range of text. For example, `c` (change) followed by a motion deletes the text in the motion's range and puts you into Insert mode.
+> An action is a command that modifies text. For example, `x` deletes the character under the cursor. Combining an action with a motion allows you to modify a range of text. For example, `c` (change) followed by a motion deletes the text in the motion's range and puts you into Insert mode.
 
 > [!Tip] Anatomy of **Anything** in Vim
 
-> - A motion can be preceded by a count, for example, `2w` moves the cursor to the next word twice. Combining this with an action, like `2cw`, will delete the next two words and put you in Insert mode.
-> - Formally: **COUNT** + **ACTION** + **MOTION**
+> A motion can be preceded by a count, for example, `2w` moves the cursor to the next word twice. Combining this with an action, like `2cw`, will delete the next two words and put you in Insert mode.
+
+Formally: **COUNT** + **ACTION** + **MOTION**
 
 > [!Tip] Text Objects
 
-> - Text objects are recognized blocks of text in Vim. For example, `w` is a word. Text objects can be combined with motions for more complex editing. For instance, `viw` means "visual inside word," which highlights the word under or near the cursor.
+> Text objects are recognized blocks of text in Vim. For example, `w` is a word. Text objects can be combined with motions for more complex editing. For instance, `viw` means "visual inside word," which highlights the word under or near the cursor.
 
 > [!Tip] Normal Mode
 

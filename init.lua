@@ -1,5 +1,5 @@
 -- NOTE: loading lazy.nvim stuff
-require("lua.user.lazy.lazy")
+require("lua.user.lazy")
 
 -- NOTE: lsp (language-server-protocol) and autocomplete
 require("user.lsp.lsp")

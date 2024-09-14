@@ -245,6 +245,7 @@ local plugins = {
 					},
 				},
 			},
+		},
     {
       -- Make sure to set this up properly if you have lazy=true
       'MeanderingProgrammer/render-markdown.nvim',
@@ -254,7 +255,7 @@ local plugins = {
       ft = { "markdown", "Avante" },
     },
   },
-}
+	{"petertriho/nvim-scrollbar"}
 }
 -- PERF: setting a rounded border
 

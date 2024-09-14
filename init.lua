@@ -27,6 +27,9 @@ require("user.plugins.oil")
 require("user.plugins.neo-tree")
 require("user.plugins.numb")
 
+-- NOTE: markdown
+require("user.plugins.scrollbar")
+
 -- NOTE: terminal plugin
 require("user.plugins.fterm")
 require("user.plugins.toggleterm")

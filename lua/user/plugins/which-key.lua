@@ -9,6 +9,7 @@ require("which-key").register({
 	["<leader>f"] = { name = "Fold", _ = "which_key_ignore" },
 	["<leader>s"] = { name = "Set", _ = "which_key_ignore" },
 	["<leader>a"] = { name = "AI", _ = "which_key_ignore" },
+	["<leader>v"] = { name = "Learn vim", _ = "which_key_ignore" },
 	["<leader><leader>"] = { name = "Other", _ = "which_key_ignore" },
 })
 

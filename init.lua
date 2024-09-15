@@ -7,7 +7,7 @@ require("user.lsp.none-ls")
 require("user.lsp.luasnip")
 require("user.lsp.completions")
 
--- NOTE: settings and styling of nvim
+-- NOTE: settings andstyling of nvim
 require("user.general.settings")
 require("user.general.styling")
 
@@ -26,9 +26,6 @@ require("user.plugins.telescope")
 require("user.plugins.oil")
 require("user.plugins.neo-tree")
 require("user.plugins.numb")
-
--- NOTE: markdown
-require("user.plugins.scrollbar")
 
 -- NOTE: terminal plugin
 require("user.plugins.fterm")

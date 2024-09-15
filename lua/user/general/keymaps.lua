@@ -56,7 +56,7 @@ vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
 
 -- PERF: remainder stuff
-vim.keymap.set("n", "<leader>sr", function() vim.cmd[[SetReminder]] end)
+vim.keymap.set("n", "<leader>sr", function() vim.cmd[[SetReminder]] end,{desc = "Set remainder"})
 
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")

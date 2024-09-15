@@ -1,60 +1,57 @@
 -- PERF: Vim appearance settings
 vim.api.nvim_create_augroup("nobg", { clear = true })
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "catppuccin",
-  desc = "Make all backgrounds transparent",
-  group = "nobg",
-	callback = function()
-		local colors = require("catppuccin.palettes").get_palette("mocha")
+vim.api.nvim_create_user_command("ToggleTelescopeHighlight", function()
+	local colors = require("catppuccin.palettes").get_palette("mocha")
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
-    vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
-    vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
-		local function darken(color, percentage)
-			local r = tonumber(color:sub(2, 3), 16)
-			local g = tonumber(color:sub(4, 5), 16)
-			local b = tonumber(color:sub(6, 7), 16)
-			r = math.floor(r * (1 - percentage / 100))
-			g = math.floor(g * (1 - percentage / 100))
-			b = math.floor(b * (1 - percentage / 100))
-			return string.format("#%02x%02x%02x", r, g, b)
-		end
-		local darken_percentage = 5
-		local telescope_highlights = {
-			TelescopeNormal = { bg = darken(colors.mantle, darken_percentage), fg = colors.text },
-			TelescopeBorder = {
-				bg = darken(colors.mantle, darken_percentage),
-				fg = darken(colors.mantle, darken_percentage),
-			},
-			TelescopePromptNormal = { bg = darken(colors.surface0, darken_percentage) },
-			TelescopePromptBorder = {
-				bg = darken(colors.surface0, darken_percentage),
-				fg = darken(colors.surface0, darken_percentage),
-			},
-			TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
-			TelescopePromptPrefix = { bg = darken(colors.surface0, darken_percentage), fg = colors.red },
-			TelescopeSelection = { bg = darken(colors.surface1, darken_percentage), fg = colors.text },
-			TelescopeSelectionCaret = { bg = darken(colors.surface1, darken_percentage), fg = colors.red },
-			TelescopeMatching = { fg = colors.blue },
-			TelescopeResultsNormal = { bg = darken(colors.mantle, darken_percentage) },
-			TelescopeResultsBorder = {
-				bg = darken(colors.mantle, darken_percentage),
-				fg = darken(colors.mantle, darken_percentage),
-			},
-			TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
-			TelescopePreviewNormal = { bg = darken(colors.base, darken_percentage) },
-			TelescopePreviewBorder = {
-				bg = darken(colors.base, darken_percentage),
-				fg = darken(colors.base, darken_percentage),
-			},
-			TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
-		}
+	vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
+	vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
+	vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
 
-		for hl, col in pairs(telescope_highlights) do
-			vim.api.nvim_set_hl(0, hl, col)
-		end
-	end,
-})
+	local function darken(color, percentage)
+		local r = tonumber(color:sub(2, 3), 16)
+		local g = tonumber(color:sub(4, 5), 16)
+		local b = tonumber(color:sub(6, 7), 16)
+		r = math.floor(r * (1 - percentage / 100))
+		g = math.floor(g * (1 - percentage / 100))
+		b = math.floor(b * (1 - percentage / 100))
+		return string.format("#%02x%02x%02x", r, g, b)
+	end
+
+	local darken_percentage = 5
+	local telescope_highlights = {
+		TelescopeNormal = { bg = darken(colors.mantle, darken_percentage), fg = colors.text },
+		TelescopeBorder = {
+			bg = darken(colors.mantle, darken_percentage),
+			fg = darken(colors.mantle, darken_percentage),
+		},
+		TelescopePromptNormal = { bg = darken(colors.surface0, darken_percentage) },
+		TelescopePromptBorder = {
+			bg = darken(colors.surface0, darken_percentage),
+			fg = darken(colors.surface0, darken_percentage),
+		},
+		TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
+		TelescopePromptPrefix = { bg = darken(colors.surface0, darken_percentage), fg = colors.red },
+		TelescopeSelection = { bg = darken(colors.surface1, darken_percentage), fg = colors.text },
+		TelescopeSelectionCaret = { bg = darken(colors.surface1, darken_percentage), fg = colors.red },
+		TelescopeMatching = { fg = colors.blue },
+		TelescopeResultsNormal = { bg = darken(colors.mantle, darken_percentage) },
+		TelescopeResultsBorder = {
+			bg = darken(colors.mantle, darken_percentage),
+			fg = darken(colors.mantle, darken_percentage),
+		},
+		TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
+		TelescopePreviewNormal = { bg = darken(colors.base, darken_percentage) },
+		TelescopePreviewBorder = {
+			bg = darken(colors.base, darken_percentage),
+			fg = darken(colors.base, darken_percentage),
+		},
+		TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
+	}
+
+	for hl, col in pairs(telescope_highlights) do
+		vim.api.nvim_set_hl(0, hl, col)
+	end
+end, { desc = "Toggle Telescope highlights with darkened colors" })
 
 vim.cmd.colorscheme("catppuccin")
 

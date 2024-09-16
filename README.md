@@ -8,7 +8,7 @@
 - ripgrep (by package manager of choice)
 - xclip (by package manager of choice)
 
-## How To use:
+## How To Install:
 windows : 
 ```
 git clone https://www.github.com/Harish-Rusum/nvim-config/ $env:LOCALAPPDATA\nvim 
@@ -18,6 +18,7 @@ mac/linux
 ```
 git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 ```
+### Note : Be sure to clear your `undo` folder once cloning and do it once in a while. This dir is used to save changes so that you can open a file, Write and Quit, Open the file again and be able to undo the changes.
 
 # Showcase
 

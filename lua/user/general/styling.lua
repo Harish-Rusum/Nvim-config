@@ -1,11 +1,15 @@
 -- PERF: Vim appearance settings
 vim.api.nvim_create_augroup("nobg", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
+		vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
+		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
+	end,
+})
 vim.api.nvim_create_user_command("ToggleTelescopeHighlight", function()
 	local colors = require("catppuccin.palettes").get_palette("mocha")
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
-	vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
-	vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
 
 	local function darken(color, percentage)
 		local r = tonumber(color:sub(2, 3), 16)

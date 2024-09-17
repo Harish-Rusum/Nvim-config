@@ -33,8 +33,8 @@ vim.keymap.set("n", "e", function() vim.cmd[[Oil]] end, { desc = "Open parent di
 vim.keymap.set("n", "<leader>e", function() vim.cmd[[Neotree toggle]] end, { desc = "Open parent directory in tree format" })
 
 -- PERF: window resizing
-vim.keymap.set("n", ">", function() vim.cmd[[<C-w>><C-w>>]] end)
-vim.keymap.set("n", "<", function() vim.cmd[[<C-w><<C-w><]] end)
+vim.keymap.set("n", ",", "<C-w>2>")
+vim.keymap.set("n", ".", "<C-w>2<")
 
 -- PERF: setting up keymaps for buffers
 vim.keymap.set("n", "<leader>bn", function() vim.cmd[[bnext]] end, { desc = "Next buffer" })
@@ -44,7 +44,6 @@ vim.keymap.set("n", "<Tab>", function() vim.cmd[[bn]] end, { desc = "Toggle buff
 
 -- PERF: other terminal keybindings
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
-vim.keymap.set("n", "<C-w><RightArrow>", function() vim.cmd[[<C-w><RightArrow>i]] end)
 vim.keymap.set("t", "`", [[<C-\><C-n>]])
 
 -- PERF: setting up keymaps for code folding

@@ -16,6 +16,7 @@ vim.keymap.set('n', '<leader>t]', function() vim.cmd[[ToggleTerm direction=horiz
 
 -- PERF: setting up AI (avante)
 vim.keymap.set('n', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})
+vim.keymap.set('v', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })

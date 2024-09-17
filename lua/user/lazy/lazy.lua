@@ -255,6 +255,30 @@ local plugins = {
       ft = { "markdown", "Avante" },
     },
   },
+	{
+		"nvim-telescope/telescope-frecency.nvim",
+		config = function()
+			require("telescope").load_extension "frecency"
+		end,
+	},
+	{
+		"mikavilpas/yazi.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>-",
+				"<cmd>Yazi<cr>",
+				desc = "Open yazi at the current file",
+			},
+		},
+		opts = {
+			-- if you want to open yazi instead of netrw, see below for more info
+			open_for_directories = false,
+			keymaps = {
+				show_help = '<f1>',
+			},
+		},
+	}
 }
 -- PERF: setting a rounded border
 

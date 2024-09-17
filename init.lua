@@ -31,6 +31,9 @@ require("user.plugins.numb")
 require("user.plugins.fterm")
 require("user.plugins.toggleterm")
 
+-- NOTE: AI using avante
+require("user.plugins.avante")
+
 -- NOTE: mason for installing dependencies
 require("user.plugins.mason")
 

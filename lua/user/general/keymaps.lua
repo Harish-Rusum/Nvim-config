@@ -5,9 +5,9 @@ vim.g.mapleader = " "
 -- PERF: Telescope keymaps
 vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
 vim.keymap.set("n", "<leader>tg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
-vim.keymap.set("n", "<leader>tc", function() vim.cmd[[:Telescope current_buffer_fuzzy_find]] end, { desc = "Current buffer fuzzy find" })
 vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]] end, {desc = "open telescope builtin"})
-vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]] end)
+vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]] end, {desc = "Colorscheme picker"})
+vim.keymap.set("n", "<leader>tc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })

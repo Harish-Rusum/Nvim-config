@@ -26,23 +26,19 @@ git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 # Showcase
 
 
-![image](https://github.com/user-attachments/assets/78340391-ad61-48f8-9cd1-5ae14a4e7ac2)
-
-![image](https://github.com/user-attachments/assets/7c84d279-e2c3-4d5f-8f69-afd9aedb3761)
-
-![image](https://github.com/user-attachments/assets/4e9b4c89-a7a3-43e1-a0ec-363c7454870d)
-
-![image](https://github.com/user-attachments/assets/31b2e353-7f52-475f-a26e-0345fe75062a)
-
-![image](https://github.com/user-attachments/assets/adfea70c-83e4-47b9-8c2e-d5dc22c97a45)
-
-![image](https://github.com/user-attachments/assets/454cbda4-2580-403d-87e1-23ae8121b029)
-
-![image](https://github.com/user-attachments/assets/820f827b-aa8b-44a0-a296-10ebbe2c6fe5)
-
-![image](https://github.com/user-attachments/assets/41f305a0-6b76-4701-b1a8-7c15c395474c)
-
-![image](https://github.com/user-attachments/assets/5e5b0b19-ce83-4b6c-9c3d-0315e62cf731)
+![image](https://github.com/user-attachments/assets/57b0d2ba-77d7-489d-a6f9-540f2eec5429)
+![image](https://github.com/user-attachments/assets/ddcc2c9e-7216-40d6-b72b-e37e6d9066e1)
+![image](https://github.com/user-attachments/assets/0cbb8f99-2f11-4c60-9653-19d925b039d5)
+![image](https://github.com/user-attachments/assets/4e15547c-4d77-4235-98cd-b4f9293920fa)
+![image](https://github.com/user-attachments/assets/6de89b1e-4ac4-4305-baf0-40df714cab82)
+![image](https://github.com/user-attachments/assets/ec648f34-bf2b-4a8e-a4f4-a692b17a438c)
+![image](https://github.com/user-attachments/assets/290efd2a-b012-43a5-8dc3-5c5cc2d955e6)
+![image](https://github.com/user-attachments/assets/a825b83e-896f-4009-a96b-0c4273721a83)
+![image](https://github.com/user-attachments/assets/2e952b86-e07e-4fd7-a027-2751663a53aa)
+![image](https://github.com/user-attachments/assets/70bc585c-bdcb-4bdb-b025-8f2d486fb8d3)
+![image](https://github.com/user-attachments/assets/64671655-11b7-4cdc-8278-60ba642d8fea)
+![image](https://github.com/user-attachments/assets/02c099df-812a-403c-9177-4a3bf30c26d9)
+![image](https://github.com/user-attachments/assets/2b4e3491-c611-4ebc-b585-e3a1287dfd42)
 
 # About
 

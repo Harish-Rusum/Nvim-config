@@ -7,6 +7,9 @@
 - stylua (mason)
 - ripgrep (by package manager of choice)
 - xclip (by package manager of choice)
+- Yazi (File manager, https://yazi-rs.github.io/docs/installation)
+- A gemini/claude/anthropic/openai api key. (For the ai features), It is set to gemini by default but if you want to change it:
+- "~/.local/share/nvim/lazy/avante.nvim/lua/avante/config.lua" Change the provider on line `13` to whatever you want
 
 ## How To Install:
 windows : 

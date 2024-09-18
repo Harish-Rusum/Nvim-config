@@ -28,7 +28,7 @@ require("user.plugins.neo-tree")
 require("user.plugins.numb")
 
 -- NOTE: git
-require("user.git.commit")
+require("user.git.git")
 
 -- NOTE: terminal plugin
 require("user.plugins.fterm")

@@ -33,6 +33,7 @@ telescope.setup({
 		initial_mode = "insert",
 		border = true,
 		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 		winblend = 0,
 		color_devicons = true,
 		use_less = true,

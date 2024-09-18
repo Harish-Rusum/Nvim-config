@@ -27,6 +27,9 @@ require("user.plugins.oil")
 require("user.plugins.neo-tree")
 require("user.plugins.numb")
 
+-- NOTE: git
+require("user.git.commit")
+
 -- NOTE: terminal plugin
 require("user.plugins.fterm")
 require("user.plugins.toggleterm")

@@ -1,7 +1,8 @@
 local Input = require("nui.input")
 local event = require("nui.utils.autocmd").event
 
-local function prompt_user_input(callback)
+-- Function to prompt for user input
+local function prompt_user_input(callback, prompt_text, default_value)
   local input_popup = Input({
     position = "50%",
     size = {
@@ -10,7 +11,7 @@ local function prompt_user_input(callback)
     border = {
       style = "rounded",
       text = {
-        top = "[ Commit Message ]",
+        top = prompt_text,
         top_align = "center",
       },
     },
@@ -19,7 +20,7 @@ local function prompt_user_input(callback)
     },
   }, {
     prompt = " ❱ ",
-    default_value = "",
+    default_value = default_value or "",
     on_submit = function(value)
       if callback then
         callback(value)
@@ -34,25 +35,59 @@ local function prompt_user_input(callback)
   end)
 end
 
-local function git_commit(commit_message)
-  local result = vim.fn.system({"git", "commit", "-m", commit_message})
+-- Function to run git commands
+local function run_git_command(command_args)
+  local result = vim.fn.system(command_args)
   if vim.v.shell_error ~= 0 then
-    print("Error committing: " .. result)
+    print("Error: " .. result)
   else
-    print("Commit successful!")
+    print("Command successful!")
   end
 end
 
+-- Git commit
+local function git_commit(commit_message)
+  run_git_command({"git", "commit", "-m", commit_message})
+end
+
+-- Git add
+local function git_add(files)
+  run_git_command({"git", "add", files})
+end
+
+-- Git push
+local function git_push(remote)
+  run_git_command({"git", "push", remote})
+end
+
+-- Git remove
+local function git_remove(files)
+  run_git_command({"git", "rm", files})
+end
+
+-- Create Git command in Neovim
 vim.api.nvim_create_user_command("Git", function(opts)
   local subcommand = opts.args
 
   if subcommand == "commit" then
     prompt_user_input(function(commit_message)
       git_commit(commit_message)
-    end)
+    end, "[ Commit Message ]")
+  elseif subcommand == "add" then
+    prompt_user_input(function(files)
+      git_add(files)
+    end, "[ Files to Add ]")
+  elseif subcommand == "push" then
+    prompt_user_input(function(remote)
+      git_push(remote)
+    end, "[ Remote for Push ]", "origin")  -- Default to 'origin'
+  elseif subcommand == "remove" then
+    prompt_user_input(function(files)
+      git_remove(files)
+    end, "[ Files to Remove ]")
   else
     print("Unknown Git subcommand: " .. subcommand)
   end
 end, { nargs = 1, complete = function()
-    return { "commit" }
+    return { "commit", "add", "push", "remove" }
   end })

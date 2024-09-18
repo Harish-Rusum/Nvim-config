@@ -44,17 +44,24 @@ local function run_git_command(command_args)
 	end
 end
 
--- Git commit
 local function git_commit(commit_message)
 	run_git_command({ "git", "commit", "-m", commit_message })
 end
 
--- Git add
 local function git_add(files)
 	run_git_command({ "git", "add", files })
 end
 
--- Git remove
+local function git_status()
+	local result = vim.fn.system({ "git", "status" })
+	print(result)
+end
+
+local function git_log()
+	local result = vim.fn.system({ "git", "log" })
+	print(result)
+end
+
 local function git_remove(files)
 	run_git_command({ "git", "rm", files })
 end
@@ -74,12 +81,16 @@ vim.api.nvim_create_user_command("Git", function(opts)
 		prompt_user_input(function(files)
 			git_remove(files)
 		end, "[ Files to Remove ]")
+	elseif subcommand == "status" then
+		git_status()
+	elseif subcommand == "log" then
+		git_log()
 	else
 		print("Unknown Git subcommand: " .. subcommand)
 	end
 end, {
 	nargs = 1,
 	complete = function()
-		return { "commit", "add", "remove" }
+		return { "commit", "add", "remove", "status", "log"}
 	end,
 })

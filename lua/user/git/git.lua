@@ -62,11 +62,16 @@ local function git_log()
 	print(result)
 end
 
+local function git_init()
+	local result = vim.fn.system({ "git", "init" })
+	print(result)
+end
+
 local function git_remove(files)
 	run_git_command({ "git", "rm", files })
 end
 
-vim.api.nvim_create_user_command("Git", function(opts)
+vim.api.nvim_create_user_command("G", function(opts)
 	local subcommand = opts.args
 
 	if subcommand == "commit" then
@@ -85,12 +90,14 @@ vim.api.nvim_create_user_command("Git", function(opts)
 		git_status()
 	elseif subcommand == "log" then
 		git_log()
+	elseif subcommand == "init" then
+		git_init()
 	else
 		print("Unknown Git subcommand: " .. subcommand)
 	end
 end, {
 	nargs = 1,
 	complete = function()
-		return { "commit", "add", "remove", "status", "log"}
+		return { "commit", "add", "remove", "status", "log", "init"}
 	end,
 })

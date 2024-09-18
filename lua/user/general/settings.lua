@@ -3,7 +3,7 @@
 vim.cmd([[set nu]])
 vim.cmd([[set rnu]])
 vim.cmd([[bufdo LspStart]])
-vim.cmd([[command! -nargs=1 G execute ':!git <args>']])
+
 -- PERF: set relative line numbers only in normal mode or command mode
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", { clear = true })
 local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = true })

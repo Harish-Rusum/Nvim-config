@@ -14,6 +14,11 @@ vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggl
 vim.keymap.set('n', '<leader>t[', function() vim.cmd[[ToggleTerm direction=vertical size=70]] end, { desc = "vertical split" })
 vim.keymap.set('n', '<leader>t]', function() vim.cmd[[ToggleTerm direction=horizontal size=17]] end, { desc = "horizontal split" })
 
+-- PERF: git
+vim.keymap.set('n', '<leader>ga', function() vim.cmd[[G add]] end, {desc = "git add"})
+vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G remove]] end, {desc = "git remove"})
+vim.keymap.set('n', '<leader>gc', function() vim.cmd[[G commit]] end, {desc = "git commit"})
+
 -- PERF: setting up AI (avante)
 vim.keymap.set('n', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})
 vim.keymap.set('v', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})

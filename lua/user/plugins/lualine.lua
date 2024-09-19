@@ -1,63 +1,54 @@
--- PERF: defining theme colors
-
+-- PERF: defining theme colors with Catppuccin blue/violet tones
 local colors = {
 	none = "none",
-	red = "#ed4e6b",
-	lightgrey = "#4a4a49",
-	grey = "#3a3b39",
-	darkgrey = "#242423",
+	blue = "#d488f2",
+	violet = "#b4befe",
+	darkblue = "#2d3342",
+	darkviolet = "#2d3342",
+	lightgrey = "#6c7086",
+	grey = "#6c7086",
+	red = "#f38ba8",
 	green = "#95d982",
-	magenta = "#d488f2",
-	brown = "#eba871",
-	teal = "#3fd1cc",
-	white = "#ffffff",
+	white = "#dce0e8",
 }
 
--- PERF: mapping the colors to the apropriate lualine sections
-
+-- PERF: Mapping the colors to lualine sections, emphasizing Catppuccin's balance and style
 local theme = {
 	normal = {
-		b = { bg = colors.darkgrey, fg = colors.white },
-		a = { bg = colors.magenta, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white },
+		a = { bg = colors.blue, fg = colors.darkblue, gui = "bold" },
+		b = { bg = colors.darkviolet, fg = colors.white },
+		c = { bg = colors.none, fg = colors.lightgrey },
 	},
 	insert = {
-		b = { bg = colors.darkgrey, fg = colors.white },
-		a = { bg = colors.red, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white },
+		a = { bg = colors.green, fg = colors.darkblue, gui = "bold" },
+		b = { bg = colors.darkviolet, fg = colors.white },
+		c = { bg = colors.none, fg = colors.lightgrey },
 	},
 	command = {
-		b = { bg = colors.darkgrey, fg = colors.white },
-		a = { bg = colors.green, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white },
+		a = { bg = colors.green, fg = colors.darkblue, gui = "bold" },
+		b = { bg = colors.darkviolet, fg = colors.white },
+		c = { bg = colors.none, fg = colors.lightgrey },
 	},
 	visual = {
-		b = { bg = colors.darkgrey, fg = colors.white },
-		a = { bg = colors.brown, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white },
+		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
+		b = { bg = colors.darkviolet, fg = colors.white },
+		c = { bg = colors.none, fg = colors.lightgrey },
 	},
 	replace = {
-		b = { bg = colors.darkgrey, fg = colors.white },
-		a = { bg = colors.teal, fg = colors.darkgrey },
-		c = { bg = colors.none, fg = colors.white },
+		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
+		b = { bg = colors.darkviolet, fg = colors.white },
+		c = { bg = colors.none, fg = colors.lightgrey },
 	},
 }
 
 require("lualine").setup({
-
-	-- PERF: lualine basic options (mainly seperators)
-
 	options = {
 		icons_enabled = true,
 		theme = theme,
 		globalstatus = true,
-		component_separators = { left = "|", right = "|" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = {
-			statusline = {},
-			winbar = {},
-		},
-		ignore_focus = {},
+		component_separators = { left = "│", right = "│" },
+		section_separators = { left = "", right = "" },
+		disabled_filetypes = { statusline = {}, winbar = {} },
 		always_divide_middle = true,
 		refresh = {
 			statusline = 1000,
@@ -66,47 +57,58 @@ require("lualine").setup({
 		},
 	},
 
-	-- PERF: defining lualine sections (mainly the lsp information in the bottom right)
-
+	-- PERF: Defining sections with diagnostic symbols and LSP/filetype color sync
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { "branch", "diagnostics" },
+		lualine_b = {
+			"branch",
+			{
+				"diagnostics",
+				sources = { "nvim_diagnostic" },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
+				diagnostics_color = {
+					error = { fg = colors.red },
+					warn = { fg = colors.violet },
+					info = { fg = colors.blue },
+					hint = { fg = colors.green },
+				},
+			},
+		},
 		lualine_c = { "" },
 		lualine_x = {
-			"filetype",
+			{
+				"filetype",
+				colored = false,
+				icon_only = true,
+				icon = { align = "right" },
+				separator = "|",
+				color = { fg = colors.grey, gui = "bold" },
+			},
 			{
 				function()
 					local clients = vim.lsp.buf_get_clients()
 					local client_names = {}
 
-					if next(clients) ~= nil then
-						for _, client in pairs(clients) do
-							if client.name ~= "null-ls" then
-								table.insert(client_names, client.name)
-							end
+					for _, client in pairs(clients) do
+						if client.name ~= "null-ls" then
+							table.insert(client_names, client.name)
 						end
 					end
 
-					local sources = require("null-ls.sources")
-					local ft = vim.bo.filetype
-					local available_sources = sources.get_available(ft)
+					local sources = require("null-ls.sources").get_available(vim.bo.filetype)
 					local unique_sources = {}
 
-					for _, source in ipairs(available_sources) do
+					for _, source in ipairs(sources) do
 						if not unique_sources[source.name] then
 							table.insert(client_names, source.name)
 							unique_sources[source.name] = true
 						end
 					end
 
-					if next(client_names) == nil then
-						return ""
-					end
-
-					return "[" .. table.concat(client_names, ", ") .. "]"
+					-- return #client_names > 0 and "  [" .. table.concat(client_names, ", ") .. "]" or ""
+					return #client_names > 0 and "[" .. table.concat(client_names, ", ") .. "]" or ""
 				end,
-				icon = " ",
-				color = { fg = "#ffffff", gui = "bold" },
+				color = { fg = colors.grey, gui = "bold" },
 			},
 		},
 		lualine_y = { "progress" },

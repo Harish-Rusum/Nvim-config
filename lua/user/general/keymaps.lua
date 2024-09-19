@@ -16,6 +16,10 @@ vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggl
 vim.keymap.set('n', '<leader>t[', function() vim.cmd[[ToggleTerm direction=vertical size=70]] end, { desc = "vertical split" })
 vim.keymap.set('n', '<leader>t]', function() vim.cmd[[ToggleTerm direction=horizontal size=17]] end, { desc = "horizontal split" })
 
+-- PERF: lualine (statusbar)
+vim.keymap.set('n', '<leader>le', function() vim.cmd[[set laststatus=2]] end, {desc = "Enable lualine (statusbar)"})
+vim.keymap.set('n', '<leader>ld', function() vim.cmd[[set laststatus=0]] end, {desc = "Disable lualine (statusbar)"})
+
 -- PERF: git
 vim.keymap.set('n', '<leader>ga', function() vim.cmd[[G add]] end, {desc = "git add"})
 vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G remove]] end, {desc = "git remove"})

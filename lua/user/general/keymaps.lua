@@ -42,6 +42,8 @@ vim.keymap.set("n", "<leader>e", function() vim.cmd[[Neotree toggle]] end, { des
 -- PERF: window resizing
 vim.keymap.set("n", ",", "<C-w>2>")
 vim.keymap.set("n", ".", "<C-w>2<")
+vim.keymap.set("n", "<C-,>", "<C-w>2-")
+vim.keymap.set("n", "<C-.>", "<C-w>2+")
 
 -- PERF: setting up keymaps for buffers
 vim.keymap.set("n", "<leader>bn", function() vim.cmd[[bnext]] end, { desc = "Next buffer" })

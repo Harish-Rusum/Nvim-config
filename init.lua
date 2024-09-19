@@ -7,7 +7,7 @@ require("user.lsp.none-ls")
 require("user.lsp.luasnip")
 require("user.lsp.completions")
 
--- NOTE: settings andstyling of nvim
+-- NOTE: settings and styling
 require("user.general.settings")
 require("user.general.styling")
 
@@ -27,7 +27,7 @@ require("user.plugins.oil")
 require("user.plugins.neo-tree")
 require("user.plugins.numb")
 
--- NOTE: git
+-- NOTE: git commands
 require("user.git.git")
 
 -- NOTE: terminal plugin
@@ -42,9 +42,6 @@ require("user.plugins.mason")
 
 -- NOTE: plugin for persisting nvim sessions
 require("user.plugins.auto-session")
-
--- NOTE: remainder system
-require("user.popups.remainder")
 
 -- NOTE : keymaps for EVERYTHING
 require("user.general.keymaps")

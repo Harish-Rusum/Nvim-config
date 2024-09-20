@@ -5,7 +5,7 @@ local function prompt_user_input(callback, prompt_text, default_value)
 	local input_popup = Input({
 		position = "50%",
 		size = {
-			width = 40,
+			width = 60,
 		},
 		border = {
 			style = "rounded",

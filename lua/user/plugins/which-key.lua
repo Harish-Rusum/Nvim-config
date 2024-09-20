@@ -3,6 +3,7 @@
 require("which-key").register({
 	["<leader>t"] = { name = "Telescope/Terminal", _ = "which_key_ignore" },
 	["<leader>td"] = { name = "Telescope at cursor", _ = "which_key_ignore" },
+	["<leader>ti"] = { name = "Telescope in a split", _ = "which_key_ignore" },
 	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
 	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
 	["<leader>h"] = { name = "Harpoon", _ = "which_key_ignore" },

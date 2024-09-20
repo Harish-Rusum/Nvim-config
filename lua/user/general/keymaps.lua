@@ -9,7 +9,8 @@ vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]]
 vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]] end, {desc = "Colorscheme picker"})
 vim.keymap.set("n", "<leader>tc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
 vim.keymap.set("n", "<leader>tdf", function() vim.cmd[[lua require('telescope.builtin').find_files(require('telescope.themes').get_cursor({}))]] end, {desc = "Find files"})
-vim.keymap.set("n", "<leader>tdg", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_cursor({}))]] end, {desc = "Live grep"})
+vim.keymap.set("n", "<leader>tif", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
+vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })

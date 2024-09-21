@@ -28,10 +28,6 @@ vim.keymap.set('n', '<leader>ga', function() vim.cmd[[G add]] end, {desc = "git 
 vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G remove]] end, {desc = "git remove"})
 vim.keymap.set('n', '<leader>gc', function() vim.cmd[[G commit]] end, {desc = "git commit"})
 
--- PERF: setting up AI (avante)
-vim.keymap.set('n', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})
-vim.keymap.set('v', '<leader>aa', function() vim.cmd[[AvanteChat]] end, {desc = "Chat with ai"})
-
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })
 vim.keymap.set("n", "<leader>cg", function() vim.cmd[[lua vim.lsp.buf.definition()]] end, { desc = "Go to definition" })

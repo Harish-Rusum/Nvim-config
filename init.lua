@@ -36,9 +36,6 @@ require("git.git")
 require("plugins.fterm")
 require("plugins.toggleterm")
 
--- NOTE: AI using avante
-require("plugins.avante")
-
 -- NOTE: mason for installing dependencies
 require("plugins.mason")
 

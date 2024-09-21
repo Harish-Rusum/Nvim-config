@@ -12,6 +12,8 @@ vim.keymap.set("n", "<leader>tdf", function() vim.cmd[[lua require('telescope.bu
 vim.keymap.set("n", "<leader>tif", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 
+-- PERF: Lualine 
+
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
 vim.keymap.set('n', '<leader>t[', function() vim.cmd[[ToggleTerm direction=vertical size=70]] end, { desc = "vertical split" })

@@ -1,7 +1,8 @@
 -- PERF: defining theme colors with Catppuccin blue/violet tones
 local colors = {
 	none = "none",
-	blue = "#d488f2",
+	-- none = "#1e2031",
+	blue = "#8aadf5",
 	violet = "#b4befe",
 	darkblue = "#2d3342",
 	darkviolet = "#2d3342",
@@ -115,3 +116,4 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 })
+

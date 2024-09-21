@@ -12,7 +12,6 @@ require("user.general.settings")
 require("user.general.styling")
 
 -- NOTE: UI plugins (user-interface)
-require("user.plugins.lualine")
 require("user.plugins.which-key")
 require("user.plugins.screenkey")
 require("user.plugins.bufferline")
@@ -26,6 +25,9 @@ require("user.plugins.telescope")
 require("user.plugins.oil")
 require("user.plugins.neo-tree")
 require("user.plugins.numb")
+
+-- NOTE: Lualine (change to user.lualine.lualine_sharp if wanted) 
+require("user.lualine.lualine_rounded")
 
 -- NOTE: git commands
 require("user.git.git")
@@ -43,5 +45,5 @@ require("user.plugins.mason")
 -- NOTE: plugin for persisting nvim sessions
 require("user.plugins.auto-session")
 
--- NOTE : keymaps for EVERYTHING
+-- NOTE:  keymaps for EVERYTHING
 require("user.general.keymaps")

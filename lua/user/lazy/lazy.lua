@@ -278,6 +278,13 @@ local plugins = {
 			},
 		},
 	},
+	{
+		"Styzex/RandTheme.nvim",
+		event = "VimEnter",
+		config = function()
+			require("randtheme").setup()
+		end
+	},
 }
 -- PERF: setting a rounded border
 

@@ -67,8 +67,8 @@ local function git_init()
 	print(result)
 end
 
-local function git_remove(files)
-	run_git_command({ "git", "rm", files })
+local function git_reset(files)
+	run_git_command({ "git", "reset", files })
 end
 
 vim.api.nvim_create_user_command("G", function(opts)
@@ -82,10 +82,10 @@ vim.api.nvim_create_user_command("G", function(opts)
 		prompt_user_input(function(files)
 			git_add(files)
 		end, "[ Files to Add ]")
-	elseif subcommand == "remove" then
+	elseif subcommand == "reset" then
 		prompt_user_input(function(files)
-			git_remove(files)
-		end, "[ Files to Remove ]")
+			git_reset(files)
+		end, "[ Files to reset ]")
 	elseif subcommand == "status" then
 		git_status()
 	elseif subcommand == "log" then
@@ -98,6 +98,6 @@ vim.api.nvim_create_user_command("G", function(opts)
 end, {
 	nargs = 1,
 	complete = function()
-		return { "commit", "add", "remove", "status", "log", "init"}
+		return { "commit", "add", "reset", "status", "log", "init"}
 	end,
 })

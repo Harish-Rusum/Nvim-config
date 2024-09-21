@@ -154,8 +154,7 @@ local plugins = {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		opts = {
-		},
+		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
@@ -168,15 +167,15 @@ local plugins = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
-		}
+		},
 	},
 	{
-		's1n7ax/nvim-window-picker',
-		name = 'window-picker',
-		event = 'VeryLazy',
-		version = '2.*',
+		"s1n7ax/nvim-window-picker",
+		name = "window-picker",
+		event = "VeryLazy",
+		version = "2.*",
 		config = function()
-			require'window-picker'.setup()
+			require("window-picker").setup()
 		end,
 	},
 	{
@@ -187,16 +186,16 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 			{
-				's1n7ax/nvim-window-picker',
-				version = '2.*',
+				"s1n7ax/nvim-window-picker",
+				version = "2.*",
 				config = function()
-					require 'window-picker'.setup({
+					require("window-picker").setup({
 						filter_rules = {
 							include_current_win = false,
 							autoselect_one = true,
 							bo = {
-								filetype = { 'neo-tree', "neo-tree-popup", "notify" },
-								buftype = { 'terminal', "quickfix" },
+								filetype = { "neo-tree", "neo-tree-popup", "notify" },
+								buftype = { "terminal", "quickfix" },
 							},
 						},
 					})
@@ -205,11 +204,11 @@ local plugins = {
 		},
 	},
 	{
-		'MeanderingProgrammer/render-markdown.nvim',
+		"MeanderingProgrammer/render-markdown.nvim",
 		opts = {},
-		dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
-	{'akinsho/toggleterm.nvim', version = "*", config = true},
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",
@@ -227,7 +226,7 @@ local plugins = {
 			"MunifTanjim/nui.nvim",
 			--- The below dependencies are optional,
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			"zbirenbaum/copilot.lua",   -- for providers='copilot'
 			{
 				-- support for image pasting
 				"HakonHarnes/img-clip.nvim",
@@ -246,19 +245,19 @@ local plugins = {
 				},
 			},
 		},
-    {
-      -- Make sure to set this up properly if you have lazy=true
-      'MeanderingProgrammer/render-markdown.nvim',
-      opts = {
-        file_types = { "markdown", "Avante" },
-      },
-      ft = { "markdown", "Avante" },
-    },
-  },
+		{
+			-- Make sure to set this up properly if you have lazy=true
+			"MeanderingProgrammer/render-markdown.nvim",
+			opts = {
+				file_types = { "markdown", "Avante" },
+			},
+			ft = { "markdown", "Avante" },
+		},
+	},
 	{
 		"nvim-telescope/telescope-frecency.nvim",
 		config = function()
-			require("telescope").load_extension "frecency"
+			require("telescope").load_extension("frecency")
 		end,
 	},
 	{
@@ -275,10 +274,10 @@ local plugins = {
 			-- if you want to open yazi instead of netrw, see below for more info
 			open_for_directories = false,
 			keymaps = {
-				show_help = '<f1>',
+				show_help = "<f1>",
 			},
 		},
-	}
+	},
 }
 -- PERF: setting a rounded border
 

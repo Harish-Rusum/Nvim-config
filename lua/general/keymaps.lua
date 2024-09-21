@@ -39,8 +39,8 @@ vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable"
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
 
 -- PERF: chtshts
-vim.keymap.set("n", "<leader>vc", function() vim.cmd[[e ~/.config/nvim/lua/user/chtshts/chtsht.md]] end, { desc = "Open vim cheat sheat" })
-vim.keymap.set("n", "<leader>vb", function() vim.cmd[[e ~/.config/nvim/lua/user/chtshts/files.md]] end, { desc = "Files in vim chtsht" })
+vim.keymap.set("n", "<leader>vc", function() vim.cmd[[e ~/.config/nvim/lua/chtshts/chtsht.md]] end, { desc = "Open vim cheat sheat" })
+vim.keymap.set("n", "<leader>vb", function() vim.cmd[[e ~/.config/nvim/lua/chtshts/files.md]] end, { desc = "Files in vim chtsht" })
 
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd[[Oil]] end, { desc = "Open parent directory" })

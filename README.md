@@ -1,3 +1,12 @@
+# Table of Contents
+1. [Installation](#installation)
+   - [Requirements](#requirements)
+   - [How To Install](#how-to-install)
+   - [Note](#note)
+   
+2. [Showcase](#showcase)
+
+3. [About](#about)
 # Installation
 
 ## Requirements

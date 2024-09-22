@@ -73,6 +73,7 @@ end
 
 local function git_push()
 	run_git_command({ "git", "push"})
+	print("Successfuly pushed to remote repo")
 end
 
 vim.api.nvim_create_user_command("G", function(opts)

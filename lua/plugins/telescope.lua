@@ -26,7 +26,7 @@ telescope.setup({
 		-- PERF: Telescope icons and borders
 -- ❱ 
 		layout_strategy = "horizontal",
-		sorting_strategy = "ascending",
+		sorting_strategy = "descending",
 		prompt_prefix = " ",
 		selection_caret = "▶ ",
 		entry_prefix = "  ",

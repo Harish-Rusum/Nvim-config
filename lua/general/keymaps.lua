@@ -12,7 +12,8 @@ vim.keymap.set("n", "<leader>tdf", function() vim.cmd[[lua require('telescope.bu
 vim.keymap.set("n", "<leader>tif", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 
--- PERF: Lualine 
+-- PERF: Smooth cursor
+vim.keymap.set('n', '<leader>at', function() vim.cmd[[SmoothCursorToggle]] end, { desc = "Animated cursor toggle" })
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
@@ -25,8 +26,12 @@ vim.keymap.set('n', '<leader>ld', function() vim.cmd[[set laststatus=0]] end, {d
 
 -- PERF: git
 vim.keymap.set('n', '<leader>ga', function() vim.cmd[[G add]] end, {desc = "git add"})
-vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G remove]] end, {desc = "git remove"})
+vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G reset]] end, {desc = "git remove"})
 vim.keymap.set('n', '<leader>gc', function() vim.cmd[[G commit]] end, {desc = "git commit"})
+vim.keymap.set('n', '<leader>gs', function() vim.cmd[[G status]] end, {desc = "git status"})
+vim.keymap.set('n', '<leader>gl', function() vim.cmd[[G log]] end, {desc = "git log"})
+vim.keymap.set('n', '<leader>gp', function() vim.cmd[[G push]] end, {desc = "git push"})
+vim.keymap.set('n', '<leader>gi', function() vim.cmd[[G init]] end, {desc = "git init"})
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })
@@ -66,9 +71,6 @@ vim.keymap.set("v", "<leader>fo", function() vim.cmd[[zo]] end)
 vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
-
--- PERF: remainder stuff
-vim.keymap.set("n", "<leader>sr", function() vim.cmd[[SetReminder]] end,{desc = "Set remainder"})
 
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")

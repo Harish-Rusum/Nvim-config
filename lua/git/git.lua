@@ -71,6 +71,10 @@ local function git_reset(files)
 	run_git_command({ "git", "reset", files })
 end
 
+local function git_push()
+	run_git_command({ "git", "push"})
+end
+
 vim.api.nvim_create_user_command("G", function(opts)
 	local subcommand = opts.args
 
@@ -90,6 +94,8 @@ vim.api.nvim_create_user_command("G", function(opts)
 		git_status()
 	elseif subcommand == "log" then
 		git_log()
+	elseif subcommand == "push" then
+		git_push()
 	elseif subcommand == "init" then
 		git_init()
 	else
@@ -98,6 +104,6 @@ vim.api.nvim_create_user_command("G", function(opts)
 end, {
 	nargs = 1,
 	complete = function()
-		return { "commit", "add", "reset", "status", "log", "init"}
+		return { "commit", "add", "reset", "status", "log", "init", "push"}
 	end,
 })

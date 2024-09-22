@@ -233,13 +233,11 @@ local plugins = {
 			},
 		},
 	},
-	{
-		"Styzex/RandTheme.nvim",
-		event = "VimEnter",
+	{ 'gen740/SmoothCursor.nvim',
 		config = function()
-			require("randtheme").setup()
+			require('smoothcursor').setup()
 		end
-	},
+	}
 }
 -- PERF: setting a rounded border
 

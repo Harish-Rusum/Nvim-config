@@ -233,12 +233,11 @@ local plugins = {
 			require("smoothcursor").setup()
 		end,
 	},
-	-- {
-	-- 	"j-hui/fidget.nvim",
-	-- 	opts = {
-	-- 		-- options
-	-- 	},
-	-- }
+	{
+		"j-hui/fidget.nvim",
+		opts = {
+		},
+	}
 }
 -- PERF: setting a rounded border
 

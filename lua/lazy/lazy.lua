@@ -210,12 +210,6 @@ local plugins = {
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
-		"nvim-telescope/telescope-frecency.nvim",
-		config = function()
-			require("telescope").load_extension("frecency")
-		end,
-	},
-	{
 		"mikavilpas/yazi.nvim",
 		event = "VeryLazy",
 		keys = {
@@ -237,7 +231,7 @@ local plugins = {
 		config = function()
 			require('smoothcursor').setup()
 		end
-	}
+	},
 }
 -- PERF: setting a rounded border
 

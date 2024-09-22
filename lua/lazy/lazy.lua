@@ -151,15 +151,15 @@ local plugins = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -227,11 +227,18 @@ local plugins = {
 			},
 		},
 	},
-	{ 'gen740/SmoothCursor.nvim',
+	{
+		"gen740/SmoothCursor.nvim",
 		config = function()
-			require('smoothcursor').setup()
-		end
+			require("smoothcursor").setup()
+		end,
 	},
+	-- {
+	-- 	"j-hui/fidget.nvim",
+	-- 	opts = {
+	-- 		-- options
+	-- 	},
+	-- }
 }
 -- PERF: setting a rounded border
 

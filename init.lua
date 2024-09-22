@@ -18,7 +18,7 @@ require("plugins.bufferline")
 require("plugins.gitsigns")
 require("plugins.treesitter")
 require("plugins.hicolors")
-require("plugins.noice")
+-- require("plugins.noice")
 require("plugins.smoothcursor")
 
 -- NOTE: search stuff
@@ -27,7 +27,7 @@ require("plugins.oil")
 require("plugins.neo-tree")
 require("plugins.numb")
 
--- NOTE: Lualine (change to lualine.lualine_sharp if wanted)
+-- NOTE: Lualine (other option is lualine_sharp)
 require("lualine.lualine_rounded")
 
 -- NOTE: git commands

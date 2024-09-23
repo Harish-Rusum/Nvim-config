@@ -15,7 +15,6 @@ require("general.styling")
 require("plugins.which-key")
 require("plugins.screenkey")
 require("plugins.bufferline")
-require("plugins.gitsigns")
 require("plugins.treesitter")
 require("plugins.hicolors")
 require("plugins.alpha")
@@ -32,6 +31,7 @@ require("plugins.numb")
 require("lualine.lualine_rounded")
 
 -- NOTE: git commands
+require("plugins.gitsigns")
 require("git.git")
 
 -- NOTE: terminal plugin

@@ -208,9 +208,6 @@ local plugins = {
 	},
 	{
 		"gen740/SmoothCursor.nvim",
-		config = function()
-			require("smoothcursor").setup()
-		end,
 	},
 	{
 		"j-hui/fidget.nvim",
@@ -224,6 +221,7 @@ local plugins = {
 			"echasnovski/mini.icons",
 		},
 	},
+	{'nvim-telescope/telescope-ui-select.nvim' },
 }
 -- PERF: setting a rounded border
 

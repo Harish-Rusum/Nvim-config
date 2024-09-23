@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
 vim.keymap.set("n", "<leader>tg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
 vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]] end, {desc = "open telescope builtin"})
-vim.keymap.set("n", "<leader>ts", function() vim.cmd[[lua colorscheme_picker()]] end, {desc = "Colorscheme picker"})
+vim.keymap.set("n", "<leader>ts", function() vim.cmd[[:Telescope colorscheme]] end, {desc = "Colorscheme picker"})
 vim.keymap.set("n", "<leader>tc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
 vim.keymap.set("n", "<leader>tdf", function() vim.cmd[[lua require('telescope.builtin').find_files(require('telescope.themes').get_cursor({}))]] end, {desc = "Find files"})
 vim.keymap.set("n", "<leader>tif", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
@@ -63,13 +63,10 @@ vim.keymap.set("n", "<Tab>", function() vim.cmd[[bn]] end, { desc = "Toggle buff
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
 vim.keymap.set("t", "`", [[<C-\><C-n>]])
 
--- PERF: setting up keymaps for code folding
-vim.keymap.set("v", "<leader>ff", function() vim.cmd[[zf]] end)
-vim.keymap.set("v", "<leader>fo", function() vim.cmd[[zo]] end)
-
 -- PERF: make yanking always from the system clipboard
 vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
+vim.keymap.set("v", "Y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
 
 -- PERF: nice things to have

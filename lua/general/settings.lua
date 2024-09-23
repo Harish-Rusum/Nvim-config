@@ -39,3 +39,4 @@ vim.cmd([[set cursorline]])
 vim.opt.undofile = true
 
 vim.opt.undodir = vim.fn.expand('/home/linux/.config/nvim/undo')
+

@@ -18,6 +18,7 @@ require("plugins.bufferline")
 require("plugins.gitsigns")
 require("plugins.treesitter")
 require("plugins.hicolors")
+require("plugins.alpha")
 -- require("plugins.noice")
 require("plugins.smoothcursor")
 
@@ -39,9 +40,6 @@ require("plugins.toggleterm")
 
 -- NOTE: mason for installing dependencies
 require("plugins.mason")
-
--- NOTE: plugin for persisting nvim sessions
-require("plugins.auto-session")
 
 -- NOTE:  keymaps for EVERYTHING
 require("general.keymaps")

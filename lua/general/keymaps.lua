@@ -30,7 +30,7 @@ vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G reset]] end, {desc = "gi
 vim.keymap.set('n', '<leader>gc', function() vim.cmd[[G commit]] end, {desc = "git commit"})
 vim.keymap.set('n', '<leader>gs', function() vim.cmd[[G status]] end, {desc = "git status"})
 vim.keymap.set('n', '<leader>gl', function() vim.cmd[[G log]] end, {desc = "git log"})
-vim.keymap.set('n', '<leader>gp', function() vim.cmd[[G push]] end, {desc = "git push"})
+vim.keymap.set('n', '<leader>gp', function() vim.cmd[[G push]] end, { desc = "git push" })
 vim.keymap.set('n', '<leader>gi', function() vim.cmd[[G init]] end, {desc = "git init"})
 
 -- PERF: setting up LSP actions
@@ -92,7 +92,3 @@ end, { desc = "Change root dir to this dir" })
 
 vim.keymap.set("n", "<leader>cp", function() vim.cmd[[Glow %]] end, { desc = "Preview markdown files" })
 vim.keymap.set("i", "<C-w>", "<Esc>diwi", { desc = "Delete a word backwards in insert mode" })
-
--- PERF: Harpoon keymaps
-vim.keymap.set("n", "<leader>hh", function() vim.cmd[[lua require("harpoon.ui").toggle_quick_menu()]] end, { desc = "Harpoon UI toggle" })
-vim.keymap.set("n", "<leader>ha", function() vim.cmd[[lua require("harpoon.mark").add_file()]] end, { desc = "Add current file to Harpoon" })

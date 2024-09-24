@@ -51,7 +51,6 @@ cmp.setup({
 	}),
 	formatting = {
 		format = function(entry, vim_item)
-			-- Add custom symbol before the completion item
 			local symbol_map = {
 				Text = "",
 				Method = "",

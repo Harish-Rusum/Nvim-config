@@ -20,7 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	{ "tribela/vim-transparent" },
 	{ "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
-	{ "tpope/vim-surround" },
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
@@ -45,21 +44,19 @@ local plugins = {
 		end,
 		opts = {},
 	},
-	{
-		"hrsh7th/nvim-cmp",
-		requires = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-path" },
-			{ "hrsh7th/cmp-cmdline" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "L3MON4D3/LuaSnip" },
-		},
-	},
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-cmdline" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "nvimtools/none-ls.nvim" },
+	{ "L3MON4D3/LuaSnip" },
+	{ "hrsh7th/nvim-cmp" },
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-	{
-		"williamboman/mason.nvim",
-	},
+	{ "williamboman/mason.nvim" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "rafamadriz/friendly-snippets" },
+	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{
@@ -67,12 +64,9 @@ local plugins = {
 		opts = {},
 		cmd = "Trouble",
 	},
-	{ "nvimtools/none-ls.nvim" },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "stevearc/dressing.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
-	{ "ellisonleao/glow.nvim",   config = true, cmd = "Glow" },
-	{ "ThePrimeagen/harpoon" },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -90,10 +84,6 @@ local plugins = {
 	{ "nacro90/numb.nvim" },
 	{ "simeji/winresizer" },
 	{
-		"folke/zen-mode.nvim",
-		opts = {},
-	},
-	{
 		"numToStr/Comment.nvim",
 		opts = {},
 		lazy = false,
@@ -101,9 +91,6 @@ local plugins = {
 	{
 		"L3MON4D3/LuaSnip",
 	},
-	{ "saadparwaiz1/cmp_luasnip" },
-	{ "rafamadriz/friendly-snippets" },
-	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -130,15 +117,6 @@ local plugins = {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	-- {
-	-- 	"folke/noice.nvim",
-	-- 	event = "VeryLazy",
-	-- 	opts = {},
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		"rcarriga/nvim-notify",
-	-- 	},
-	-- },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -149,45 +127,11 @@ local plugins = {
 		},
 	},
 	{
-		"s1n7ax/nvim-window-picker",
-		name = "window-picker",
-		event = "VeryLazy",
-		version = "2.*",
-		config = function()
-			require("window-picker").setup()
-		end,
-	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-			{
-				"s1n7ax/nvim-window-picker",
-				version = "2.*",
-				config = function()
-					require("window-picker").setup({
-						filter_rules = {
-							include_current_win = false,
-							autoselect_one = true,
-							bo = {
-								filetype = { "neo-tree", "neo-tree-popup", "notify" },
-								buftype = { "terminal", "quickfix" },
-							},
-						},
-					})
-				end,
-			},
-		},
-	},
-	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		opts = {},
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{ "akinsho/toggleterm.nvim",                version = "*", config = true },
 	{
 		"mikavilpas/yazi.nvim",
 		event = "VeryLazy",
@@ -199,7 +143,6 @@ local plugins = {
 			},
 		},
 		opts = {
-			-- if you want to open yazi instead of netrw, see below for more info
 			open_for_directories = false,
 			keymaps = {
 				show_help = "<f1>",
@@ -211,8 +154,7 @@ local plugins = {
 	},
 	{
 		"j-hui/fidget.nvim",
-		opts = {
-		},
+		opts = {},
 	},
 	{
 
@@ -221,7 +163,16 @@ local plugins = {
 			"echasnovski/mini.icons",
 		},
 	},
-	{'nvim-telescope/telescope-ui-select.nvim' },
+	{ "nvim-telescope/telescope-ui-select.nvim" },
+	{ "tpope/vim-surround" },
+	{
+		"Wansmer/treesj",
+		keys = { "<space>s", "<space>j", "<space>m" },
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		config = function()
+			require("treesj").setup({ max_join_length = 1000 })
+		end,
+	},
 }
 -- PERF: setting a rounded border
 

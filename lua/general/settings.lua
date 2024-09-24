@@ -8,7 +8,6 @@ vim.cmd([[bufdo LspStart]])
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", { clear = true })
 local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = true })
 
--- Function to check if the buffer has a file path
 local function has_file_path()
 	return vim.api.nvim_buf_get_name(0) ~= ""
 end

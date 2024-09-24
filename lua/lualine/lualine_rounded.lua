@@ -106,7 +106,6 @@ require("lualine").setup({
 						end
 					end
 
-					-- return #client_names > 0 and "  [" .. table.concat(client_names, ", ") .. "]" or ""
 					return #client_names > 0 and "[" .. table.concat(client_names, ", ") .. "]" or ""
 				end,
 				color = { fg = colors.grey, gui = "bold" },

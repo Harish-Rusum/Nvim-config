@@ -173,6 +173,16 @@ local plugins = {
 			require("treesj").setup({ max_join_length = 1000 })
 		end,
 	},
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+		},
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+			}
+	}
 }
 -- PERF: setting a rounded border
 

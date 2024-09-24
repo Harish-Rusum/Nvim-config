@@ -18,7 +18,7 @@ require("plugins.bufferline")
 require("plugins.treesitter")
 require("plugins.hicolors")
 require("plugins.alpha")
--- require("plugins.noice")
+require("plugins.noice")
 require("plugins.smoothcursor")
 
 -- NOTE: search stuff

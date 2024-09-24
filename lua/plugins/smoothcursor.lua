@@ -6,7 +6,7 @@ require('smoothcursor').setup({
 
     fancy = {
         enable = true,
-        head = { cursor = " ", texthl = "SmoothCursor",
+        head = { cursor = " ", texthl = "SmoothCursor", linehl = nil },
         body = {
             -- { cursor = "󰝥", texthl = "SmoothCursorRed" },
             -- { cursor = "󰝥", texthl = "SmoothCursorOrange" },
@@ -63,4 +63,4 @@ require('smoothcursor').setup({
     enabled_filetypes = nil,
     disabled_filetypes = nil,
     show_last_positions = nil,
-}})
+})

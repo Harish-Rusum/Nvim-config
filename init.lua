@@ -6,6 +6,7 @@ require("lsp.lsp")
 require("lsp.none-ls")
 require("lsp.luasnip")
 require("lsp.completions")
+-- require("lsp.lines")
 
 -- NOTE: settings and styling
 require("general.settings")

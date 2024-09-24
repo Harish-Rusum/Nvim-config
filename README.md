@@ -3,6 +3,7 @@
    - [Requirements](#requirements)
    - [How To Install](#how-to-install)
    - [Note](#note)
+   - [Credits](#credits)
    
 2. [Showcase](#showcase)
 
@@ -52,8 +53,17 @@ git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 ![image](https://github.com/user-attachments/assets/33377e49-eab2-473e-880a-f4d2e62637d6)
 ![image](https://github.com/user-attachments/assets/562db9f0-4adb-4346-8c8f-6992c4d1eaba)
 
+# Credits
+
+Huge thanks to a lot of the below mentioned people for their config videos and github repos
+> - Typecraft - https://www.youtube.com/@typecraft_dev
+> - Coding with sphere - https://www.youtube.com/@codingwithsphere
+> - ThePrimeagen (duh) - https://www.youtube.com/c/theprimeagen
+> - TJDevries (duh) - https://www.youtube.com/c/tjdevries
+> - Chris@Machine - https://www.youtube.com/@chrisatmachine 
 
 # About
 
 This config was born out of frustration with lunarvim's lsp system ( https://www.lunarvim.org ), specifically how to use it and remove preconfigured stuff.
+Note : LunarVim is REALLY good and my frustration stemmed from not understanding how to do things in it thats all.
 I went from not knowing anything about vim (hence the moving from community distro to distro) and i finally just decided to make one myself, for this reason i have tried to make this config as self-explanatory and intuitive as possible with **relatively** good explanations of what everything is doing 

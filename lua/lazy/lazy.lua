@@ -182,6 +182,9 @@ local plugins = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 			}
+	},
+	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 	}
 }
 -- PERF: setting a rounded border

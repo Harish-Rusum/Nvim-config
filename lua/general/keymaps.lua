@@ -1,3 +1,5 @@
+-- PERF: Base
+vim.keymap.set('n', '<Esc>', function() vim.cmd [[nohlsearch]] end)
 
 -- PERF: mapping vim leader
 vim.g.mapleader = " "

@@ -19,21 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 -- PERF: loadig in plugins
 local plugins = {
 	{ "tribela/vim-transparent" },
-	{ "catppuccin/nvim",        name = "catppuccin", priority = 1000 },
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
-	},
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+	{ "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "stevearc/oil.nvim" },
 	{
 		"folke/which-key.nvim",
@@ -59,11 +48,7 @@ local plugins = {
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{
-		"folke/trouble.nvim",
-		opts = {},
-		cmd = "Trouble",
-	},
+	{ "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "stevearc/dressing.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
@@ -83,32 +68,17 @@ local plugins = {
 	},
 	{ "nacro90/numb.nvim" },
 	{ "simeji/winresizer" },
-	{
-		"numToStr/Comment.nvim",
-		opts = {},
-		lazy = false,
-	},
-	{
-		"L3MON4D3/LuaSnip",
-	},
+	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
+	{ "L3MON4D3/LuaSnip" },
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
-	{
-		"NStefan002/screenkey.nvim",
-		lazy = false,
-		version = "*",
-	},
+	{ "NStefan002/screenkey.nvim", lazy = false, version = "*" },
 	{ "tpope/vim-repeat" },
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
-	{
-		"MunifTanjim/nui.nvim",
-		event = "VimEnter",
-	},
-	{
-		"numToStr/FTerm.nvim",
-	},
+	{ "MunifTanjim/nui.nvim", event = "VimEnter" },
+	{ "numToStr/FTerm.nvim" },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -131,7 +101,7 @@ local plugins = {
 		opts = {},
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
-	{ "akinsho/toggleterm.nvim",                version = "*", config = true },
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
 		"mikavilpas/yazi.nvim",
 		event = "VeryLazy",
@@ -149,21 +119,10 @@ local plugins = {
 			},
 		},
 	},
-	{
-		"gen740/SmoothCursor.nvim",
-	},
-	{
-		"j-hui/fidget.nvim",
-		opts = {},
-	},
-	{
-
-		"goolord/alpha-nvim",
-		dependencies = {
-			"echasnovski/mini.icons",
-		},
-	},
-	{ "nvim-telescope/telescope-ui-select.nvim" },
+	{"gen740/SmoothCursor.nvim"},
+	{"stevearc/conform.nvim", opts = {}},
+	{"j-hui/fidget.nvim", opts = {}},
+	{"goolord/alpha-nvim", dependencies = {"echasnovski/mini.icons"}},
 	{ "tpope/vim-surround" },
 	{
 		"Wansmer/treesj",
@@ -176,19 +135,14 @@ local plugins = {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		opts = {
-		},
+		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
-			}
+		},
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	{ 'fgheng/winbar.nvim' },
-	{
-		'stevearc/conform.nvim',
-		opts = {},
-	},
+	{ "fgheng/winbar.nvim" },
 }
 -- PERF: setting a rounded border
 

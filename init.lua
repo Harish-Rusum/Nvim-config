@@ -21,7 +21,7 @@ require("plugins.hicolors")
 require("plugins.alpha")
 require("plugins.noice")
 require("plugins.smoothcursor")
--- require("plugins.winbar")
+require("plugins.winbar")
 
 -- NOTE: search stuff
 require("plugins.telescope")

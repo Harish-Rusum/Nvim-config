@@ -183,9 +183,13 @@ local plugins = {
 			"rcarriga/nvim-notify",
 			}
 	},
-	{
-		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-	}
+	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
+  {
+    'Bekaboo/dropbar.nvim',
+    dependencies = {
+      'nvim-telescope/telescope-fzf-native.nvim'
+    }
+  }
 }
 -- PERF: setting a rounded border
 

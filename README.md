@@ -12,8 +12,6 @@
 
 ## Requirements
 -  git
-- mypy (mason)
-- black (mason)
 - stylua (mason)
 - ripgrep (by package manager of choice)
 - xclip (by package manager of choice)

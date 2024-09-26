@@ -37,5 +37,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 vim.cmd([[set cursorline]])
 vim.opt.undofile = true
 
-vim.opt.undodir = vim.fn.expand('/home/linux/.config/nvim/undo')
-
+vim.opt.undodir = vim.fn.expand("/home/linux/.config/nvim/undo")
+vim.schedule(function()
+	vim.opt.clipboard = "unnamedplus"
+end)

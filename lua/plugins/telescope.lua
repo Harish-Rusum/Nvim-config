@@ -8,7 +8,6 @@ telescope.setup({
 	},
 	defaults = {
 		-- PERF: Telescope layout config
-
 		layout_config = {
 			horizontal = {
 				prompt_position = "bottom",

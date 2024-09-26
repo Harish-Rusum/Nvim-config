@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader>tdf", function() vim.cmd[[lua require('telescope.bu
 vim.keymap.set("n", "<leader>tif", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 
+-- Notifications
+vim.api.nvim_set_keymap('n', '<leader>nc', ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications"})
+
 -- PERF: Smooth cursor
 vim.keymap.set('n', '<leader>at', function() vim.cmd[[SmoothCursorToggle]] end, { desc = "Animated cursor toggle" })
 

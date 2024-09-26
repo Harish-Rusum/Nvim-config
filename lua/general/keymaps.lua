@@ -37,7 +37,7 @@ vim.keymap.set('n', '<leader>gp', function() vim.cmd[[G push]] end, { desc = "gi
 vim.keymap.set('n', '<leader>gi', function() vim.cmd[[G init]] end, {desc = "git init"})
 
 -- PERF: setting up LSP actions
-vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format buffer" })
+vim.keymap.set("n", "<leader>cf", function() vim.cmd [[echo 'Formatted successfully' | Format]] end, { desc = "Format buffer" })
 vim.keymap.set("n", "<leader>cg", function() vim.cmd[[lua vim.lsp.buf.definition()]] end, { desc = "Go to definition" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })

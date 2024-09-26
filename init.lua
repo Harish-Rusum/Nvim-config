@@ -21,6 +21,7 @@ require("plugins.hicolors")
 require("plugins.alpha")
 require("plugins.noice")
 require("plugins.smoothcursor")
+-- require("plugins.winbar")
 
 -- NOTE: search stuff
 require("plugins.telescope")
@@ -34,6 +35,9 @@ require("lualine.lualine_rounded")
 -- NOTE: git commands
 require("plugins.gitsigns")
 require("git.git")
+
+-- NOTE: Formatting
+require("plugins.conform")
 
 -- NOTE: terminal plugin
 require("plugins.fterm")

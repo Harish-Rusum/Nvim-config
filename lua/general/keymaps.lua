@@ -33,6 +33,7 @@ vim.keymap.set('n', '<leader>ld', function() vim.cmd[[set laststatus=0]] end, {d
 vim.keymap.set('n', '<leader>ga', function() vim.cmd[[G add]] end, {desc = "git add"})
 vim.keymap.set('n', '<leader>gr', function() vim.cmd[[G reset]] end, {desc = "git remove"})
 vim.keymap.set('n', '<leader>gc', function() vim.cmd[[G commit]] end, {desc = "git commit"})
+vim.keymap.set('n', '<leader>gp', function() vim.cmd[[G push]] end, {desc = "git push"})
 vim.keymap.set('n', '<leader>gs', function() vim.cmd[[G status]] end, {desc = "git status"})
 vim.keymap.set('n', '<leader>gl', function() vim.cmd[[G log]] end, {desc = "git log"})
 vim.keymap.set('n', '<leader>gp', function() vim.cmd[[G push]] end, { desc = "git push" })
@@ -60,6 +61,7 @@ vim.keymap.set("n", "<C-.>", "<C-w>2+")
 
 -- PERF: setting up keymaps for buffers
 vim.keymap.set("n", "<leader>bn", function() vim.cmd[[bnext]] end, { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bt", function() vim.cmd[[BufferLineGroupToggle ungrouped]] end, { desc = "Toggle buffers" })
 vim.keymap.set("n", "<leader>bc", function() vim.cmd[[bdelete]] end, { desc = "Close current buffer" })
 vim.keymap.set("n", "<leader>bp", function() vim.cmd[[bprev]] end, { desc = "Previous buffer" })
 vim.keymap.set("n", "<Tab>", function() vim.cmd[[bn]] end, { desc = "Toggle buffer focus" })

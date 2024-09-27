@@ -7,6 +7,7 @@ require("lsp.none-ls")
 require("lsp.luasnip")
 require("lsp.completions")
 require("lsp.mason")
+require("plugins.conform")
 -- require("lsp.lines")
 
 -- NOTE: settings and styling
@@ -23,7 +24,7 @@ require("plugins.alpha")
 require("plugins.noice")
 require("plugins.lualine")
 
--- NOTE: search
+-- NOTE: search stuff
 require("plugins.telescope")
 require("plugins.oil")
 require("plugins.neo-tree")
@@ -32,9 +33,6 @@ require("plugins.numb")
 -- NOTE: git
 require("plugins.gitsigns")
 require("git.git")
-
--- NOTE: Formatting
-require("plugins.conform")
 
 -- NOTE: terminal plugin
 require("plugins.toggleterm")

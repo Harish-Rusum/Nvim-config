@@ -142,7 +142,6 @@ local plugins = {
 		},
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	{ "fgheng/winbar.nvim" },
 }
 -- PERF: setting a rounded border
 

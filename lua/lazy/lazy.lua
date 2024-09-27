@@ -78,7 +78,6 @@ local plugins = {
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
 	{ "MunifTanjim/nui.nvim", event = "VimEnter" },
-	{ "numToStr/FTerm.nvim" },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

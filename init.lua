@@ -6,6 +6,7 @@ require("lsp.lsp")
 require("lsp.none-ls")
 require("lsp.luasnip")
 require("lsp.completions")
+require("lsp.mason")
 -- require("lsp.lines")
 
 -- NOTE: settings and styling
@@ -20,18 +21,15 @@ require("plugins.treesitter")
 require("plugins.hicolors")
 require("plugins.alpha")
 require("plugins.noice")
-require("plugins.smoothcursor")
+require("plugins.lualine")
 
--- NOTE: search stuff
+-- NOTE: search
 require("plugins.telescope")
 require("plugins.oil")
 require("plugins.neo-tree")
 require("plugins.numb")
 
--- NOTE: Lualine (other option is lualine_sharp)
-require("lualine.lualine_rounded")
-
--- NOTE: git commands
+-- NOTE: git
 require("plugins.gitsigns")
 require("git.git")
 
@@ -39,11 +37,7 @@ require("git.git")
 require("plugins.conform")
 
 -- NOTE: terminal plugin
-require("plugins.fterm")
 require("plugins.toggleterm")
-
--- NOTE: mason for installing dependencies
-require("plugins.mason")
 
 -- NOTE:  keymaps for EVERYTHING
 require("general.keymaps")

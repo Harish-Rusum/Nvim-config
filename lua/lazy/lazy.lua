@@ -141,7 +141,7 @@ local plugins = {
 		},
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	'vim/killersheep'
+	{"numToStr/FTerm.nvim"},
 }
 -- PERF: setting a rounded border
 

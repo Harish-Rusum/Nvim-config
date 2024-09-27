@@ -36,6 +36,7 @@ require("git.git")
 
 -- NOTE: terminal plugin
 require("plugins.toggleterm")
+require("plugins.fterm")
 
 -- NOTE:  keymaps for EVERYTHING
 require("general.keymaps")

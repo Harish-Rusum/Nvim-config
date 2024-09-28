@@ -9,7 +9,7 @@
 
 3. [About](#about)
 
-4. See [How to build on the config]('lua/nvim/chtshts/general.md')
+4. See [How to build on the config](lua/nvim/chtshts/general.md)
 
 # Installation
 

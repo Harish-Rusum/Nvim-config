@@ -8,7 +8,7 @@ require("nvim.lsp.luasnip")
 require("nvim.lsp.completions")
 require("nvim.lsp.mason")
 require("nvim.plugins.conform")
--- require("lsp.lines")
+-- require("nvim.lsp.lines")
 
 -- NOTE: settings and styling
 require("nvim.general.settings")

@@ -25,6 +25,37 @@
   - Trouble :
     - ![image](https://github.com/user-attachments/assets/1485d227-c4ad-4c14-ae8b-181acceb8de0)
 
+- **Highlighting** :
+
+  - Treesitter 
+
+#### How to toggle..
+
+- **Completions**
+  - You cant really toggle...
+
+- **Errors/Diagnostics** :
+  - Inline - enabled by default Nothing you can do to disable it
+  - Multi-line :
+    - Comment in `require("nvim.lsp.lines")` If you WANT the Multi-line diagnostics
+    - Comment out `require("nvim.lsp.lines")` If you DONT WANT the Multi-line diagnostics
+- **Treesitter**:
+  - Comment out `require("nvim.plugins.treesitter")` in the `init.lua` 
+
+#### How to add more
+
+- **Completions** AND **Diagnostics** :
+  - Run `:Mason` and figure out what LSP you want
+  - Add it to the list on line `11` in `lua/nvim/lsp/mason.lua` (IF you have installed an lsp not a formatter etc. etc.)
+  - At line `31`, type in the following
+  ```lua 
+  lspconfig.your_lsp_name.setup({
+    capabilities = capabilities,
+  })```
+
+- **Treesitter**
+  - Add your desired language to the ensure_installed list on
+  - line `4` of `lua/nvim/plugins/treesitter.lua`
 
 ### File searching
 

@@ -4,10 +4,13 @@
    - [How To Install](#how-to-install)
    - [Note](#note)
    - [Credits](#credits)
-   
+
 2. [Showcase](#showcase)
 
 3. [About](#about)
+
+4. See [How to build on the config]('lua/nvim/chtshts/general.md')
+
 # Installation
 
 ## Requirements

@@ -1,42 +1,42 @@
 -- NOTE: loading lazy.nvim stuff
-require("lazy.lazy")
+require("nvim.lazy")
 
 -- NOTE: lsp (language-server-protocol) and autocomplete
-require("lsp.lsp")
-require("lsp.none-ls")
-require("lsp.luasnip")
-require("lsp.completions")
-require("lsp.mason")
-require("plugins.conform")
+require("nvim.lsp.lsp")
+require("nvim.lsp.none-ls")
+require("nvim.lsp.luasnip")
+require("nvim.lsp.completions")
+require("nvim.lsp.mason")
+require("nvim.plugins.conform")
 -- require("lsp.lines")
 
 -- NOTE: settings and styling
-require("general.settings")
-require("general.styling")
+require("nvim.general.settings")
+require("nvim.general.styling")
 
 -- NOTE: UI plugins (interface)
-require("plugins.which-key")
-require("plugins.screenkey")
-require("plugins.bufferline")
-require("plugins.treesitter")
-require("plugins.hicolors")
-require("plugins.alpha")
-require("plugins.noice")
-require("plugins.lualine")
+require("nvim.plugins.which-key")
+require("nvim.plugins.screenkey")
+require("nvim.plugins.bufferline")
+require("nvim.plugins.treesitter")
+require("nvim.plugins.hicolors")
+require("nvim.plugins.alpha")
+require("nvim.plugins.noice")
+require("nvim.plugins.lualine")
 
 -- NOTE: search stuff
-require("plugins.telescope")
-require("plugins.oil")
-require("plugins.neo-tree")
-require("plugins.numb")
+require("nvim.plugins.telescope")
+require("nvim.plugins.oil")
+require("nvim.plugins.neo-tree")
+require("nvim.plugins.numb")
 
 -- NOTE: git
-require("plugins.gitsigns")
-require("git.git")
+require("nvim.plugins.gitsigns")
+require("nvim.git.git")
 
 -- NOTE: terminal plugin
-require("plugins.toggleterm")
-require("plugins.fterm")
+require("nvim.plugins.toggleterm")
+require("nvim.plugins.fterm")
 
 -- NOTE:  keymaps for EVERYTHING
-require("general.keymaps")
+require("nvim.general.keymaps")

@@ -1,4 +1,4 @@
--- NOTE: loading lazy.nvim stuff
+-- NOTE: loading lazy.nvim.stuff
 require("nvim.lazy")
 
 -- NOTE: lsp (language-server-protocol) and autocomplete

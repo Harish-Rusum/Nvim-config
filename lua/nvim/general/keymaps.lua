@@ -4,6 +4,7 @@ vim.keymap.set('n', '<Esc>', function() vim.cmd [[nohlsearch]] end)
 -- PERF: mapping vim leader
 vim.g.mapleader = " "
 
+
 -- PERF: Telescope keymaps
 vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
 vim.keymap.set("n", "<leader>tg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
@@ -16,9 +17,6 @@ vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.bu
 
 -- Notifications
 vim.api.nvim_set_keymap('n', '<leader>nc', ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications"})
-
--- PERF: Smooth cursor
-vim.keymap.set('n', '<leader>at', function() vim.cmd[[SmoothCursorToggle]] end, { desc = "Animated cursor toggle" })
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
@@ -69,6 +67,10 @@ vim.keymap.set("n", "<Tab>", function() vim.cmd[[bn]] end, { desc = "Toggle buff
 -- PERF: other terminal keybindings
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
 vim.keymap.set("t", "`", [[<C-\><C-n>]])
+
+-- PERF: zenmode
+vim.keymap.set("n", "<leader>ze", function() vim.cmd [[set laststatus=0 | set nonu | set nornu | BufferLineGroupToggle ungrouped]] end, {desc = "Enable zenmode"})
+vim.keymap.set("n", "<leader>zd", function() vim.cmd [[set laststatus=2 | set nu | set rnu | BufferLineGroupToggle ungrouped]] end, {desc = "Disable zenmode"})
 
 -- PERF: make yanking always from the system clipboard
 vim.keymap.set("n", "y", '"+y')

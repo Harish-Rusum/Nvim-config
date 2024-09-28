@@ -51,7 +51,8 @@
   ```lua 
   lspconfig.your_lsp_name.setup({
     capabilities = capabilities,
-  })```
+  })
+  ```
 
 - **Treesitter**
   - Add your desired language to the ensure_installed list on

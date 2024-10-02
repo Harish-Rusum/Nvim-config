@@ -9,6 +9,7 @@ require("which-key").register({
 	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },
 	["<leader>v"] = { name = "Learn vim", _ = "which_key_ignore" },
 	["<leader>g"] = { name = "Git", _ = "which_key_ignore" },
+	["<leader>p"] = { name = "Practice", _ = "which_key_ignore" },
 	["<leader>n"] = { name = "Notifications", _ = "which_key_ignore" },
 	["<leader>l"] = { name = "Lualine (statusbar)", _ = "which_key_ignore" },
 	["<leader><leader>"] = { name = "Other", _ = "which_key_ignore" },

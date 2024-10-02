@@ -142,6 +142,7 @@ local plugins = {
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
 	{"numToStr/FTerm.nvim"},
+	{'ThePrimeagen/vim-be-good'},
 }
 -- PERF: setting a rounded border
 

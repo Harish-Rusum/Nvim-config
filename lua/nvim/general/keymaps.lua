@@ -65,6 +65,9 @@ vim.keymap.set("n", "<leader>bc", function() vim.cmd[[bdelete]] end, { desc = "C
 vim.keymap.set("n", "<leader>bp", function() vim.cmd[[bprev]] end, { desc = "Previous buffer" })
 vim.keymap.set("n", "<Tab>", function() vim.cmd[[bn]] end, { desc = "Toggle buffer focus" })
 
+-- PERF: Vim be good
+vim.keymap.set("n", "<leader>pv", function() vim.cmd [[VimBeGood]] end, {desc = "Practice vim"})
+
 -- PERF: other terminal keybindings
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
 vim.keymap.set("t", "`", [[<C-\><C-n>]])

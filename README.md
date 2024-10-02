@@ -32,7 +32,7 @@ mac/linux
 ```
 git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 ```
-### Note : Be sure to clear your `undo` folder once cloning and do it once in a while. This dir is used to save changes so that you can open a file, Write and Quit, Open the file again and be able to undo the changes.
+### Note : Be sure to clear your `undo` folder once cloning and do it once in a while. This dir is used to save changes so that you can open a file, Write and Quit, Open the file again and be able to undo the changes. AND Update the filepath to your undodir on line `40` of `lua/nvim/general/settings.lua`
 
 # Showcase
 

@@ -4,6 +4,8 @@ vim.keymap.set('n', '<Esc>', function() vim.cmd [[nohlsearch]] end)
 -- PERF: mapping vim leader
 vim.g.mapleader = " "
 
+-- PERF: Alpha
+vim.keymap.set("n", "<leader>;", function() vim.cmd[[Alpha]] end, { desc = "Dashboard" })
 
 -- PERF: Telescope keymaps
 vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })

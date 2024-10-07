@@ -83,6 +83,8 @@ vim.keymap.set("n", "y", '"+y')
 vim.keymap.set("v", "y", '"+y')
 vim.keymap.set("v", "Y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
+vim.keymap.set("n", "<C-v>", '"*p')
+vim.keymap.set("n", "<C-c>", '"*y')
 
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")

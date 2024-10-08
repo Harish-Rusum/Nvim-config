@@ -1,8 +1,11 @@
 -- PERF: Vim settings
 
+vim.cmd([[set guicursor=n-v-c:block,i:block]])
 vim.cmd([[set nu]])
 vim.cmd([[set rnu]])
 vim.cmd([[bufdo LspStart]])
+vim.cmd([[vnoremap > >gv]])
+vim.cmd([[vnoremap < <gv]])
 
 -- PERF: set relative line numbers only in normal mode or command mode
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", { clear = true })

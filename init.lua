@@ -40,4 +40,3 @@ require("nvim.plugins.fterm")
 
 -- NOTE:  keymaps for EVERYTHING
 require("nvim.general.keymaps")
-

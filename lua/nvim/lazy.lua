@@ -1,5 +1,4 @@
 -- PERF: setting up lazypath
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.keymap.set("n", "<leader>bn", function()
 	vim.cmd([[bnext]])

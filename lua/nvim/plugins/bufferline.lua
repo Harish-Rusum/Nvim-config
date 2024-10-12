@@ -5,7 +5,7 @@ require("bufferline").setup {
     indicator_icon = '▎',
     modified_icon = '●',
     persist_buffer_sort = true,
-    always_show_bufferline = true,
+    always_show_bufferline = false,
     offsets = {
       {
         filetype = "neo-tree",

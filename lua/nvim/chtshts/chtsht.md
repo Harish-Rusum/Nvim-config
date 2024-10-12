@@ -1,3 +1,7 @@
+
+>█▀▀ █░█ █▀▀ ▄▀█ ▀█▀ █▀ █░█ █▀▀ █▀▀ ▀█▀
+>█▄▄ █▀█ ██▄ █▀█ ░█░ ▄█ █▀█ ██▄ ██▄ ░█░
+
 > [!Tip] Vim Basics
 
 > Vim operates in multiple modes, each designed for specific tasks.

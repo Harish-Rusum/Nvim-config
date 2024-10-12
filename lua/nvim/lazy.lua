@@ -39,7 +39,12 @@ local plugins = {
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "nvimtools/none-ls.nvim" },
 	{ "L3MON4D3/LuaSnip" },
-	{ "hrsh7th/nvim-cmp" },
+	{
+		'hrsh7th/nvim-cmp',
+		requires = {
+			'hrsh7th/cmp-ghost-text'
+		}
+	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "williamboman/mason.nvim" },
 	{ "saadparwaiz1/cmp_luasnip" },
@@ -72,7 +77,6 @@ local plugins = {
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
-	{ "NStefan002/screenkey.nvim", lazy = false, version = "*" },
 	{ "tpope/vim-repeat" },
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },

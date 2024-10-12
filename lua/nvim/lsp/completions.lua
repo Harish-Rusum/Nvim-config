@@ -13,7 +13,6 @@ end
 -- PERF: setting up the completion engine
 
 cmp.setup({
-	-- PERF: defining engine for snippets
 
 	snippet = {
 		expand = function(args)
@@ -27,6 +26,10 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	-- PERF: setting up keymaps for completion
+
+	experimental = {
+		ghost_text = true,
+	},
 
 	mapping = cmp.mapping.preset.insert({
 		["<Escape>"] = cmp.mapping.abort(),

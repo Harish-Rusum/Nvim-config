@@ -21,9 +21,11 @@ vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.bu
 vim.api.nvim_set_keymap('n', '<leader>nc', ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications"})
 
 -- PERF: setting up terminal keymaps
-vim.keymap.set('n', '<leader>tt', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
-vim.keymap.set('n', '<leader>t[', function() vim.cmd[[ToggleTerm direction=vertical size=70]] end, { desc = "vertical split" })
-vim.keymap.set('n', '<leader>t]', function() vim.cmd[[ToggleTerm direction=horizontal size=17]] end, { desc = "horizontal split" })
+vim.keymap.set('n', '<C-t>', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })
+vim.keymap.set("n", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
+vim.keymap.set("t", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
+vim.keymap.set("n", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
+vim.keymap.set("t", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
 
 -- PERF: lualine (statusbar)
 vim.keymap.set('n', '<leader>le', function() vim.cmd[[set laststatus=2]] end, {desc = "Enable lualine (statusbar)"})
@@ -72,8 +74,8 @@ vim.keymap.set("n", "<leader>pv", function() vim.cmd [[VimBeGood]] end, {desc = 
 
 -- PERF: other terminal keybindings
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
-vim.keymap.set("t", "`", [[<C-\><C-n>]])
-
+-- vim.keymap.set("t", "`", [[<C-\><C-n>]])
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
 -- PERF: zenmode
 vim.keymap.set("n", "<leader>ze", function() vim.cmd [[set laststatus=0 | set nonu | set nornu | BufferLineGroupToggle ungrouped]] end, {desc = "Enable zenmode"})
 vim.keymap.set("n", "<leader>zd", function() vim.cmd [[set laststatus=2 | set nu | set rnu | BufferLineGroupToggle ungrouped]] end, {desc = "Disable zenmode"})

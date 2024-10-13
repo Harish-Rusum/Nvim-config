@@ -2,14 +2,14 @@
 local colors = {
 	none = "none",
 	-- none = "#1e2031",
-	blue = "#8aadf5",
+	blue = "#eabdbb",
 	violet = "#b4befe",
 	darkblue = "#2d3342",
 	darkviolet = "#2d3342",
 	lightgrey = "#6c7086",
 	grey = "#6c7086",
 	red = "#f38ba8",
-	green = "#95d982",
+	green = "#d291f1",
 	white = "#dce0e8",
 }
 
@@ -21,7 +21,7 @@ local theme = {
 		c = { bg = colors.none, fg = colors.lightgrey },
 	},
 	insert = {
-		a = { bg = colors.green, fg = colors.darkblue, gui = "bold" },
+		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
 		c = { bg = colors.none, fg = colors.lightgrey },
 	},

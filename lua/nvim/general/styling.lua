@@ -102,3 +102,4 @@ vim.api.nvim_create_autocmd("FileType", {
 require("notify").setup({
 	background_colour = "#000000",
 })
+vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])

@@ -40,10 +40,10 @@ local plugins = {
 	{ "nvimtools/none-ls.nvim" },
 	{ "L3MON4D3/LuaSnip" },
 	{
-		'hrsh7th/nvim-cmp',
+		"hrsh7th/nvim-cmp",
 		requires = {
-			'hrsh7th/cmp-ghost-text'
-		}
+			"hrsh7th/cmp-ghost-text",
+		},
 	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "williamboman/mason.nvim" },
@@ -121,10 +121,10 @@ local plugins = {
 			},
 		},
 	},
-	{"gen740/SmoothCursor.nvim"},
-	{"stevearc/conform.nvim", opts = {}},
-	{"j-hui/fidget.nvim", opts = {}},
-	{"goolord/alpha-nvim", dependencies = {"echasnovski/mini.icons"}},
+	{ "gen740/SmoothCursor.nvim" },
+	{ "stevearc/conform.nvim", opts = {} },
+	{ "j-hui/fidget.nvim", opts = {} },
+	{ "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons" } },
 	{ "tpope/vim-surround" },
 	{
 		"Wansmer/treesj",
@@ -144,9 +144,9 @@ local plugins = {
 		},
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	{"numToStr/FTerm.nvim"},
-	{'ThePrimeagen/vim-be-good'},
-	{'tpope/vim-sensible'},
+	{ "numToStr/FTerm.nvim" },
+	{ "ThePrimeagen/vim-be-good" },
+	{ "tpope/vim-sensible" },
 }
 -- PERF: setting a rounded border
 

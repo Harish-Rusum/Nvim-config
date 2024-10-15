@@ -1,4 +1,4 @@
-local function transparent()
+local function default()
 	local telescope_highlights = {
 		TelescopePromptTitle = { bg = "none", fg = "#89b5fa" },
 		TelescopeResultsTitle = { bg = "none", fg = "#89b5fa" },
@@ -10,6 +10,27 @@ local function transparent()
 		TelescopePromptBorder = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewNormal = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewBorder = { bg = "none", fg = "#89b5fa" },
+	}
+
+	for hl, col in pairs(telescope_highlights) do
+		vim.api.nvim_set_hl(0, hl, col)
+	end
+end
+
+local function rosePine()
+	local telescope_highlights = {
+		TelescopePromptTitle = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopeResultsTitle = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopePreviewTitle = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopePromptPrefix = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopePromptNormal = { bg = "#1e1c2e", fg = "#c8c0d3" },
+		TelescopeResultsNormal = { bg = "#1e1c2e", fg = "#c8c0d3" },
+		TelescopeResultsBorder = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopePromptBorder = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopePreviewNormal = { bg = "#1e1c2e", fg = "#c8c0d3" },
+		TelescopePreviewBorder = { bg = "#1e1c2e", fg = "#6f6b86" },
+		TelescopeSelection = { bg = "#26233a", fg = "#c8c0d3" },
+		TelescopeMatching = { bg = "none", fg = "#cba889" },
 	}
 
 	for hl, col in pairs(telescope_highlights) do
@@ -30,7 +51,7 @@ local function titles()
 		return string.format("#%02x%02x%02x", r, g, b)
 	end
 
-	local darken_percentage = 5
+	local darken_percentage = 1
 
 	local telescope_highlights = {
 		TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
@@ -50,7 +71,7 @@ local function titles()
 	end
 end
 
-local function full()
+local function catppuccin()
 	local colors = require("catppuccin.palettes").get_palette("mocha")
 
 	local function darken(color, percentage)
@@ -63,7 +84,7 @@ local function full()
 		return string.format("#%02x%02x%02x", r, g, b)
 	end
 
-	local darken_percentage = 5
+	local darken_percentage = 0
 
 	local telescope_highlights = {
 		TelescopePromptNormal = { bg = darken(colors.surface0, darken_percentage) },
@@ -93,12 +114,14 @@ local function full()
 end
 
 local function apply_theme(theme_label)
-	if theme_label == "Full transparency" then
-		transparent()
-	elseif theme_label == "Only titles colored" then
+	if theme_label == "Default" then
+		default()
+	elseif theme_label == "Only titles" then
 		titles()
-	elseif theme_label == "All elements customized" then
-		full()
+	elseif theme_label == "Catppuccin" then
+		catppuccin()
+	elseif theme_label == "Rose Pine" then
+		rosePine()
 	end
 end
 
@@ -125,12 +148,14 @@ local function load_theme_from_file()
 end
 
 local function apply_theme(theme_label)
-	if theme_label == "Full transparency" then
-		transparent()
-	elseif theme_label == "Only titles colored" then
+	if theme_label == "Default" then
+		default()
+	elseif theme_label == "Only titles" then
 		titles()
-	elseif theme_label == "All elements customized" then
-		full()
+	elseif theme_label == "Catppuccin" then
+		catppuccin()
+	elseif theme_label == "Rose Pine" then
+		rosePine()
 	end
 
 	save_theme_to_file(theme_label)
@@ -139,9 +164,10 @@ end
 load_theme_from_file()
 
 local themes = {
-	{ label = "Full transparency" },
-	{ label = "Only titles colored" },
-	{ label = "All elements customized" },
+	{ label = "Default" },
+	{ label = "Only titles" },
+	{ label = "Catppuccin" },
+	{ label = "Rose Pine" },
 }
 
 local actions = require("telescope.actions")

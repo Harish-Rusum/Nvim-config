@@ -37,6 +37,11 @@ local theme_catppuccin = {
 		b = { bg = colors_catppuccin.darkviolet, fg = colors_catppuccin.white },
 		c = { bg = colors_catppuccin.none, fg = colors_catppuccin.lightgrey },
 	},
+	command = {
+		a = { bg = colors_catppuccin.green, fg = colors_catppuccin.darkblue, gui = "bold" },
+		b = { bg = colors_catppuccin.darkviolet, fg = colors_catppuccin.white },
+		c = { bg = colors_catppuccin.none, fg = colors_catppuccin.lightgrey },
+	},
 }
 
 local theme_alt = {
@@ -46,7 +51,12 @@ local theme_alt = {
 		c = { bg = colors_alt.none, fg = colors_alt.lightgrey },
 	},
 	insert = {
-		a = { bg = colors_alt.red, fg = colors_alt.darkblue, gui = "bold" },
+		a = { bg = colors_alt.coral, fg = colors_alt.darkblue, gui = "bold" },
+		b = { bg = colors_alt.darkviolet, fg = colors_alt.white },
+		c = { bg = colors_alt.none, fg = colors_alt.lightgrey },
+	},
+	command = {
+		a = { bg = colors_alt.green, fg = colors_alt.darkblue, gui = "bold" },
 		b = { bg = colors_alt.darkviolet, fg = colors_alt.white },
 		c = { bg = colors_alt.none, fg = colors_alt.lightgrey },
 	},

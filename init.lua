@@ -29,6 +29,9 @@ require("nvim.plugins.oil")
 require("nvim.plugins.neo-tree")
 require("nvim.plugins.numb")
 
+-- NOTE: themes
+require("nvim.themes.telescope")
+
 -- NOTE: git
 require("nvim.plugins.gitsigns")
 require("nvim.git.git")

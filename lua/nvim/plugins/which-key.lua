@@ -1,9 +1,9 @@
 -- PERF: setting up the preview in the whcih key menu
 
 require("which-key").register({
-	["<leader>t"] = { name = "Telescope/Terminal", _ = "which_key_ignore" },
-	["<leader>td"] = { name = "Telescope at cursor", _ = "which_key_ignore" },
-	["<leader>ti"] = { name = "Telescope in a split", _ = "which_key_ignore" },
+	["<leader>t"] = { name = "Terminal", _ = "which_key_ignore" },
+	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
+  ["<leader>s"] = { name = "In split", _ = "which_key_ignore" },
 	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
 	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
 	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },

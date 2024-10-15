@@ -8,17 +8,20 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>;", function() vim.cmd[[Alpha]] end, { desc = "Dashboard" })
 
 -- PERF: Telescope keymaps
-vim.keymap.set("n", "<leader>tf", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
-vim.keymap.set("n", "<leader>tg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
-vim.keymap.set("n", "<leader><leader>t", function() vim.cmd[[Telescope builtin]] end, {desc = "open telescope builtin"})
-vim.keymap.set("n", "<leader>ts", function() vim.cmd[[:Telescope colorscheme]] end, {desc = "Colorscheme picker"})
-vim.keymap.set("n", "<leader>tc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
-vim.keymap.set("n", "<leader>tdf", function() vim.cmd[[lua require('telescope.builtin').find_files(require('telescope.themes').get_cursor({}))]] end, {desc = "Find files"})
-vim.keymap.set("n", "<leader>tif", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
-vim.keymap.set("n", "<leader>tig", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
+vim.keymap.set("n", "<leader>ff", function() vim.cmd[[:Telescope fd]] end, { desc = "Fuzzy find files" })
+vim.keymap.set("n", "<leader>fg", function() vim.cmd[[:Telescope live_grep]] end, { desc = "Live grep" })
+vim.keymap.set("n", "<leader><leader>f", function() vim.cmd[[Telescope builtin]] end, {desc = "open telescope builtin"})
+vim.keymap.set("n", "<leader>fs", function() vim.cmd[[:Telescope colorscheme]] end, {desc = "Colorscheme picker"})
+vim.keymap.set("n", "<leader>fc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
+vim.keymap.set("n", "<leader>sf", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
+vim.keymap.set("n", "<leader>sg", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 
--- Notifications
+-- PERF: Notifications
 vim.api.nvim_set_keymap('n', '<leader>nc', ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications"})
+
+-- PERF: themes.
+vim.keymap.set("n", "<leader>Tt", function() vim.cmd[[:PickTelescopeTheme]] end, {desc = "Pick telescope themes"})
+vim.keymap.set("n", "<leader>Tt", function() vim.cmd[[:PickTelescopeTheme]] end, {desc = "Pick telescope themes"})
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set('n', '<C-t>', function() vim.cmd[[lua require("FTerm").toggle()]] end, { desc = "Floating terminal" })

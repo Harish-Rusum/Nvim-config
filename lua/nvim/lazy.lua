@@ -128,7 +128,7 @@ local plugins = {
 	{ "tpope/vim-surround" },
 	{
 		"Wansmer/treesj",
-		keys = { "<space>s", "<space>j", "<space>m" },
+		keys = {"<space>m"},
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		config = function()
 			require("treesj").setup({ max_join_length = 1000 })

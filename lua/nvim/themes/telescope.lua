@@ -1,4 +1,4 @@
-local function theme_normal()
+local function transparent()
 	local telescope_highlights = {
 		TelescopePromptTitle = {bg="none", fg="#89b5fa"},
 		TelescopeResultsTitle = {bg="none", fg="#89b5fa"},
@@ -17,7 +17,7 @@ local function theme_normal()
 	end
 end
 
-local function theme_one()
+local function titles()
 	local colors = require("catppuccin.palettes").get_palette("mocha")
 
 	local function darken(color, percentage)
@@ -50,7 +50,7 @@ local function theme_one()
 	end
 end
 
-local function theme_two()
+local function full()
 	local colors = require("catppuccin.palettes").get_palette("mocha")
 
 	local function darken(color, percentage)
@@ -94,13 +94,48 @@ end
 
 local function apply_theme(theme_label)
     if theme_label == "Full transparency" then
-        theme_normal()
+        transparent()
     elseif theme_label == "Only titles colored" then
-        theme_one()
+        titles()
     elseif theme_label == "All elements customized" then
-        theme_two()
+        full()
     end
 end
+
+local theme_file_path = vim.fn.stdpath("config") .. "/lua/store/telescopeTheme.txt"
+
+local function saveTheme(theme_label)
+    local file = io.open(theme_file_path, "w")
+    if file then
+        file:write(theme_label)
+        file:close()
+    end
+end
+
+local function loadTheme()
+    local file = io.open(theme_file_path, "r")
+    if file then
+        local theme_label = file:read("*line")
+        if theme_label then
+            apply_theme(theme_label)
+            print("Loaded theme: " .. theme_label)
+        end
+        file:close()
+    end
+end
+
+local function applyTheme(themeLabel)
+    if themeLabel == "Full transparency" then
+        transparent()
+    elseif themeLabel == "Only titles colored" then
+        titles()
+    elseif themeLabel == "All elements customized" then
+        full()
+    end
+    saveTheme(themeLabel)
+end
+
+loadTheme()
 
 local themes = {
     { label = "Full transparency" },
@@ -109,49 +144,47 @@ local themes = {
 }
 
 local actions = require('telescope.actions')
-local action_state = require('telescope.actions.state')
+local actionState = require('telescope.actions.state')
 local pickers = require('telescope.pickers')
 local finders = require('telescope.finders')
 local conf = require('telescope.config').values
 
-local function pick_theme()
+local function pickTheme()
     pickers.new({}, {
-        prompt_title = "Choose Telescope Theme",
-        finder = finders.new_table {
-            results = vim.tbl_map(function(theme) return theme.label end, themes)
+        promptTitle = "Choose Telescope Theme",
+        finder = finders.newTable {
+            results = vim.tblMap(function(theme) return theme.label end, themes)
         },
-        sorter = conf.generic_sorter({}),
-        attach_mappings = function(_, map)
-
-            local function update_theme(prompt_bufnr)
-                local selection = action_state.get_selected_entry().value
+        sorter = conf.genericSorter({}),
+        attachMappings = function(_, map)
+            local function updateTheme(prompt_bufnr)
+                local selection = actionState.getEntry().value
                 if selection then
-                    apply_theme(selection)
+                    applyTheme(selection)
                     print("Selected theme: " .. selection)
                 end
             end
 
-
             vim.schedule(function()
                 local initial_selection = themes[1].label
-                apply_theme(initial_selection)
+                applyTheme(initial_selection)
                 print("Selected theme applied: " .. initial_selection)
             end)
 
             map('i', '<Up>', function(prompt_bufnr)
                 actions.move_selection_previous(prompt_bufnr)
-                update_theme(prompt_bufnr)
+                updateTheme(prompt_bufnr)
             end)
 
             map('i', '<Down>', function(prompt_bufnr)
                 actions.move_selection_next(prompt_bufnr)
-                update_theme(prompt_bufnr)
+                updateTheme(prompt_bufnr)
             end)
 
             actions.select_default:replace(function(prompt_bufnr)
-                local selection = action_state.get_selected_entry().value
+                local selection = actionState.getEntry().value
                 actions.close(prompt_bufnr)
-                apply_theme(selection)
+                applyTheme(selection)
                 print("Telescope theme " .. selection .. " applied")
             end)
 
@@ -160,4 +193,4 @@ local function pick_theme()
     }):find()
 end
 
-vim.api.nvim_create_user_command("PickTelescopeTheme", pick_theme, { desc = "Pick between Telescope themes with real-time preview" })
+vim.api.nvim_create_user_command("PickTelescopeTheme", pickTheme, { desc = "Pick between Telescope themes with real-time preview" })

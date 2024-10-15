@@ -21,7 +21,6 @@ require("nvim.plugins.treesitter")
 require("nvim.plugins.hicolors")
 require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
-require("nvim.plugins.lualine")
 
 -- NOTE: search stuff
 require("nvim.plugins.telescope")
@@ -31,6 +30,7 @@ require("nvim.plugins.numb")
 
 -- NOTE: themes
 require("nvim.themes.telescope")
+require("nvim.themes.lualine")
 
 -- NOTE: git
 require("nvim.plugins.gitsigns")

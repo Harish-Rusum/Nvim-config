@@ -36,31 +36,24 @@ git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 
 # Showcase
 
-![image](https://github.com/user-attachments/assets/7b663c3b-2512-4785-9a84-6ca923fb8df3)
-![image](https://github.com/user-attachments/assets/e8d0a817-92d2-4f04-bfd3-c9ed35aab7be)
-![image](https://github.com/user-attachments/assets/8ed73f72-f7b6-42cc-9055-a1359792ddcf)
-![image](https://github.com/user-attachments/assets/38726f7f-92d9-4fce-a110-2774620bfe12)
-![image](https://github.com/user-attachments/assets/2ddb9b1c-d6b7-48e9-945b-264c0496d9df)
-![image](https://github.com/user-attachments/assets/839de997-e240-4039-b6ee-d06776e68012)
-![image](https://github.com/user-attachments/assets/479f7e6a-7579-4dcb-b420-90168c188134)
-![image](https://github.com/user-attachments/assets/7fdc2020-a03c-41ea-9d5c-51bc88aa667f)
-![image](https://github.com/user-attachments/assets/6e0f53a4-733f-4fd2-bd88-f6e9c1bb3909)
-![image](https://github.com/user-attachments/assets/d913c1c4-7a2a-4fc9-b188-3e7d9eadc296)
-![image](https://github.com/user-attachments/assets/feed77f6-e8be-42f1-8b2e-265a8b6c7dd9)
-![image](https://github.com/user-attachments/assets/a51d6161-f64d-46b8-92a6-235534e45a91)
-![image](https://github.com/user-attachments/assets/a33a6887-c5a5-4447-9e87-706f438e23c3)
-![image](https://github.com/user-attachments/assets/16bb78b5-0c03-40ff-b5ab-957cc18fbad7)
-![image](https://github.com/user-attachments/assets/8cbfcdf1-1270-4b1d-8a13-7478d9a16116)
-![image](https://github.com/user-attachments/assets/33377e49-eab2-473e-880a-f4d2e62637d6)
-![image](https://github.com/user-attachments/assets/562db9f0-4adb-4346-8c8f-6992c4d1eaba)
+# My neovim VS Base Nvchad (Mine left, nvchad right)
+![image](https://github.com/user-attachments/assets/f995078b-b0b3-4b2c-9a1e-7e111bd147da)
+![image](https://github.com/user-attachments/assets/abdcf268-b429-4cd0-b317-197950e8ac7d)
+![image](https://github.com/user-attachments/assets/33f6a108-bec1-46b7-abe1-d72dfe466431)
+![image](https://github.com/user-attachments/assets/2db789b1-f944-4aff-b9cc-9a9e06654252)
+![image](https://github.com/user-attachments/assets/34239bc9-8469-4e9f-b5b6-9fa3b9651c71)
+![image](https://github.com/user-attachments/assets/353b151e-2a3c-490d-ba8a-23b81b0005b6)
+![image](https://github.com/user-attachments/assets/f955af4d-ca07-40d0-ae7c-3c1ae9d8309a)
+![image](https://github.com/user-attachments/assets/68012e24-f7cd-49c5-9e6d-35963e1feb6c)
+![image](https://github.com/user-attachments/assets/5b12c2dc-130c-49e2-8b5d-77ac09be22c8)
 
 # Credits
 
 Huge thanks to a lot of the below mentioned people for their config videos and github repos
 > - Typecraft - https://www.youtube.com/@typecraft_dev
 > - Coding with sphere - https://www.youtube.com/@codingwithsphere
-> - ThePrimeagen (duh) - https://www.youtube.com/c/theprimeagen
-> - TJDevries (duh) - https://www.youtube.com/c/tjdevries
+> - ThePrimeagen - https://www.youtube.com/c/theprimeagen
+> - TJDevries - https://www.youtube.com/c/tjdevries
 > - Chris@Machine - https://www.youtube.com/@chrisatmachine 
 
 # About

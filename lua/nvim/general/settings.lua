@@ -6,6 +6,7 @@ vim.cmd([[set rnu]])
 vim.cmd([[bufdo LspStart]])
 vim.cmd([[vnoremap > >gv]])
 vim.cmd([[vnoremap < <gv]])
+vim.cmd([[set splitright]])
 
 -- PERF: set relative line numbers only in normal mode or command mode
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", { clear = true })

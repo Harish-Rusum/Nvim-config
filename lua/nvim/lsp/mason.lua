@@ -13,8 +13,7 @@ require("mason-lspconfig").setup({
 		"pyright",
 		"lua_ls",
 		"clangd",
-	},
-})
+}})
 
 -- PERF: setting up the language servers
 

@@ -17,27 +17,27 @@ local theme = {
 	normal = {
 		a = { bg = colors.skintone, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.lightgrey },
+		c = { bg = colors.none, fg = colors.grey },
 	},
 	insert = {
 		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.lightgrey },
+		c = { bg = colors.none, fg = colors.grey },
 	},
 	command = {
 		a = { bg = colors.violet, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.lightgrey },
+		c = { bg = colors.none, fg = colors.grey },
 	},
 	visual = {
 		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.lightgrey },
+		c = { bg = colors.none, fg = colors.grey },
 	},
 	replace = {
 		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.lightgrey },
+		c = { bg = colors.none, fg = colors.grey },
 	},
 }
 
@@ -47,10 +47,9 @@ require("lualine").setup({
 		icons_enabled = true,
 		theme = theme,
 		globalstatus = true,
-		-- component_separators = { left = "│", right = "│" },
+		--    
 		component_separators = { left = "/", right = "│" },
-		-- section_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { statusline = {}, winbar = {} },
 		always_divide_middle = true,
 		refresh = {
@@ -127,7 +126,15 @@ require("lualine").setup({
 				color = { fg = colors.grey, gui = "bold" },
 			},
 		},
-		lualine_y = { "progress" },
-		lualine_z = { "location" },
+		lualine_y = {
+			{
+				function()
+					return "󰉋 " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+				end,
+				color = { fg = colors.grey},
+			},
+		},
+		lualine_z = {"location"}
 	},
 })
+

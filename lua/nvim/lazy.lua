@@ -76,6 +76,7 @@ local plugins = {
 	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{ "tpope/vim-repeat" },
+	{"tpope/vim-fugitive"},
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
 	{ "MunifTanjim/nui.nvim", event = "VimEnter" },

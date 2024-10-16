@@ -70,7 +70,6 @@ local plugins = {
 		},
 	},
 	{ "nacro90/numb.nvim" },
-	{ "simeji/winresizer" },
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
 	{ "L3MON4D3/LuaSnip" },
 	{ "nvim-treesitter/nvim-treesitter" },

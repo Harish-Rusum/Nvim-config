@@ -13,11 +13,13 @@ vim.keymap.set("n", "<leader>fg", function() vim.cmd[[:Telescope live_grep]] end
 vim.keymap.set("n", "<leader><leader>f", function() vim.cmd[[Telescope builtin]] end, {desc = "open telescope(finder) builtin"})
 vim.keymap.set("n", "<leader>fs", function() vim.cmd[[:Telescope colorscheme]] end, {desc = "Colorscheme picker"})
 vim.keymap.set("n", "<leader>fc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
-vim.keymap.set("n", "<leader>sf", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
-vim.keymap.set("n", "<leader>sg", function() vim.cmd[[lua require('telescope.builtin').live_grep(require('telescope.themes').get_ivy({}))]] end, {desc = "Live grep"})
 
 -- PERF: Notifications
 vim.api.nvim_set_keymap('n', '<leader>nc', ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications"})
+
+-- PERF: splits
+vim.keymap.set("n", "<leader>s[", function() vim.cmd[[vsplit]] end, {desc = "split vertically"})
+vim.keymap.set("n", "<leader>s]", function() vim.cmd[[sp]] end, {desc = "split horizontally"})
 
 -- PERF: themes.
 vim.keymap.set("n", "<leader>Tt", function() vim.cmd[[:PickTelescopeTheme]] end, {desc = "Pick telescope (finder) themes"})

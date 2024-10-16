@@ -40,5 +40,5 @@ require("nvim.git.git")
 require("nvim.plugins.toggleterm")
 require("nvim.plugins.fterm")
 
--- NOTE:  keymaps for EVERYTHING
+-- NOTE:  keymaps
 require("nvim.general.keymaps")

@@ -47,8 +47,10 @@ require("lualine").setup({
 		icons_enabled = true,
 		theme = theme,
 		globalstatus = true,
-		component_separators = { left = "│", right = "│" },
-		section_separators = { left = "", right = "" },
+		-- component_separators = { left = "│", right = "│" },
+		component_separators = { left = "/", right = "│" },
+		-- section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { statusline = {}, winbar = {} },
 		always_divide_middle = true,
 		refresh = {
@@ -60,7 +62,21 @@ require("lualine").setup({
 
 	-- PERF: Defining sections with diagnostic symbols and LSP/filetype color sync
 	sections = {
-		lualine_a = { "mode" },
+		lualine_a = {
+			function()
+				local mode_map = {
+					n = 'NORMAL',
+					i = 'INSERT',
+					v = 'VISUAL',
+					V = 'V-LINE',
+					c = 'COMMAND',
+					t = 'TERMINAL',
+					R = 'REPLACE',
+				}
+				local current_mode = vim.fn.mode()
+				return " " .. (mode_map[current_mode] or current_mode:upper())  -- Default to uppercase if mode not found
+			end,
+		},
 		lualine_b = {
 			"branch",
 			{

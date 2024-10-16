@@ -12,7 +12,7 @@ require("nvim.lsp.completions")
 require("nvim.lsp.mason")
 require("nvim.plugins.conform")
 -- require("nvim.lsp.lines")
-
+--  
 -- NOTE: settings and styling
 require("nvim.general.settings")
 require("nvim.general.styling")

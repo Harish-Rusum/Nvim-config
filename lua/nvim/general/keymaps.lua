@@ -110,7 +110,11 @@ vim.keymap.set("v", "Y", '"+y')
 vim.keymap.set("n", "Y", '"+Y')
 vim.keymap.set("n", "<C-v>", '"*p')
 vim.keymap.set("n", "<C-c>", '"*y')
-
+vim.keymap.set("i", "<C-v>", '"*p')
+vim.api.nvim_set_keymap('n', '<S-Up>', '<Esc>V<Up>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-Down>', '<Esc>V<Down>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<S-Up>', '<Up>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<S-Down>', '<Down>', { noremap = true, silent = true })
 
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")

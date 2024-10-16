@@ -127,7 +127,6 @@ local plugins = {
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
 	{ "numToStr/FTerm.nvim" },
 	{ "ThePrimeagen/vim-be-good" },
-	{ "tpope/vim-sensible" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 }
 -- PERF: setting a rounded border

@@ -1,16 +1,19 @@
 -- PERF: Vim appearance settings
 vim.api.nvim_create_augroup("nobg", { clear = true })
-vim.api.nvim_create_autocmd("ColorScheme", {
-	callback = function()
-		vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
-		vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
-		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
-	end,
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" })
+-- 		vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" })
+-- 		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" })
+-- 		vim.cmd([[
+-- 		highlight NormalFloat guibg=none
+-- 		highlight Normal guibg=none
+-- 		]])
+-- 	end,
+-- })
 
 vim.cmd.colorscheme("catppuccin")
 
-vim.opt.fillchars = { eob = " " }
 vim.opt.showmode = false
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
@@ -19,10 +22,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-vim.cmd([[
-highlight NormalFloat guibg=none
-highlight Normal guibg=none
-]])
 
 local IndentGroup = vim.api.nvim_create_augroup("CustomIndent", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

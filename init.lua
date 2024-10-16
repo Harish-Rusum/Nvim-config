@@ -1,6 +1,9 @@
 -- NOTE: loading lazy.nvim.stuff
 require("nvim.lazy")
 
+-- NOTE: colorscheme
+require("nvim.plugins.catppuccin")
+
 -- NOTE: lsp (language-server-protocol) and autocomplete
 require("nvim.lsp.lsp")
 require("nvim.lsp.none-ls")

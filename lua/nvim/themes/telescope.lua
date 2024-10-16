@@ -3,13 +3,15 @@ local function default()
 		TelescopePromptTitle = { bg = "none", fg = "#89b5fa" },
 		TelescopeResultsTitle = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewTitle = { bg = "none", fg = "#89b5fa" },
-		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4" },
-		TelescopePromptNormal = { bg = "none", fg = "#bec6e4" },
-		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4" },
+		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopePromptNormal = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4", bold = true },
 		TelescopeResultsBorder = { bg = "none", fg = "#89b5fa" },
 		TelescopePromptBorder = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewNormal = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewBorder = { bg = "none", fg = "#89b5fa" },
+		TelescopeMatching = { bg = "none", fg = "#7a9ee0" },
+		TelescopeSelection = { bg = "#26233a", fg = "#bec6e4", bold = true}
 	}
 
 	for hl, col in pairs(telescope_highlights) do
@@ -57,13 +59,15 @@ local function titles()
 		TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
 		TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
 		TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
-		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4" },
-		TelescopePromptNormal = { bg = "none", fg = "#bec6e4" },
-		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4" },
+		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopePromptNormal = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4", bold = true },
 		TelescopeResultsBorder = { bg = "none", fg = "#89b5fa" },
 		TelescopePromptBorder = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewNormal = { bg = "none", fg = "#89b5fa" },
 		TelescopePreviewBorder = { bg = "none", fg = "#89b5fa" },
+		TelescopeMatching = { bg = "none", fg = "#7a9ee0" },
+		TelescopeSelection = { bg = "#26233a", fg = "#bec6e4", bold = true}
 	}
 
 	for hl, col in pairs(telescope_highlights) do

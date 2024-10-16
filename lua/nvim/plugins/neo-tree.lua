@@ -1,3 +1,5 @@
+--  PERF: setting up the file explorer (NvimTree) 
+
 require("neo-tree").setup({
 	default_component_configs = {
 		icon = {
@@ -18,7 +20,6 @@ require("neo-tree").setup({
 		},
 		git_status = {
 			symbols = {
-				-- Change type
 				added     = "✚",
 				modified  = "",
 				deleted   = "✖",

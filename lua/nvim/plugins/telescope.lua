@@ -1,7 +1,9 @@
+-- PERF: Setting up telescope (fuzzy finder)
+
 local telescope = require("telescope")
 
 telescope.setup({
-	file_ignore_patterns = {"undo"},
+	file_ignore_patterns = { "undo" },
 	pickers = {
 		colorscheme = {
 			enable_preview = true,
@@ -9,7 +11,7 @@ telescope.setup({
 	},
 	defaults = {
 		-- PERF: Telescope layout config
-    file_ignore_patterns = {"undo/"},
+		file_ignore_patterns = { "undo/" },
 		layout_config = {
 			horizontal = {
 				prompt_position = "bottom",
@@ -30,7 +32,7 @@ telescope.setup({
 		},
 
 		-- PERF: Telescope icons and borders
--- ❱ 
+		-- ❱
 		layout_strategy = "horizontal",
 		sorting_strategy = "descending",
 		prompt_prefix = " ",
@@ -46,9 +48,8 @@ telescope.setup({
 		set_env = { ["COLORTERM"] = "truecolor" },
 	},
 	extensions = {
-			["ui-select"] = {
-				require("telescope.themes").get_dropdown {
-				}
-			},
-		}
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({}),
+		},
+	},
 })

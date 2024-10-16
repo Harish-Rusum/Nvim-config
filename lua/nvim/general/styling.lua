@@ -1,4 +1,5 @@
 -- PERF: Vim appearance settings
+
 vim.api.nvim_create_augroup("nobg", { clear = true })
 
 vim.cmd.colorscheme("catppuccin")

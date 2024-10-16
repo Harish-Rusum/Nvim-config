@@ -1,11 +1,13 @@
 local cmp = require("cmp")
 
 -- PERF: setting up some helper functions
+
 local function has_words_before()
-	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	local cursor = vim.api.nvim_win_get_cursor(0)
+	local line = cursor[1]
+	local col = cursor[2]
 	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
-
 local function feedkey(key, mode)
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
@@ -52,6 +54,9 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 	}),
+
+	-- PERF: setting up the completion symbols
+
 	formatting = {
 		format = function(entry, vim_item)
 			local symbol_map = {

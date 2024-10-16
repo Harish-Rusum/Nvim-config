@@ -3,7 +3,7 @@
 require("which-key").register({
 	["<leader>t"] = { name = "Terminal", _ = "which_key_ignore" },
 	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
-  ["<leader>s"] = { name = "In split", _ = "which_key_ignore" },
+	["<leader>s"] = { name = "In split", _ = "which_key_ignore" },
 	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
 	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
 	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },

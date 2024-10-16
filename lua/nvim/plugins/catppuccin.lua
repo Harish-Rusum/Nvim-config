@@ -1,18 +1,18 @@
 -- PERF: catppuccin theme settings
 
 require("catppuccin").setup({
-    flavour = "mocha",
-    background = {
-        light = "latte",
-        dark = "mocha",
-    },
-    transparent_background = true,
-    show_end_of_buffer = false,
-    integrations = {
-        cmp = true,
-        gitsigns = true,
-        nvimtree = true,
-        treesitter = true,
-        notify = false,
-    },
+	flavour = "mocha",
+	background = {
+		light = "latte",
+		dark = "mocha",
+	},
+	transparent_background = true,
+	show_end_of_buffer = false,
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		treesitter = true,
+		notify = false,
+	},
 })

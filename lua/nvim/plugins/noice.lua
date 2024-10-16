@@ -1,4 +1,5 @@
--- Set highlight groups for Noice cmdline popup
+-- PERF: setting up fancy caommand line and its colors
+
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = "NONE", fg = "#FCFFC1" })
 vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "NONE", fg = "#FCFFC1" })
 vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { fg = "#FCFFC1" })
@@ -22,5 +23,5 @@ require("noice").setup({
 })
 
 vim.defer_fn(function()
-  vim.cmd[[set cmdheight=1]]
-end, 100) -- delay in milliseconds
+	vim.cmd([[set cmdheight=1]])
+end, 100)

@@ -1,3 +1,5 @@
+-- PERF: setting up a color preview plugin
+
 require("nvim-highlight-colors").setup({
 	render = "background",
 	virtual_symbol = "■",

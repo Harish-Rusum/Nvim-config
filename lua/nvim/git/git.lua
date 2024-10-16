@@ -34,7 +34,6 @@ local function prompt_user_input(callback, prompt_text, default_value)
 	end)
 end
 
--- Function to run git commands
 local function run_git_command(command_args)
 	local result = vim.fn.system(command_args)
 	if vim.v.shell_error ~= 0 then

@@ -1,4 +1,5 @@
 -- PERF: defining theme colors with Catppuccin blue/violet tones
+
 local colors = {
 	none = "none",
 	-- none = "#1e2031",
@@ -11,7 +12,7 @@ local colors = {
 	white = "#dce0e8",
 }
 
--- PERF: Mapping the colors to lualine sections, emphasizing Catppuccin's balance and style
+-- PERF: Mapping the colors to lualine sections
 local theme = {
 	normal = {
 		a = { bg = colors.skintone, fg = colors.darkblue, gui = "bold" },
@@ -40,6 +41,7 @@ local theme = {
 	},
 }
 
+-- PERF: Actually setting up lualine (the statusbar)
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -113,4 +115,3 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 })
-

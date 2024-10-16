@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- PERF: loadig in plugins
 local plugins = {
-	{ "tribela/vim-transparent" },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 	{ "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -104,23 +103,6 @@ local plugins = {
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	{
-		"mikavilpas/yazi.nvim",
-		event = "VeryLazy",
-		keys = {
-			{
-				"<leader>-",
-				"<cmd>Yazi<cr>",
-				desc = "Open yazi at the current file",
-			},
-		},
-		opts = {
-			open_for_directories = false,
-			keymaps = {
-				show_help = "<f1>",
-			},
-		},
-	},
 	{ "gen740/SmoothCursor.nvim" },
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },

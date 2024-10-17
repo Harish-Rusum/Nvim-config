@@ -1,8 +1,8 @@
 -- PERF: defining theme colors with Catppuccin blue/violet tones
-
 local colors = {
 	none = "none",
-	-- none = "#1e2031",
+	-- darkpurple = "none",
+	darkpurple = "#1f1f2c",
 	skintone = "#eabdbb",
 	darkblue = "#2d3342",
 	darkviolet = "#2d3342",
@@ -17,22 +17,21 @@ local theme = {
 	normal = {
 		a = { bg = colors.skintone, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.grey },
+		c = { bg = colors.darkpurple, fg = colors.grey },
 	},
 	insert = {
 		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.grey },
+		c = { bg = colors.darkpurple, fg = colors.grey },
 	},
 	command = {
 		a = { bg = colors.violet, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.grey },
+		c = { bg = colors.darkpurple, fg = colors.grey },
 	},
 	visual = {
 		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
 		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.none, fg = colors.grey },
 	},
 	replace = {
 		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
@@ -47,7 +46,6 @@ require("lualine").setup({
 		icons_enabled = true,
 		theme = theme,
 		globalstatus = true,
-		--    
 		component_separators = { left = "/", right = "│" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = { statusline = {}, winbar = {} },
@@ -64,18 +62,19 @@ require("lualine").setup({
 		lualine_a = {
 			function()
 				local mode_map = {
-					n = 'NORMAL',
-					i = 'INSERT',
-					v = 'VISUAL',
-					V = 'V-LINE',
-					c = 'COMMAND',
-					t = 'TERMINAL',
-					R = 'REPLACE',
+					n = "NORMAL",
+					i = "INSERT",
+					v = "VISUAL",
+					V = "V-LINE",
+					c = "COMMAND",
+					t = "TERMINAL",
+					R = "REPLACE",
 				}
 				local current_mode = vim.fn.mode()
-				return " " .. (mode_map[current_mode] or current_mode:upper())  -- Default to uppercase if mode not found
+				return " " .. (mode_map[current_mode] or current_mode:upper()) -- Default to uppercase if mode not found
 			end,
 		},
+
 		lualine_b = {
 			"branch",
 			{
@@ -89,9 +88,18 @@ require("lualine").setup({
 					hint = { fg = colors.violet },
 				},
 			},
-			{"diff"}
 		},
-		lualine_c = { "lsp_progress" },
+		lualine_c = {
+			{
+				"diff",
+				symbols = {
+					added = " ",
+					modified = " ",
+					removed = " ",
+				},
+			}
+		},
+		lualine_d = { "" },
 		lualine_x = {
 			{
 				"filetype",
@@ -132,10 +140,9 @@ require("lualine").setup({
 				function()
 					return "󰉋 " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 				end,
-				color = { fg = colors.grey},
+				color = { fg = colors.grey },
 			},
 		},
-		lualine_z = {"location"}
+		lualine_z = { "location" },
 	},
 })
-

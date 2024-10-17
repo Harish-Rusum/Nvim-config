@@ -89,6 +89,7 @@ require("lualine").setup({
 					hint = { fg = colors.violet },
 				},
 			},
+			{"diff"}
 		},
 		lualine_c = { "lsp_progress" },
 		lualine_x = {

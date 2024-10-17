@@ -8,6 +8,17 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE" })
 	end,
 })
+vim.api.nvim_set_hl(0, "BufferLineBackground", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineSeparator", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineSeparatorVisible", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineSeparatorSelected", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineCloseButton", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineCloseButtonVisible", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineCloseButtonSelected", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineBufferVisible", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "NONE" })
+
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),

@@ -1,10 +1,13 @@
 -- PERF: Vim appearance settings
-
 vim.api.nvim_create_augroup("nobg", { clear = true })
-
 vim.cmd.colorscheme("catppuccin")
-
+vim.cmd[[highlight Visual guibg=#2f2f3f guifg=none]]
 vim.opt.showmode = false
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE" })
+	end,
+})
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
@@ -12,7 +15,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
-
 local IndentGroup = vim.api.nvim_create_augroup("CustomIndent", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
 	group = IndentGroup,
@@ -66,6 +68,7 @@ vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])
 -- end
 
 local function titles()
+
 	local colors = require("catppuccin.palettes").get_palette("mocha")
 
 	local function darken(color, percentage)

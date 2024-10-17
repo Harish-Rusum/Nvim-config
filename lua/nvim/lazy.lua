@@ -129,6 +129,21 @@ local plugins = {
 	{ "numToStr/FTerm.nvim" },
 	{ "ThePrimeagen/vim-be-good" },
 	{ "rose-pine/neovim", name = "rose-pine" },
+	{
+		'nvimdev/lspsaga.nvim',
+		config = function()
+			require("lspsaga").setup({
+				breadcrumbs = {
+					enabled = false,
+				},
+				lightbulb = {
+					enable = false,
+				},
+				code_action = ''
+			})
+		end,
+	},
+	{'arkav/lualine-lsp-progress'},
 }
 -- PERF: setting a rounded border
 

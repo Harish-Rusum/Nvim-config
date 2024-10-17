@@ -90,7 +90,7 @@ require("lualine").setup({
 				},
 			},
 		},
-		lualine_c = { "" },
+		lualine_c = { "lsp_progress" },
 		lualine_x = {
 			{
 				"filetype",

@@ -16,3 +16,5 @@ require("catppuccin").setup({
 		notify = false,
 	},
 })
+
+vim.o.fillchars = "eob: "

@@ -17,6 +17,14 @@ vim.keymap.set("n", "<leader><leader>f", function() vim.cmd[[Telescope builtin]]
 vim.keymap.set("n", "<leader>fs", function() vim.cmd[[:Telescope colorscheme]] end, {desc = "Colorscheme picker"})
 vim.keymap.set("n", "<leader>fc", function() vim.cmd[[Telescope find_files cwd=~/.config/nvim/]] end, {desc = "Find config files"})
 
+-- PERF: lspsaga
+
+vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References" })
+vim.keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find Definitions" })
+vim.keymap.set("n", "<leader>dn", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find Definitions" })
+vim.keymap.set("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev <CR>", { desc = "Find Definitions" })
+vim.keymap.set("n", "<leader>dl", "<cmd>Lspsaga show_workspace_diagnostics ++normal <CR>", { desc = "Find Definitions" })
+vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true})
 
 -- PERF: Notifications
 vim.api.nvim_set_keymap('n', '<leader>nc', ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications"})
@@ -138,3 +146,53 @@ end, { desc = "Change root dir to this dir" })
 
 vim.keymap.set("n", "<leader>cp", function() vim.cmd[[Glow %]] end, { desc = "Preview markdown files" })
 vim.keymap.set("i", "<C-w>", "<Esc>diwi", { desc = "Delete a word backwards in insert mode" })
+
+local is_transparent = true
+
+function ToggleTransparency()
+	is_transparent = not is_transparent
+	require('catppuccin').setup({
+		transparent_background = is_transparent,
+	})
+	vim.cmd.colorscheme('catppuccin')
+	vim.cmd[[source init.lua]]
+	vim.cmd[[highlight Visual guibg=#2f2f3f guifg=none]]
+	vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])
+	local colors = require("catppuccin.palettes").get_palette("mocha")
+
+	local function darken(color, percentage)
+		local r = tonumber(color:sub(2, 3), 16)
+		local g = tonumber(color:sub(4, 5), 16)
+		local b = tonumber(color:sub(6, 7), 16)
+		r = math.floor(r * (1 - percentage / 100))
+		g = math.floor(g * (1 - percentage / 100))
+		b = math.floor(b * (1 - percentage / 100))
+		return string.format("#%02x%02x%02x", r, g, b)
+	end
+
+	local darken_percentage = 1
+
+	local telescope_highlights = {
+		TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
+		TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
+		TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
+		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopePromptNormal = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4", bold = true },
+		TelescopeResultsBorder = { bg = "none", fg = "#89b5fa" },
+		TelescopePromptBorder = { bg = "none", fg = "#89b5fa" },
+		TelescopePreviewNormal = { bg = "none", fg = "#89b5fa" },
+		TelescopePreviewBorder = { bg = "none", fg = "#89b5fa" },
+		TelescopeMatching = { bg = "none", fg = "#7a9ee0" },
+		TelescopeSelection = { bg = "#26233a", fg = "#bec6e4", bold = true}
+	}
+
+	for hl, col in pairs(telescope_highlights) do
+		vim.api.nvim_set_hl(0, hl, col)
+	end
+	vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = "NONE", fg = "#FCFFC1" })
+	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "NONE", fg = "#FCFFC1" })
+	vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { fg = "#FCFFC1" })
+	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { fg = "#FCFFC1" })
+end
+vim.api.nvim_set_keymap('n', '<leader>tt', ':lua ToggleTransparency()<CR>', { noremap = true, silent = true, desc = "Toggle transparent backbackground"})

@@ -13,10 +13,6 @@ require("nvim.lsp.mason")
 require("nvim.plugins.conform")
 -- require("nvim.lsp.lines")
 
--- NOTE: settings and styling
-require("nvim.general.settings")
-require("nvim.general.styling")
-
 -- NOTE: UI plugins (interface)
 require("nvim.plugins.which-key")
 require("nvim.plugins.bufferline")
@@ -25,6 +21,10 @@ require("nvim.plugins.hicolors")
 require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
 require("nvim.plugins.lualine")
+
+-- NOTE: settings and styling
+require("nvim.general.settings")
+require("nvim.general.styling")
 
 -- NOTE: search stuff
 require("nvim.plugins.telescope")

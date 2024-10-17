@@ -1,9 +1,10 @@
 -- PERF: setting up the preview in the whcih key menu
 
 require("which-key").register({
-	["<leader>t"] = { name = "Terminal", _ = "which_key_ignore" },
+	["<leader>t"] = { name = "Transparent bg", _ = "which_key_ignore" },
 	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
-	["<leader>s"] = { name = "In split", _ = "which_key_ignore" },
+	["<leader>s"] = { name = "Split pane", _ = "which_key_ignore" },
+	["<leader>d"] = { name = "Diagnostics", _ = "which_key_ignore" },
 	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
 	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
 	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },

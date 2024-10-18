@@ -2,6 +2,7 @@
 
 require("which-key").register({
 	["<leader>t"] = { name = "Transparent bg", _ = "which_key_ignore" },
+	["<leader>m"] = { name = "Split or join code blocks", _ = _ },
 	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
 	["<leader>s"] = { name = "Split pane", _ = "which_key_ignore" },
 	["<leader>d"] = { name = "Diagnostics", _ = "which_key_ignore" },

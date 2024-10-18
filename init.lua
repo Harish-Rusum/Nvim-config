@@ -21,6 +21,7 @@ require("nvim.plugins.hicolors")
 require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
 require("nvim.plugins.lualine")
+require("nvim.plugins.bqf")
 
 -- NOTE: settings and styling
 require("nvim.general.settings")

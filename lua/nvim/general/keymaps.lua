@@ -19,8 +19,10 @@ vim.keymap.set("n", "<leader>fc", function() vim.cmd[[Telescope find_files cwd=~
 
 -- PERF: lspsaga
 
-vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References" })
-vim.keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find Definitions" })
+vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga finder ref <CR>", { desc = "Find References floating popup" })
+vim.keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder def <CR>", { desc = "Find References floating popup" })
+vim.keymap.set("n", "<leader>fR", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References in split" })
+vim.keymap.set("n", "<leader>fD", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find Definitions in split" })
 vim.keymap.set("n", "<leader>dn", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find Definitions" })
 vim.keymap.set("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev <CR>", { desc = "Find Definitions" })
 vim.keymap.set("n", "<leader>dl", "<cmd>Lspsaga show_workspace_diagnostics ++normal <CR>", { desc = "Find Definitions" })
@@ -131,19 +133,6 @@ vim.keymap.set("c", "Q", "q")
 vim.keymap.set("n", "<leader><leader>c", "i<C-r>=", {desc = "open calculator"})
 vim.keymap.set("n", "<leader>w", function() vim.cmd[[w]] end,{desc = "save file"})
 vim.keymap.set("n", "<leader>q", function() vim.cmd[[q]] end,{desc = "quit file"})
-
-vim.keymap.set("n", "<leader><leader>p", function()
-    local current_file = vim.api.nvim_buf_get_name(0)
-    if current_file == "" then
-        print("No file currently open")
-        return
-    end
-
-    local current_dir = vim.fn.fnamemodify(current_file, ":p:h")
-    vim.api.nvim_set_current_dir(current_dir)
-    print("Changed root directory to " .. current_dir)
-end, { desc = "Change root dir to this dir" })
-
 vim.keymap.set("n", "<leader>cp", function() vim.cmd[[Glow %]] end, { desc = "Preview markdown files" })
 vim.keymap.set("i", "<C-w>", "<Esc>diwi", { desc = "Delete a word backwards in insert mode" })
 

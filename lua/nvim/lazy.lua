@@ -144,6 +144,16 @@ local plugins = {
 		end,
 	},
 	{'arkav/lualine-lsp-progress'},
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+			})
+		end
+	},
+	{'kevinhwang91/nvim-bqf'},
 }
 -- PERF: setting a rounded border
 

@@ -27,31 +27,22 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 local IndentGroup = vim.api.nvim_create_augroup("CustomIndent", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	group = IndentGroup,
-	pattern = "lua",
-	callback = function()
-		vim.opt_local.shiftwidth = 2
-		vim.opt_local.tabstop = 2
-	end,
-})
-vim.api.nvim_create_autocmd("FileType", {
-	group = IndentGroup,
-	pattern = "python",
-	callback = function()
-		vim.opt_local.shiftwidth = 4
-		vim.opt_local.tabstop = 4
-	end,
-})
-vim.api.nvim_create_autocmd("FileType", {
-	group = IndentGroup,
-	pattern = "cpp",
-	callback = function()
-		vim.opt_local.shiftwidth = 4
-		vim.opt_local.tabstop = 4
-	end,
-})
 
+local function setIndent(filetype, shiftwidth, tabstop)
+	vim.api.nvim_create_autocmd("FileType", {
+		group = IndentGroup,
+		pattern = filetype,
+		callback = function()
+			vim.opt_local.shiftwidth = shiftwidth
+			vim.opt_local.tabstop = tabstop
+		end,
+	})
+end
+
+-- Set indentation for multiple filetypes
+setIndent("lua", 2, 2)
+setIndent("python", 4, 4)
+setIndent("cpp", 4, 4)
 require("notify").setup({
 	background_colour = "#000000",
 })
@@ -108,7 +99,6 @@ local function titles()
 		TelescopeMatching = { bg = "none", fg = "#7a9ee0" },
 		TelescopeSelection = { bg = "#26233a", fg = "#bec6e4", bold = true}
 	}
-
 	for hl, col in pairs(telescope_highlights) do
 		vim.api.nvim_set_hl(0, hl, col)
 	end

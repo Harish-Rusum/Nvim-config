@@ -45,3 +45,4 @@ vim.opt.undodir = vim.fn.stdpath("config") .. "nvim/undo"
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
+

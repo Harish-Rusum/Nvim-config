@@ -44,7 +44,7 @@ local plugins = {
 			"hrsh7th/cmp-ghost-text",
 		},
 	},
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	-- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "williamboman/mason.nvim" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "rafamadriz/friendly-snippets" },
@@ -139,7 +139,10 @@ local plugins = {
 				lightbulb = {
 					enable = false,
 				},
-				code_action = ''
+				code_action = '',
+				diagnostic = {
+						jump_num = false,
+					},
 			})
 		end,
 	},
@@ -153,7 +156,14 @@ local plugins = {
 			})
 		end
 	},
+	{
+		"karb94/neoscroll.nvim",
+		config = function ()
+			require('neoscroll').setup({})
+		end
+	},
 	{'kevinhwang91/nvim-bqf'},
+	{"eandrju/cellular-automaton.nvim"},
 }
 -- PERF: setting a rounded border
 

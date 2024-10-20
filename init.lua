@@ -24,8 +24,8 @@ require("nvim.plugins.lualine")
 require("nvim.plugins.bqf")
 
 -- NOTE: settings and styling
-require("nvim.general.settings")
 require("nvim.general.styling")
+require("nvim.general.settings")
 
 -- NOTE: search stuff
 require("nvim.plugins.telescope")
@@ -43,3 +43,4 @@ require("nvim.plugins.fterm")
 
 -- NOTE:  keymaps
 require("nvim.general.keymaps")
+

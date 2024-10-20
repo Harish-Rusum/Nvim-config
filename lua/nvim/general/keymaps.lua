@@ -4,7 +4,7 @@ vim.keymap.set('n', '<Esc>', function() vim.cmd [[nohlsearch]] end)
 
 -- PERF: mapping vim leader
 vim.g.mapleader = " "
-
+vim.g.maplocalleader = " "
 
 -- PERF: Alpha
 vim.keymap.set("n", "<leader>;", function() vim.cmd[[Alpha]] end, { desc = "Dashboard" })
@@ -23,8 +23,8 @@ vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga finder ref <CR>", { desc = "Find
 vim.keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder def <CR>", { desc = "Find References floating popup" })
 vim.keymap.set("n", "<leader>fR", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References in split" })
 vim.keymap.set("n", "<leader>fD", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find Definitions in split" })
-vim.keymap.set("n", "<leader>dn", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find Definitions" })
-vim.keymap.set("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev <CR>", { desc = "Find Definitions" })
+vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find next diagnostic" })
+vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev <CR>", { desc = "Find previous diagnostic" })
 vim.keymap.set("n", "<leader>dl", "<cmd>Lspsaga show_workspace_diagnostics ++normal <CR>", { desc = "Find Definitions" })
 vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true})
 
@@ -115,14 +115,10 @@ vim.keymap.set("n", "<leader>zd", function() vim.cmd [[set laststatus=2 | set nu
 
 
 -- PERF: make yanking always from the system clipboard
-vim.keymap.set("n", "y", '"+y')
-vim.keymap.set("v", "y", '"+y')
-vim.keymap.set("v", "Y", '"+y')
-vim.keymap.set("n", "Y", '"+Y')
-vim.keymap.set("n", "<C-v>", '"*p')
-vim.keymap.set("v", "<C-p>", '"*p')
-vim.keymap.set("n", "<C-c>", '"*y')
-vim.keymap.set("v", "<C-c>", '"*y')
+vim.keymap.set("n", "<C-v>", 'p')
+vim.keymap.set("v", "<C-p>", 'p')
+vim.keymap.set("n", "<C-c>", 'y')
+vim.keymap.set("v", "<C-c>", 'y')
 vim.keymap.set("n", "<C-a>", 'ggVG')
 vim.api.nvim_set_keymap('n', '<S-Up>', '<Esc>V<Up>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Down>', '<Esc>V<Down>', { noremap = true, silent = true })
@@ -134,7 +130,7 @@ vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
 vim.keymap.set("n", "<leader><leader>c", "i<C-r>=", {desc = "open calculator"})
 vim.keymap.set("n", "<leader>w", function() vim.cmd[[w]] end,{desc = "save file"})
-vim.keymap.set("n", "<leader>q", function() vim.cmd[[q]] end,{desc = "quit file"})
+vim.keymap.set("n", "<leader>q", function() vim.cmd[[q!]] end,{desc = "quit file"})
 vim.keymap.set("n", "<leader>cp", function() vim.cmd[[Glow %]] end, { desc = "Preview markdown files" })
 vim.keymap.set("i", "<C-w>", "<Esc>diwi", { desc = "Delete a word backwards in insert mode" })
 

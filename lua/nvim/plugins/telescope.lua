@@ -3,7 +3,7 @@
 local telescope = require("telescope")
 
 telescope.setup({
-	file_ignore_patterns = { "undo" },
+	le_ignore_patterns = { "undo" },
 	pickers = {
 		colorscheme = {
 			enable_preview = true,

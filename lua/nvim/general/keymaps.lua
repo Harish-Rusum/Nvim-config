@@ -82,6 +82,7 @@ vim.keymap.set("n", "<leader>vf", function() vim.cmd[[e ~/.config/nvim/lua/nvim/
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd[[Oil]] end, { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>e", function() vim.cmd[[Neotree toggle]] end, { desc = "Open parent directory in tree format" })
+vim.keymap.set("v", "<leader>e", function() vim.cmd[[Neotree toggle]] end, { desc = "Open parent directory in tree format" })
 
 
 -- PERF: window resizing
@@ -122,6 +123,7 @@ vim.keymap.set("n", "<C-v>", '"*p')
 vim.keymap.set("v", "<C-p>", '"*p')
 vim.keymap.set("n", "<C-c>", '"*y')
 vim.keymap.set("v", "<C-c>", '"*y')
+vim.keymap.set("n", "<C-a>", 'ggVG')
 vim.api.nvim_set_keymap('n', '<S-Up>', '<Esc>V<Up>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Down>', '<Esc>V<Down>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<S-Up>', '<Up>', { noremap = true, silent = true })
@@ -144,7 +146,7 @@ function ToggleTransparency()
 		transparent_background = is_transparent,
 	})
 	vim.cmd.colorscheme('catppuccin')
-	vim.cmd[[source init.lua]]
+	vim.cmd[[source ~/.config/nvim/init.lua]]
 	vim.cmd[[highlight Visual guibg=#2f2f3f guifg=none]]
 	vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])
 	local colors = require("catppuccin.palettes").get_palette("mocha")

@@ -8,7 +8,7 @@ vim.cmd([[vnoremap < <gv]])
 vim.cmd([[set splitbelow]])
 vim.cmd([[set cursorline]])
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
+-- vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
@@ -67,18 +67,18 @@ require("notify").setup({
 
 vim.g.have_nerd_font = false
 vim.schedule(function()
-	vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 vim.opt.smartcase = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.list = true
-vim.opt.listchars = { tab = '▎ '}
+vim.opt.listchars = { tab = "▎ " }
 -- vim.api.nvim_set_hl(0, 'Whitespace', { ctermfg = 240, guifg = '#5c6370' })
-vim.cmd[[highlight Whitespace guifg=#303345 guibg=none]]
+vim.cmd([[highlight Whitespace guifg=#303345 guibg=none]])

@@ -44,7 +44,7 @@ local plugins = {
 			"hrsh7th/cmp-ghost-text",
 		},
 	},
-	-- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "williamboman/mason.nvim" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "rafamadriz/friendly-snippets" },

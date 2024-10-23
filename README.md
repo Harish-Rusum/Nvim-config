@@ -32,7 +32,7 @@ mac/linux
 ```
 git clone https://www.github.com/Harish-Rusum/nvim-config/ ~/.config/nvim
 ```
-### Note : Be sure to clear your `undo` folder once cloning and do it once in a while. This dir is used to save changes so that you can open a file, Write and Quit, Open the file again and be able to undo the changes. AND Update the filepath to your undodir on line `40` of `lua/nvim/general/settings.lua`
+### Note : Be sure to clear your `undo` folder once cloning and do it once in a while. This dir is used to save changes so that you can open a file, Write and Quit, Open the file again and be able to undo the changes. AND Update the filepath to your undodir on line `40` of `lua/nvim/general/settings.lua`. You also need to change line `4` in `lua/nvim/git/octohub.lua`. If you have an authenticated `gh` then when you open a repo using octohub.nvim, it will clone the projects into the dir specified in line 4 (`~/Projects` by default).
 
 # Showcase
 

@@ -14,6 +14,8 @@ require("which-key").register({
 	["<leader>p"] = { name = "Practice", _ = "which_key_ignore" },
 	["<leader>n"] = { name = "Notifications", _ = "which_key_ignore" },
 	["<leader>l"] = { name = "Lualine (statusbar)", _ = "which_key_ignore" },
+	["<leader>ga"] = { name = "Git action", _ = "which_key_ignore" },
+	["<leader>go"] = { name = "Github things", _ = "which_key_ignore" },
 	["<leader><leader>"] = { name = "Other", _ = "which_key_ignore" },
 })
 

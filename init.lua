@@ -29,9 +29,10 @@ require("nvim.plugins.oil")
 require("nvim.plugins.neo-tree")
 require("nvim.plugins.numb")
 
--- NOTE: git
-require("nvim.plugins.gitsigns")
+-- NOTE: git / github
+require("nvim.git.gitsigns")
 require("nvim.git.git")
+require("nvim.git.octohub")
 
 -- NOTE: terminal plugin
 require("nvim.plugins.toggleterm")

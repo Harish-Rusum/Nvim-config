@@ -5,7 +5,7 @@ vim.cmd([[set rnu]])
 vim.cmd([[bufdo LspStart]])
 vim.cmd([[vnoremap > >gv]])
 vim.cmd([[vnoremap < <gv]])
-vim.cmd([[set splitbelow]])
+vim.cmd([[set splitright]])
 vim.cmd([[set cursorline]])
 vim.opt.undofile = true
 -- vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"

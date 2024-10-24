@@ -7,6 +7,7 @@ vim.cmd([[vnoremap > >gv]])
 vim.cmd([[vnoremap < <gv]])
 vim.cmd([[set splitright]])
 vim.cmd([[set cursorline]])
+vim.cmd([[IBLDisableScope]])
 vim.opt.undofile = true
 -- vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
 vim.schedule(function()
@@ -14,7 +15,7 @@ vim.schedule(function()
 end)
 
 -- PERF: set relative line numbers only in normal mode or command mode
-local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", { clear = true })
+local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", {})
 local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = true })
 
 local function has_file_path()

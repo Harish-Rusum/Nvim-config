@@ -21,13 +21,11 @@ vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=
 
 -- PERF: lspsaga
 
-vim.keymap.set("n", "<leader>fr", "<cmd>Lspsaga finder ref <CR>", { desc = "Find References floating popup" })
-vim.keymap.set("n", "<leader>fd", "<cmd>Lspsaga finder def <CR>", { desc = "Find References floating popup" })
-vim.keymap.set("n", "<leader>fR", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References in split" })
-vim.keymap.set("n", "<leader>fD", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find Definitions in split" })
+vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })
+vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find References floating popup" })
 vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find next diagnostic" })
 vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev <CR>", { desc = "Find previous diagnostic" })
-vim.keymap.set("n", "<leader>dl", "<cmd>Lspsaga show_workspace_diagnostics ++normal <CR>", { desc = "Find Definitions" })
+vim.keymap.set("n", "<leader>lD", "<cmd>Lspsaga show_workspace_diagnostics ++normal <CR>", { desc = "Find Definitions" })
 vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
 
 -- PERF: Notifications
@@ -37,10 +35,6 @@ vim.api.nvim_set_keymap("n", "<leader>nc", ':lua require("notify").dismiss()<CR>
 vim.keymap.set("n", "<leader>s[", function() vim.cmd([[vsplit]]) end, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>s]", function() vim.cmd([[sp]]) end, { desc = "split horizontally" })
 
--- PERF: themes.
-vim.keymap.set("n", "<leader>Tt", function() vim.cmd([[:PickTelescopeTheme]]) end, { desc = "Pick telescope (finder) themes" })
-vim.keymap.set("n", "<leader>Tl", function() vim.cmd([[:PickLualineTheme]]) end, { desc = "Pick lualine (statusbar) themes" })
-
 -- PERF: setting up terminal keymaps
 vim.keymap.set("n", "<C-t>", function() vim.cmd([[lua require("FTerm").toggle()]]) end, { desc = "Floating terminal" })
 vim.keymap.set("n", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
@@ -48,9 +42,8 @@ vim.keymap.set("t", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical s
 vim.keymap.set("n", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
 vim.keymap.set("t", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
 
--- PERF: lualine (statusbar)
-vim.keymap.set("n", "<leader>le", function() vim.cmd([[set laststatus=2]]) end, { desc = "Enable lualine (statusbar)" })
-vim.keymap.set("n", "<leader>ld", function() vim.cmd([[set laststatus=0]]) end, { desc = "Disable lualine (statusbar)" })
+-- PERF: setting up terminal keymaps
+vim.keymap.set("n", "<leader>is", function() vim.cmd([[IBLToggleScope]]) end, { desc = "Toggle highlighting scope" })
 
 -- PERF: git
 vim.keymap.set("n", "<leader>gaa", function() vim.cmd([[G add]]) end, { desc = "git add" })
@@ -66,7 +59,7 @@ vim.keymap.set("n", "<leader>gor", function() vim.cmd([[OctoRepos]]) end, { desc
 vim.keymap.set("n", "<leader>gop", function() vim.cmd([[OctoProfile]]) end, { desc = "Git profile in browser" })
 vim.keymap.set("n", "<leader>goa", function() vim.cmd([[OctoActivityStats]]) end, { desc = "Git recent activity" })
 vim.keymap.set("n", "<leader>gos", function() vim.cmd([[OctoStats]]) end, { desc = "Git profile stats" })
-vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoActivity]]) end, { desc = "Open current repo in browser" })
+vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoRepoWeb]]) end, { desc = "Open current repo in browser" })
 
 
 -- PERF: setting up LSP actions
@@ -75,6 +68,8 @@ vim.keymap.set("n", "<leader>cg", function() vim.cmd([[lua vim.lsp.buf.definitio
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
 vim.keymap.set("n", "<leader>cd", function() vim.cmd([[Trouble]]) end, { desc = "Diagnostics using Trouble" })
+vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { desc = "open an ast (abstract syntax tere)" })
+
 
 -- PERF: chtshts
 vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/lua/nvim/chtshts/chtsht.md]]) end, { desc = "Open vim cheat sheat" })

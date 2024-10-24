@@ -1,3 +1,3 @@
--- PERF: setting up the better quickfix list 
+-- PERF: Setting up the better quickfix plugin
 
-require("bqf").setup{}
+require("bqf").setup({})

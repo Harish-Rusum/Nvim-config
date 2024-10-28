@@ -197,6 +197,7 @@ local plugins = {
 		},
 		opts = {},
 	},
+	{ "mistricky/codesnap.nvim", build = "make" },
 }
 -- PERF: setting a rounded border
 

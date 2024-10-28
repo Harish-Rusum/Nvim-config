@@ -22,6 +22,7 @@ require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
 require("nvim.plugins.lualine")
 require("nvim.plugins.bqf")
+require("nvim.plugins.codesnap")
 
 -- NOTE: search stuff
 require("nvim.plugins.telescope")

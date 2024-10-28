@@ -23,7 +23,8 @@ local bufferline_highlights = {
     "BufferLineCloseButtonSelected",
     "BufferLineBufferVisible",
     "BufferLineBufferSelected",
-    "BufferLineFill"
+    "BufferLineFill",
+    "BufferLineDiagnostic"
 }
 
 for _, hl in ipairs(bufferline_highlights) do

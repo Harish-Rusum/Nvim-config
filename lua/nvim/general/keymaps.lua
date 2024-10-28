@@ -35,6 +35,7 @@ vim.api.nvim_set_keymap("n", "<leader>nc", ':lua require("notify").dismiss()<CR>
 vim.keymap.set("n", "<leader>s[", function() vim.cmd([[vsplit]]) end, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>s]", function() vim.cmd([[sp]]) end, { desc = "split horizontally" })
 
+
 -- PERF: setting up terminal keymaps
 vim.keymap.set("n", "<C-t>", function() vim.cmd([[lua require("FTerm").toggle()]]) end, { desc = "Floating terminal" })
 vim.keymap.set("n", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
@@ -70,6 +71,10 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code ac
 vim.keymap.set("n", "<leader>cd", function() vim.cmd([[Trouble]]) end, { desc = "Diagnostics using Trouble" })
 vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { desc = "open an ast (abstract syntax tere)" })
 
+-- PERF: Codesnap
+vim.keymap.set("v", "<leader>cc", function() vim.cmd([[CodeSnap]]) end, { desc = "Take code screenshot" })
+vim.keymap.set("v", "<leader>ch", function() vim.cmd([[CodeSnapHighlight]]) end, { desc = "Code screenshot with highlighted lines" })
+
 
 -- PERF: chtshts
 vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/lua/nvim/chtshts/chtsht.md]]) end, { desc = "Open vim cheat sheat" })
@@ -79,7 +84,6 @@ vim.keymap.set("n", "<leader>vf", function() vim.cmd([[e ~/.config/nvim/lua/nvim
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd([[Oil]]) end, { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>e", function() vim.cmd([[Neotree toggle]]) end, { desc = "Open parent directory in tree format" })
-vim.keymap.set("v", "<leader>e", function() vim.cmd([[Neotree toggle]]) end, { desc = "Open parent directory in tree format" })
 
 -- PERF: window resizing
 vim.keymap.set("n", ",", "<C-w>2>")

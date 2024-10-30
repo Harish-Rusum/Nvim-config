@@ -5,6 +5,7 @@
         "sdasd"
     ],
     "diagnostics.disable": [
-        "undefined-global"
+        "undefined-global",
+        "different-requires"
     ]
 }

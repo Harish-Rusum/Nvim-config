@@ -14,10 +14,13 @@ end, { desc = "Dashboard" })
 
 -- PERF: Telescope keymaps
 vim.keymap.set("n", "<leader>ff", function() vim.cmd([[:Telescope fd]]) end, { desc = "Fuzzy find files" })
-vim.keymap.set("n", "<leader>fg", function() vim.cmd([[:Telescope live_grep]]) end, { desc = "Live grep" })
+vim.keymap.set("n", "<C-p>", function() vim.cmd([[:Telescope fd]]) end, { desc = "Find files" })
+vim.keymap.set("n", "<leader>fg", function() vim.cmd([[:Telescope live_grep]]) end, { desc = "Live grep (search for word)" })
 vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[Telescope builtin]]) end, { desc = "open telescope(finder) builtin" })
 vim.keymap.set("n", "<leader>fs", function() vim.cmd([[:Telescope colorscheme]]) end, { desc = "Colorscheme picker" })
 vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=~/.config/nvim/]]) end, { desc = "Find config files" })
+
+-- PERF: Harpoon
 
 -- PERF: lspsaga
 vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })

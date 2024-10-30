@@ -198,6 +198,11 @@ local plugins = {
 		opts = {},
 	},
 	{ "mistricky/codesnap.nvim", build = "make" },
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { {"nvim-lua/plenary.nvim"} }
+	},
 }
 -- PERF: setting a rounded border
 

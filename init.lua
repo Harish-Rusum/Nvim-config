@@ -43,5 +43,9 @@ require("nvim.plugins.fterm")
 require("nvim.general.styling")
 require("nvim.general.settings")
 
+-- NOTE: Language specific stuff
+require("lang.py.run")
+require("lang.cpp.run")
+
 -- NOTE:  keymaps
 require("nvim.general.keymaps")

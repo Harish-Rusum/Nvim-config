@@ -6,7 +6,6 @@ require("which-key").register({
 	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
 	["<leader>s"] = { name = "Split pane", _ = "which_key_ignore" },
 	["<leader>l"] = { name = "Lsp", _ = "which_key_ignore" },
-	["<leader>d"] = { name = "Diagnostics", _ = "which_key_ignore" },
 	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
 	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
 	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },

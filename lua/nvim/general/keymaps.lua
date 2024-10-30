@@ -20,7 +20,6 @@ vim.keymap.set("n", "<leader>fs", function() vim.cmd([[:Telescope colorscheme]])
 vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=~/.config/nvim/]]) end, { desc = "Find config files" })
 
 -- PERF: lspsaga
-
 vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })
 vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find References floating popup" })
 vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find next diagnostic" })
@@ -34,7 +33,6 @@ vim.api.nvim_set_keymap("n", "<leader>nc", ':lua require("notify").dismiss()<CR>
 -- PERF: splits
 vim.keymap.set("n", "<leader>s[", function() vim.cmd([[vsplit]]) end, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>s]", function() vim.cmd([[sp]]) end, { desc = "split horizontally" })
-
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set("n", "<C-t>", function() vim.cmd([[lua require("FTerm").toggle()]]) end, { desc = "Floating terminal" })
@@ -65,7 +63,7 @@ vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoRepoWeb]]) end, { de
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", function() vim.cmd([[echo 'Formatted successfully' | Format]]) end, { desc = "Format buffer" })
-vim.keymap.set("n", "<leader>cg", function() vim.cmd([[lua vim.lsp.buf.definition()]]) end, { desc = "Go to definition" })
+vim.keymap.set("n", "<leader>cg", function() vim.cmd([[lua vim.lsp.buf.definition()]]) end, { desc = "Go to file" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
 vim.keymap.set("n", "<leader>cd", function() vim.cmd([[Trouble]]) end, { desc = "Diagnostics using Trouble" })
@@ -75,6 +73,9 @@ vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { des
 vim.keymap.set("v", "<leader>cc", function() vim.cmd([[CodeSnap]]) end, { desc = "Take code screenshot" })
 vim.keymap.set("v", "<leader>ch", function() vim.cmd([[CodeSnapHighlight]]) end, { desc = "Code screenshot with highlighted lines" })
 
+-- PERF: Running stuff
+vim.keymap.set("n", "<leader>rp", function() vim.cmd[[RunPython]] end, {desc = "Run current python file"})
+vim.keymap.set("n", "<leader>rc", function() vim.cmd[[RunCpp]] end, {desc = "Run current c++ file"})
 
 -- PERF: chtshts
 vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/lua/nvim/chtshts/chtsht.md]]) end, { desc = "Open vim cheat sheat" })

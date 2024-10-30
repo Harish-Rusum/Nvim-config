@@ -30,6 +30,7 @@ require("nvim.plugins.telescope")
 require("nvim.plugins.oil")
 require("nvim.plugins.neo-tree")
 require("nvim.plugins.numb")
+require("nvim.plugins.harpoon")
 
 -- NOTE: git / github
 require("nvim.git.gitsigns")

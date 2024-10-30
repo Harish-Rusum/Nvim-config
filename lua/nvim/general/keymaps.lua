@@ -20,8 +20,6 @@ vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[Telescope builtin]
 vim.keymap.set("n", "<leader>fs", function() vim.cmd([[:Telescope colorscheme]]) end, { desc = "Colorscheme picker" })
 vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=~/.config/nvim/]]) end, { desc = "Find config files" })
 
--- PERF: Harpoon
-
 -- PERF: lspsaga
 vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })
 vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find References floating popup" })
@@ -122,7 +120,6 @@ vim.keymap.set("n", "<C-v>", "p")
 vim.keymap.set("v", "<C-p>", "p")
 vim.keymap.set("n", "<C-c>", "y")
 vim.keymap.set("v", "<C-c>", "y")
-vim.keymap.set("n", "<C-a>", "ggVG")
 vim.api.nvim_set_keymap("n", "<S-Up>", "<Esc>V<Up>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", "<Esc>V<Down>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<S-Up>", "<Up>", { noremap = true, silent = true })

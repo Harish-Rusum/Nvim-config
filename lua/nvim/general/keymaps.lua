@@ -61,6 +61,14 @@ vim.keymap.set("n", "<leader>goa", function() vim.cmd([[OctoActivityStats]]) end
 vim.keymap.set("n", "<leader>gos", function() vim.cmd([[OctoStats]]) end, { desc = "Git profile stats" })
 vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoRepoWeb]]) end, { desc = "Open current repo in browser" })
 
+-- PERF: harpoon
+vim.keymap.set("n", "<C-h>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
+vim.keymap.set("n", "<C-a>", function() require("harpoon"):list():add() end)
+
+vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end)
+vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end)
+vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end)
+vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end)
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", function() vim.cmd([[echo 'Formatted successfully' | Format]]) end, { desc = "Format buffer" })

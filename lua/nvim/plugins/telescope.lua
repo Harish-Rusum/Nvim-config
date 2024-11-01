@@ -15,19 +15,19 @@ telescope.setup({
 		layout_config = {
 			horizontal = {
 				prompt_position = "bottom",
-				preview_width = 0.4,
-				results_width = 0.8,
-				width = 0.85,
-				height = 0.9,
+				-- preview_width = 0.4,
+				-- results_width = 0.8,
+				-- width = 0.85,
+				-- height = 0.9,
 			},
 			vertical = {
 				mirror = false,
-				width = 0.85,
-				height = 0.9,
+				-- width = 0.85,
+				-- height = 0.9,
 			},
 			center = {
-				width = 0.85,
-				height = 0.9,
+				-- width = 0.85,
+				-- height = 0.9,
 			},
 		},
 
@@ -51,6 +51,5 @@ telescope.setup({
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({}),
 		},
-
 	},
 })

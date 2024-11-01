@@ -2,9 +2,9 @@
 local colors = {
 	none = "none",
 	-- darkpurple = "none",
-	-- darkpurple = "#232232",
+	darkpurple = "#232232",
 	-- darkpurple = "#1f1f2c",
-	darkpurple = "#1c1c28",
+	-- darkpurple = "#1c1c28",
 	skintone = "#eabdbb",
 	darkblue = "#2d3342",
 	darkviolet = "#2d3342",

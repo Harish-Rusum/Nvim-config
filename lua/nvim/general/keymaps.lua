@@ -65,10 +65,10 @@ vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoRepoWeb]]) end, { de
 vim.keymap.set("n", "<C-h>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
 vim.keymap.set("n", "<C-a>", function() require("harpoon"):list():add() end)
 
-vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end)
-vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end)
-vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end)
-vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end)
+vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end, {desc = "Go to first harpoon item"})
+vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
+vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
+vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", function() vim.cmd([[echo 'Formatted successfully' | Format]]) end, { desc = "Format buffer" })
@@ -149,7 +149,6 @@ function ToggleTransparency()
 		transparent_background = is_transparent,
 	})
 	vim.cmd.colorscheme("catppuccin")
-	vim.cmd([[source ~/.config/nvim/init.lua]])
 	vim.cmd([[highlight Visual guibg=#2f2f3f guifg=none]])
 	vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])
 	local colors = require("catppuccin.palettes").get_palette("mocha")
@@ -189,8 +188,9 @@ function ToggleTransparency()
 	vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { fg = "#FCFFC1" })
 	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { fg = "#FCFFC1" })
 end
-vim.api.nvim_set_keymap("n", "<leader>tt", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent backbackground" })
 
+vim.api.nvim_set_keymap("n", "<leader>tt", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent background" })
+ToggleTransparency()
 vim.keymap.set("n", "<leader><leader>p", function()
     local current_file = vim.api.nvim_buf_get_name(0)
     if current_file == "" then

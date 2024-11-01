@@ -9,7 +9,6 @@ vim.cmd([[set splitright]])
 vim.cmd([[set cursorline]])
 vim.cmd([[IBLDisableScope]])
 vim.opt.undofile = true
--- vim.opt.undodir = vim.fn.stdpath("config") .. "/undo"
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)

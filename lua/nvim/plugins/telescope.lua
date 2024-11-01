@@ -3,7 +3,6 @@
 local telescope = require("telescope")
 
 telescope.setup({
-	le_ignore_patterns = { "undo" },
 	pickers = {
 		colorscheme = {
 			enable_preview = true,
@@ -11,7 +10,6 @@ telescope.setup({
 	},
 	defaults = {
 		-- PERF: Telescope layout config
-		file_ignore_patterns = { "undo/" },
 		layout_config = {
 			horizontal = {
 				prompt_position = "bottom",

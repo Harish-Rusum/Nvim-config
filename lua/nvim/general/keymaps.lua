@@ -87,9 +87,9 @@ vim.keymap.set("n", "<leader>rp", function() vim.cmd[[RunPython]] end, {desc = "
 vim.keymap.set("n", "<leader>rc", function() vim.cmd[[RunCpp]] end, {desc = "Run current c++ file"})
 
 -- PERF: chtshts
-vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/lua/nvim/chtshts/chtsht.md]]) end, { desc = "Open vim cheat sheat" })
-vim.keymap.set("n", "<leader>vb", function() vim.cmd([[e ~/.config/nvim/lua/nvim/chtshts/files.md]]) end, { desc = "Files in vim chtsht" })
-vim.keymap.set("n", "<leader>vf", function() vim.cmd([[e ~/.config/nvim/lua/nvim/chtshts/general.md]]) end, { desc = "How to do stuff in this config" })
+vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/doc/chtsht.md]]) end, { desc = "Open vim cheat sheat" })
+vim.keymap.set("n", "<leader>vb", function() vim.cmd([[e ~/.config/nvim/doc/files.md]]) end, { desc = "Files in vim chtsht" })
+vim.keymap.set("n", "<leader>vf", function() vim.cmd([[e ~/.config/nvim/doc/general.md]]) end, { desc = "How to do stuff in this config" })
 
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd([[Oil]]) end, { desc = "Open parent directory" })

@@ -103,7 +103,6 @@ local plugins = {
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
-	{ "gen740/SmoothCursor.nvim" },
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
 	{ "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons" } },

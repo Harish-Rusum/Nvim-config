@@ -74,6 +74,4 @@ Huge thanks to a lot of the below mentioned people for their config videos and g
 
 # About
 
-This config was born out of frustration with lunarvim's lsp system ( https://www.lunarvim.org ), specifically how to use it and remove preconfigured stuff.
-Note : LunarVim is REALLY good and my frustration stemmed from not understanding how to do things in it thats all.
-I went from not knowing anything about vim (hence the moving from community distro to distro) and i finally just decided to make one myself, for this reason i have tried to make this config as self-explanatory and intuitive as possible with **relatively** good explanations of what everything is doing 
+This configuration was created out of frustration with LunarVim's LSP system (https://www.lunarvim.org), particularly regarding how to use it and remove the preconfigured settings. It's important to note that LunarVim is excellent; my frustration came from not fully understanding how to navigate its features. I started with no knowledge of Vim, which led me to switch between various community distributions. Ultimately, I decided to create my own setup. As a result, I aimed to make this configuration as self-explanatory and intuitive as possible, providing relatively clear explanations for each component.

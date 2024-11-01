@@ -36,19 +36,17 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HO
 If you're using `cmd.exe`:
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git "%localappdata%\nvim"
+git clone https://github.com/Harish-Rusum/Nvim-config.git "%localappdata%\nvim"
 ```
 
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${env:LOCALAPPDATA}\nvim"
+git clone https://github.com/Harish-Rusum/Nivm-config.git "${env:LOCALAPPDATA}\nvim"
 ```
 
 </details>
-```
-git clone https://www.github.com/Harish-Rusum/nvim-config/ "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-```
+
 ### Note : Be sure to clear your `undo` folder once cloning and do it once in a while. This dir is used to save changes so that you can open a file, Write and Quit, Open the file again and be able to undo the changes. AND Update the filepath to your undodir on line `40` of `lua/nvim/general/settings.lua`. You also need to change line `4` in `lua/nvim/git/octohub.lua`. If you have an authenticated `gh` then when you open a repo using octohub.nvim, it will clone the projects into the dir specified in line 4 (`~/Projects` by default).
 
 # Showcase

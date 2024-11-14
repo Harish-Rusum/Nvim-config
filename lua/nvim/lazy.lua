@@ -202,6 +202,13 @@ local plugins = {
 		branch = "harpoon2",
 		requires = { {"nvim-lua/plenary.nvim"} }
 	},
+	{
+		'b0o/incline.nvim',
+		config = function()
+			require('incline').setup()
+		end,
+		event = 'VeryLazy',
+	},
 }
 -- PERF: setting a rounded border
 

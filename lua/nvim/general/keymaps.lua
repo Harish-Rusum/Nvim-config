@@ -16,9 +16,13 @@ end, { desc = "Dashboard" })
 vim.keymap.set("n", "<leader>ff", function() vim.cmd([[:Telescope fd]]) end, { desc = "Fuzzy find files" })
 vim.keymap.set("n", "<C-p>", function() vim.cmd([[:Telescope fd]]) end, { desc = "Find files" })
 vim.keymap.set("n", "<leader>fg", function() vim.cmd([[:Telescope live_grep]]) end, { desc = "Live grep (search for word)" })
+vim.keymap.set("n", "<leader>fb", function() vim.cmd([[:Telescope buffers]]) end, { desc = "Find open buffers" })
 vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[Telescope builtin]]) end, { desc = "open telescope(finder) builtin" })
 vim.keymap.set("n", "<leader>fs", function() vim.cmd([[:Telescope colorscheme]]) end, { desc = "Colorscheme picker" })
 vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=~/.config/nvim/]]) end, { desc = "Find config files" })
+
+-- PERF: Smart delete
+vim.keymap.set({"n","v"}, "<leader>d", [["_d]], {desc = 'Delete to unnamed reg'})
 
 -- PERF: lspsaga
 vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })
@@ -34,6 +38,10 @@ vim.api.nvim_set_keymap("n", "<leader>nc", ':lua require("notify").dismiss()<CR>
 -- PERF: splits
 vim.keymap.set("n", "<leader>s[", function() vim.cmd([[vsplit]]) end, { desc = "split vertically" })
 vim.keymap.set("n", "<leader>s]", function() vim.cmd([[sp]]) end, { desc = "split horizontally" })
+
+-- PERF: Setting up cellular automaton
+vim.keymap.set("n", "<leader>SR", ":CellularAutomaton make_it_rain<CR>", {desc = "Make ir rain", silent = true})
+vim.keymap.set("n", "<leader>SS", ":CellularAutomaton scramble<CR>", {desc = "matrix effect", silent = true})
 
 -- PERF: setting up terminal keymaps
 vim.keymap.set("n", "<C-t>", function() vim.cmd([[lua require("FTerm").toggle()]]) end, { desc = "Floating terminal" })
@@ -69,6 +77,10 @@ vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) 
 vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
 vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
 vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
+vim.keymap.set("n", "<C-1>", function() require("harpoon"):list():select(1) end, {desc = "Go to first harpoon item"})
+vim.keymap.set("n", "<C-2>", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
+vim.keymap.set("n", "<C-3>", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
+vim.keymap.set("n", "<C-4>", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
 
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", function() vim.cmd([[echo 'Formatted successfully' | Format]]) end, { desc = "Format buffer" })

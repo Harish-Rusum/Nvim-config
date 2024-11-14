@@ -15,7 +15,6 @@ require("nvim.plugins.conform")
 
 -- NOTE: UI plugins (interface)
 require("nvim.plugins.which-key")
-require("nvim.plugins.bufferline")
 require("nvim.plugins.treesitter")
 require("nvim.plugins.hicolors")
 require("nvim.plugins.alpha")
@@ -48,5 +47,12 @@ require("nvim.general.settings")
 require("lang.py.run")
 require("lang.cpp.run")
 
+-- NOTE: Filename in the top right
+require("nvim.plugins.filename")
+
+-- NOTE: Better lsp
+require("nvim.lsp.lspsaga")
+
 -- NOTE:  keymaps
 require("nvim.general.keymaps")
+vim.cmd[[Lspsaga winbar_toggle]]

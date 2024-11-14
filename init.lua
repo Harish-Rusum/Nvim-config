@@ -55,4 +55,3 @@ require("nvim.lsp.lspsaga")
 
 -- NOTE:  keymaps
 require("nvim.general.keymaps")
-vim.cmd[[Lspsaga winbar_toggle]]

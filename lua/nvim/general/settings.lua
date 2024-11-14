@@ -9,11 +9,11 @@ vim.cmd([[set splitright]])
 vim.cmd([[set cursorline]])
 vim.cmd([[IBLDisableScope]])
 vim.cmd([[Lspsaga winbar_toggle]])
+vim.cmd[[set nowrap]]
 vim.opt.undofile = true
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)
-
 -- PERF: set relative line numbers only in normal mode or command mode
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", {})
 local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = true })

@@ -138,8 +138,8 @@ local plugins = {
 				preset = 'default',
 				['<Up>'] = { 'select_prev', 'fallback' },
 				['<Down>'] = { 'select_next', 'fallback' },
-				['<Tab>'] = { 'select_next', 'fallback'},
-				['<Enter>'] = { 'select_and_accept' },
+				-- ['<Tab>'] = { 'select_next', 'fallback'},
+				['<Tab>'] = { 'select_and_accept' },
 			},
 			appearance = {
 				use_nvim_cmp_as_default = true,

@@ -85,11 +85,6 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code ac
 vim.keymap.set("n", "<leader>cd", function() vim.cmd([[Trouble]]) end, { desc = "Diagnostics using Trouble" })
 vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { desc = "open an ast (abstract syntax tere)" })
 
--- PERF: chtshts
-vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/doc/chtsht.md]]) end, { desc = "Open vim cheat sheat" })
-vim.keymap.set("n", "<leader>vb", function() vim.cmd([[e ~/.config/nvim/doc/files.md]]) end, { desc = "Files in vim chtsht" })
-vim.keymap.set("n", "<leader>vf", function() vim.cmd([[e ~/.config/nvim/doc/general.md]]) end, { desc = "How to do stuff in this config" })
-
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd([[Oil]]) end, { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader>e", function() vim.cmd([[Neotree toggle]]) end, { desc = "Open parent directory in tree format" })

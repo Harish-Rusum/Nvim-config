@@ -1,44 +1,36 @@
--- PERF: defining theme colors with Catppuccin blue/violet tones
+-- PERF: Defining theme colors with Catppuccin blue/violet tones
 local colors = {
 	none = "none",
-	-- darkpurple = "none",
-	darkpurple = "#232232",
-	-- darkpurple = "#1f1f2c",
-	-- darkpurple = "#1c1c28",
-	skintone = "#eabdbb",
-	darkblue = "#2d3342",
-	-- darkviolet = "#2d3342",
-	darkviolet = "#2d2c3c",
-	grey = "#6c7086",
-	red = "#f38ba8",
-	violet = "#d291f1",
+	blue = "#0089d0",
+	grey = "#dce0e8",
 	white = "#dce0e8",
+	violet = "#0089d0",
 }
 
 -- PERF: Mapping the colors to lualine sections
 local theme = {
 	normal = {
-		a = { bg = colors.skintone, fg = colors.darkblue, gui = "bold" },
-		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.darkpurple, fg = colors.grey },
+		a = { bg = colors.blue, fg = colors.grey, gui = "bold" },
+		b = { bg = colors.violet, fg = colors.white },
+		c = { bg = colors.blue, fg = colors.grey },
 	},
 	insert = {
-		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
-		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.darkpurple, fg = colors.grey },
+		a = { bg = colors.violet, fg = colors.grey, gui = "bold" },
+		b = { bg = colors.violet, fg = colors.white },
+		c = { bg = colors.blue, fg = colors.grey },
 	},
 	command = {
-		a = { bg = colors.violet, fg = colors.darkblue, gui = "bold" },
-		b = { bg = colors.darkviolet, fg = colors.white },
-		c = { bg = colors.darkpurple, fg = colors.grey },
+		a = { bg = colors.blue, fg = colors.grey, gui = "bold" },
+		b = { bg = colors.violet, fg = colors.white },
+		c = { bg = colors.blue, fg = colors.grey },
 	},
 	visual = {
-		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
-		b = { bg = colors.darkviolet, fg = colors.white },
+		a = { bg = colors.violet, fg = colors.grey, gui = "bold" },
+		b = { bg = colors.violet, fg = colors.white },
 	},
 	replace = {
-		a = { bg = colors.red, fg = colors.darkblue, gui = "bold" },
-		b = { bg = colors.darkviolet, fg = colors.white },
+		a = { bg = colors.violet, fg = colors.grey, gui = "bold" },
+		b = { bg = colors.violet, fg = colors.white },
 		c = { bg = colors.none, fg = colors.grey },
 	},
 }
@@ -60,7 +52,6 @@ require("lualine").setup({
 		},
 	},
 
-	-- PERF: Defining sections with diagnostic symbols and LSP/filetype color sync
 	sections = {
 		lualine_a = {
 			function()
@@ -74,7 +65,7 @@ require("lualine").setup({
 					R = "REPLACE",
 				}
 				local current_mode = vim.fn.mode()
-				return " " .. (mode_map[current_mode] or current_mode:upper()) -- Default to uppercase if mode not found
+				return " " .. (mode_map[current_mode] or current_mode:upper())
 			end,
 		},
 
@@ -85,22 +76,14 @@ require("lualine").setup({
 				sources = { "nvim_diagnostic" },
 				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 				diagnostics_color = {
-					error = { fg = colors.red },
-					warn = { fg = colors.violet },
-					info = { fg = colors.skintone },
-					hint = { fg = colors.violet },
+					error = { fg = colors.white },
+					warn = { fg = colors.white },
+					info = { fg = colors.white },
+					hint = { fg = colors.white },
 				},
 			},
 		},
 		lualine_c = {
-			{
-				"diff",
-				symbols = {
-					added = " ",
-					modified = " ",
-					removed = " ",
-				},
-			}
 		},
 		lualine_d = { "" },
 		lualine_x = {

@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>SR", ":CellularAutomaton make_it_rain<CR>", {desc =
 vim.keymap.set("n", "<leader>SS", ":CellularAutomaton scramble<CR>", {desc = "matrix effect", silent = true})
 
 -- PERF: setting up terminal keymaps
-vim.keymap.set("n", "<C-t>", function() vim.cmd([[lua require("FTerm").toggle()]]) end, { desc = "Floating terminal" })
+vim.keymap.set({"n", "t"}, "<leader>tt", function() vim.cmd[[Floaterminal]] end, { silent = true, desc = "Floating terminal"})
 vim.keymap.set("n", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
 vim.keymap.set("t", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
 vim.keymap.set("n", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
@@ -69,19 +69,6 @@ vim.keymap.set("n", "<leader>goa", function() vim.cmd([[OctoActivityStats]]) end
 vim.keymap.set("n", "<leader>gos", function() vim.cmd([[OctoStats]]) end, { desc = "Git profile stats" })
 vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoRepoWeb]]) end, { desc = "Open current repo in browser" })
 
--- PERF: harpoon
-vim.keymap.set("n", "<C-h>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
-vim.keymap.set("n", "<C-a>", function() require("harpoon"):list():add() end)
-
-vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end, {desc = "Go to first harpoon item"})
-vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
-vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
-vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
-vim.keymap.set("n", "<C-1>", function() require("harpoon"):list():select(1) end, {desc = "Go to first harpoon item"})
-vim.keymap.set("n", "<C-2>", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
-vim.keymap.set("n", "<C-3>", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
-vim.keymap.set("n", "<C-4>", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
-
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", function() vim.cmd([[echo 'Formatted successfully' | Format]]) end, { desc = "Format buffer" })
 vim.keymap.set("n", "<leader>cg", function() vim.cmd([[lua vim.lsp.buf.definition()]]) end, { desc = "Go to file" })
@@ -97,11 +84,6 @@ vim.keymap.set("v", "<leader>ch", function() vim.cmd([[CodeSnapHighlight]]) end,
 -- PERF: Running stuff
 vim.keymap.set("n", "<leader>rp", function() vim.cmd[[RunPython]] end, {desc = "Run current python file"})
 vim.keymap.set("n", "<leader>rc", function() vim.cmd[[RunCpp]] end, {desc = "Run current c++ file"})
-
--- PERF: chtshts
-vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/doc/chtsht.md]]) end, { desc = "Open vim cheat sheat" })
-vim.keymap.set("n", "<leader>vb", function() vim.cmd([[e ~/.config/nvim/doc/files.md]]) end, { desc = "Files in vim chtsht" })
-vim.keymap.set("n", "<leader>vf", function() vim.cmd([[e ~/.config/nvim/doc/general.md]]) end, { desc = "How to do stuff in this config" })
 
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd([[Oil]]) end, { desc = "Open parent directory" })
@@ -155,53 +137,58 @@ vim.keymap.set("n", "<leader>cp", function() vim.cmd([[Glow %]]) end, { desc = "
 vim.keymap.set("i", "<C-w>", "<C-o>diw", { desc = "Delete a word backwards in insert mode", silent = true })
 local is_transparent = true
 
-function ToggleTransparency()
-	is_transparent = not is_transparent
-	require("catppuccin").setup({
-		transparent_background = is_transparent,
-	})
-	vim.cmd.colorscheme("catppuccin")
-	vim.cmd([[highlight Visual guibg=#2f2f3f guifg=none]])
-	vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])
-	local colors = require("catppuccin.palettes").get_palette("mocha")
+local function ToggleTransparency()
+    is_transparent = not is_transparent
+    vim.cmd.colorscheme("vscode")
 
-	local function darken(color, percentage)
-		local r = tonumber(color:sub(2, 3), 16)
-		local g = tonumber(color:sub(4, 5), 16)
-		local b = tonumber(color:sub(6, 7), 16)
-		r = math.floor(r * (1 - percentage / 100))
-		g = math.floor(g * (1 - percentage / 100))
-		b = math.floor(b * (1 - percentage / 100))
-		return string.format("#%02x%02x%02x", r, g, b)
-	end
+    vim.cmd([[highlight Visual guibg=#3e3e51 guifg=none]])
+    vim.cmd([[highlight WinSeparator guifg=#424242 guibg=none]])
 
-	local darken_percentage = 1
+    local colors = require("catppuccin.palettes").get_palette("mocha")
 
-	local telescope_highlights = {
-		TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
-		TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
-		TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
-		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4", bold = true },
-		TelescopePromptNormal = { bg = "none", fg = "#bec6e4", bold = true },
-		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4", bold = true },
-		TelescopeResultsBorder = { bg = "none", fg = "#89b5fa" },
-		TelescopePromptBorder = { bg = "none", fg = "#89b5fa" },
-		TelescopePreviewNormal = { bg = "none", fg = "#89b5fa" },
-		TelescopePreviewBorder = { bg = "none", fg = "#89b5fa" },
-		TelescopeMatching = { bg = "none", fg = "#7a9ee0" },
-		TelescopeSelection = { bg = "#26233a", fg = "#bec6e4", bold = true },
-	}
+    local function darken(color, percentage)
+        local r = tonumber(color:sub(2, 3), 16)
+        local g = tonumber(color:sub(4, 5), 16)
+        local b = tonumber(color:sub(6, 7), 16)
+        r = math.floor(r * (1 - percentage / 100))
+        g = math.floor(g * (1 - percentage / 100))
+        b = math.floor(b * (1 - percentage / 100))
+        return string.format("#%02x%02x%02x", r, g, b)
+    end
 
-	for hl, col in pairs(telescope_highlights) do
-		vim.api.nvim_set_hl(0, hl, col)
-	end
-	vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = "NONE", fg = "#FCFFC1" })
-	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "NONE", fg = "#FCFFC1" })
-	vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { fg = "#FCFFC1" })
-	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { fg = "#FCFFC1" })
+    local darken_percentage = 10
+
+    local telescope_highlights = {
+        TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
+        TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
+        TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
+        TelescopePromptPrefix = { bg = "none", fg = "#c5cbe6", bold = true },
+        TelescopePromptNormal = { bg = "none", fg = "#c5cbe6", bold = true },
+        TelescopeResultsNormal = { bg = "none", fg = "#c5cbe6", bold = true },
+        TelescopeResultsBorder = { bg = "none", fg = "#a2a2a2" },
+        TelescopePromptBorder = { bg = "none", fg = "#a2a2a2" },
+        TelescopePreviewNormal = { bg = "none", fg = "#5e81ac" },
+        TelescopePreviewBorder = { bg = "none", fg = "#a2a2a2" },
+        TelescopeMatching = { bg = "none", fg = "#88c0d0" },
+        TelescopeSelection = { bg = "#333842", fg = "#c5cbe6", bold = true },
+    }
+
+    for hl, col in pairs(telescope_highlights) do
+        vim.api.nvim_set_hl(0, hl, col)
+    end
+
+    vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = "NONE", fg = "#a2a2a2" })
+    vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "NONE", fg = "#a2a2a2" })
+    vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { fg = "#a2a2a2" })
+    vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { fg = "#a2a2a2" })
 end
 
-vim.api.nvim_set_keymap("n", "<leader>tt", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent background" })
+vim.api.nvim_set_keymap("n", "<leader>T", ":lua ToggleTransparency()<CR>", {
+    noremap = true,
+    silent = true,
+    desc = "Toggle transparent background",
+})
+
 ToggleTransparency()
 vim.keymap.set("n", "<leader><leader>p", function()
     local current_file = vim.api.nvim_buf_get_name(0)

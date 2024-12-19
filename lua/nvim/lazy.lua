@@ -31,44 +31,16 @@ local plugins = {
 		end,
 		opts = {},
 	},
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-buffer" },
-	{ "hrsh7th/cmp-path" },
-	{ "hrsh7th/cmp-cmdline" },
-	{ "saadparwaiz1/cmp_luasnip" },
 	{ "nvimtools/none-ls.nvim" },
-	{ "L3MON4D3/LuaSnip" },
-	{
-		"hrsh7th/nvim-cmp",
-		requires = {
-			"hrsh7th/cmp-ghost-text",
-		},
-	},
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "williamboman/mason.nvim" },
-	{ "saadparwaiz1/cmp_luasnip" },
 	{ "rafamadriz/friendly-snippets" },
-	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{ "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "stevearc/dressing.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
-	{
-		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			colors = {
-				error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-				warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-				info = { "DiagnosticInfo", "#F53B6D" },
-				hint = { "DiagnosticHint", "#10B981" },
-				default = { "Identifier", "#7C3AED" },
-				test = { "Identifier", "#FF00FF" },
-			},
-		},
-	},
 	{ "nacro90/numb.nvim" },
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
 	{ "L3MON4D3/LuaSnip" },
@@ -125,7 +97,6 @@ local plugins = {
 		},
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	{ "numToStr/FTerm.nvim" },
 	{ "ThePrimeagen/vim-be-good" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{
@@ -155,60 +126,34 @@ local plugins = {
 			})
 		end
 	},
-	{
-		"karb94/neoscroll.nvim",
-		config = function ()
-			require('neoscroll').setup({})
-		end
-	},
 	{'kevinhwang91/nvim-bqf'},
 	{"eandrju/cellular-automaton.nvim"},
 	{
-		'2kabhishek/octohub.nvim',
-		cmd = {
-			'OctoRepos',
-			'OctoRepo',
-			'OctoStats',
-			'OctoActivityStats',
-			'OctoContributionStats',
-			'OctoRepoStats',
-			'OctoProfile',
-			'OctoRepoWeb',
+		'saghen/blink.cmp',
+		dependencies = 'rafamadriz/friendly-snippets',
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			keymap = {
+				preset = 'default',
+				['<Up>'] = { 'select_prev', 'fallback' },
+				['<Down>'] = { 'select_next', 'fallback' },
+				['<Tab>'] = { 'select_next', 'fallback'},
+				['<Enter>'] = { 'select_and_accept' },
+			},
+			appearance = {
+				use_nvim_cmp_as_default = true,
+				nerd_font_variant = 'mono'
+			},
+			sources = {
+				default = { 'lsp', 'path', 'snippets', 'buffer' },
+			},
 		},
-		keys = {
-			'<leader>goa',
-			'<leader>goc',
-			'<leader>gof',
-			'<leader>gog',
-			'<leader>goh',
-			'<leader>goi',
-			'<leader>goo',
-			'<leader>gop',
-			'<leader>gor',
-			'<leader>gos',
-			'<leader>got',
-			'<leader>gou',
-			'<leader>gow',
-		},
-		dependencies = {
-			'2kabhishek/utils.nvim',
-			'nvim-telescope/telescope.nvim'
-		},
-		opts = {},
-	},
-	{ "mistricky/codesnap.nvim", build = "make" },
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		requires = { {"nvim-lua/plenary.nvim"} }
+		opts_extend = { "sources.default" }
 	},
 	{
-		'b0o/incline.nvim',
-		config = function()
-			require('incline').setup()
-		end,
-		event = 'VeryLazy',
-	},
+		'Mofiqul/vscode.nvim',
+	}
 }
 -- PERF: setting a rounded border
 

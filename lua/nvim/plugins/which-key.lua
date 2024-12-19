@@ -1,7 +1,7 @@
--- PERF: setting up the preview in the whcih key menu
+-- PERF: setting up the preview in the which key menu
 
 require("which-key").register({
-	["<leader>t"] = { name = "Transparent bg", _ = "which_key_ignore" },
+	["<leader>t"] = { name = "Terminal", _ = "which_key_ignore" },
 	["<leader>m"] = { name = "Split or Join Code Blocks", desc = "Split or Join Code Blocks" },
 	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
 	["<leader>s"] = { name = "Split pane", _ = "which_key_ignore" },
@@ -9,7 +9,6 @@ require("which-key").register({
 	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
 	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
 	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },
-	["<leader>v"] = { name = "Learn vim", _ = "which_key_ignore" },
 	["<leader>i"] = { name = "Indent lines", _ = "which_key_ignore" },
 	["<leader>g"] = { name = "Git", _ = "which_key_ignore" },
 	["<leader>p"] = { name = "Practice", _ = "which_key_ignore" },
@@ -20,7 +19,6 @@ require("which-key").register({
 })
 
 -- PERF: making which key have a rounder border
-
 require("which-key").setup({
 	window = {
 		border = "rounded",
@@ -36,3 +34,4 @@ require("which-key").setup({
 		align = "left",
 	},
 })
+

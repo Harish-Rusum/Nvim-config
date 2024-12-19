@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>SR", ":CellularAutomaton make_it_rain<CR>", {desc =
 vim.keymap.set("n", "<leader>SS", ":CellularAutomaton scramble<CR>", {desc = "matrix effect", silent = true})
 
 -- PERF: setting up terminal keymaps
-vim.keymap.set("n", "<C-t>", function() vim.cmd([[lua require("FTerm").toggle()]]) end, { desc = "Floating terminal" })
+vim.keymap.set({"n","t"}, "<C-t>", function() vim.cmd([[Floaterminal]]) end, { desc = "Floating terminal" })
 vim.keymap.set("n", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
 vim.keymap.set("t", "<C-[>", function() vim.cmd("ToggleTerm direction=vertical size=70") end)
 vim.keymap.set("n", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
@@ -84,10 +84,6 @@ vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable"
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP code actions" })
 vim.keymap.set("n", "<leader>cd", function() vim.cmd([[Trouble]]) end, { desc = "Diagnostics using Trouble" })
 vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { desc = "open an ast (abstract syntax tere)" })
-
--- PERF: Codesnap
-vim.keymap.set("v", "<leader>cc", function() vim.cmd([[CodeSnap]]) end, { desc = "Take code screenshot" })
-vim.keymap.set("v", "<leader>ch", function() vim.cmd([[CodeSnapHighlight]]) end, { desc = "Code screenshot with highlighted lines" })
 
 -- PERF: chtshts
 vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/doc/chtsht.md]]) end, { desc = "Open vim cheat sheat" })
@@ -192,7 +188,8 @@ function ToggleTransparency()
 	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupTitle", { fg = "#FCFFC1" })
 end
 
-vim.api.nvim_set_keymap("n", "<leader>tt", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent background" })
+vim.api.nvim_set_keymap("n", "<leader>T", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent background" })
+
 ToggleTransparency()
 vim.keymap.set("n", "<leader><leader>p", function()
     local current_file = vim.api.nvim_buf_get_name(0)

@@ -35,7 +35,6 @@ require("nvim.git.git")
 
 -- NOTE: terminal plugin
 require("nvim.plugins.toggleterm")
-require("nvim.plugins.fterm")
 
 -- NOTE: settings and styling
 require("nvim.general.styling")

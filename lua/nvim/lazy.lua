@@ -75,7 +75,6 @@ local plugins = {
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
-	{ "tpope/vim-repeat" },
 	{"tpope/vim-fugitive"},
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
@@ -125,7 +124,6 @@ local plugins = {
 		},
 	},
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	{ "numToStr/FTerm.nvim" },
 	{ "ThePrimeagen/vim-be-good" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{

@@ -21,7 +21,6 @@ require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
 require("nvim.plugins.lualine")
 require("nvim.plugins.bqf")
-require("nvim.plugins.codesnap")
 
 -- NOTE: search stuff
 require("nvim.plugins.telescope")
@@ -33,7 +32,6 @@ require("nvim.plugins.harpoon")
 -- NOTE: git / github
 require("nvim.git.gitsigns")
 require("nvim.git.git")
-require("nvim.git.octohub")
 
 -- NOTE: terminal plugin
 require("nvim.plugins.toggleterm")
@@ -42,10 +40,6 @@ require("nvim.plugins.fterm")
 -- NOTE: settings and styling
 require("nvim.general.styling")
 require("nvim.general.settings")
-
--- NOTE: Language specific stuff
-require("lang.py.run")
-require("lang.cpp.run")
 
 -- NOTE: Filename in the top right
 require("nvim.plugins.filename")

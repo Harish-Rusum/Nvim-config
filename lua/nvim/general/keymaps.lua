@@ -63,11 +63,6 @@ vim.keymap.set("n", "<leader>gal", function() vim.cmd([[G log]]) end, { desc = "
 vim.keymap.set("n", "<leader>gap", function() vim.cmd([[G push]]) end, { desc = "git push" })
 vim.keymap.set("n", "<leader>gai", function() vim.cmd([[G init]]) end, { desc = "git init" })
 vim.keymap.set("n", "<leader>gai", function() vim.cmd([[G init]]) end, { desc = "git init" })
-vim.keymap.set("n", "<leader>gor", function() vim.cmd([[OctoRepos]]) end, { desc = "clone and open one of your repos" })
-vim.keymap.set("n", "<leader>gop", function() vim.cmd([[OctoProfile]]) end, { desc = "Git profile in browser" })
-vim.keymap.set("n", "<leader>goa", function() vim.cmd([[OctoActivityStats]]) end, { desc = "Git recent activity" })
-vim.keymap.set("n", "<leader>gos", function() vim.cmd([[OctoStats]]) end, { desc = "Git profile stats" })
-vim.keymap.set("n", "<leader>gow", function() vim.cmd([[OctoRepoWeb]]) end, { desc = "Open current repo in browser" })
 
 -- PERF: harpoon
 vim.keymap.set("n", "<C-h>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
@@ -93,10 +88,6 @@ vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { des
 -- PERF: Codesnap
 vim.keymap.set("v", "<leader>cc", function() vim.cmd([[CodeSnap]]) end, { desc = "Take code screenshot" })
 vim.keymap.set("v", "<leader>ch", function() vim.cmd([[CodeSnapHighlight]]) end, { desc = "Code screenshot with highlighted lines" })
-
--- PERF: Running stuff
-vim.keymap.set("n", "<leader>rp", function() vim.cmd[[RunPython]] end, {desc = "Run current python file"})
-vim.keymap.set("n", "<leader>rc", function() vim.cmd[[RunCpp]] end, {desc = "Run current c++ file"})
 
 -- PERF: chtshts
 vim.keymap.set("n", "<leader>vc", function() vim.cmd([[e ~/.config/nvim/doc/chtsht.md]]) end, { desc = "Open vim cheat sheat" })

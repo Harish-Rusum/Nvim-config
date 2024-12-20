@@ -99,23 +99,6 @@ local plugins = {
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
 	{ "ThePrimeagen/vim-be-good" },
 	{ "rose-pine/neovim", name = "rose-pine" },
-	{
-		'nvimdev/lspsaga.nvim',
-		config = function()
-			require("lspsaga").setup({
-				breadcrumbs = {
-					enabled = false,
-				},
-				lightbulb = {
-					enable = false,
-				},
-				code_action = '',
-				diagnostic = {
-					jump_num = false,
-				},
-			})
-		end,
-	},
 	{'arkav/lualine-lsp-progress'},
 	{
 		"kylechui/nvim-surround",
@@ -153,6 +136,9 @@ local plugins = {
 	},
 	{
 		'Mofiqul/vscode.nvim',
+	},
+	{
+		"akinsho/bufferline.nvim"
 	}
 }
 -- PERF: setting a rounded border

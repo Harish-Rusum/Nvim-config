@@ -7,7 +7,6 @@ vim.cmd([[vnoremap < <gv]])
 vim.cmd([[set splitright]])
 vim.cmd([[set cursorline]])
 vim.cmd([[IBLDisableScope]])
-vim.cmd([[Lspsaga winbar_toggle]])
 vim.cmd[[set nowrap]]
 vim.opt.undofile = true
 vim.schedule(function()

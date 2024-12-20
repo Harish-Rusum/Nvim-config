@@ -24,14 +24,6 @@ vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=
 -- PERF: Smart delete
 vim.keymap.set({"n","v"}, "<leader>d", [["_d]], {desc = 'Delete to unnamed reg'})
 
--- PERF: lspsaga
-vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })
-vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find References floating popup" })
-vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next <CR>", { desc = "Find next diagnostic" })
-vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev <CR>", { desc = "Find previous diagnostic" })
-vim.keymap.set("n", "<leader>lD", "<cmd>Lspsaga show_workspace_diagnostics ++normal <CR>", { desc = "Find Definitions" })
-vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true })
-
 -- PERF: Notifications
 vim.api.nvim_set_keymap("n", "<leader>nc", ':lua require("notify").dismiss()<CR>', { noremap = true, silent = true, desc = "Clear notifications" })
 

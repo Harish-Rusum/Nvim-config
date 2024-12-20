@@ -21,6 +21,7 @@ require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
 require("nvim.plugins.lualine")
 require("nvim.plugins.bqf")
+require("nvim.plugins.bufferline")
 
 -- NOTE: search stuff
 require("nvim.plugins.telescope")
@@ -41,9 +42,6 @@ require("nvim.general.settings")
 -- NOTE: Language specific stuff
 require("lang.py.run")
 require("lang.cpp.run")
-
--- NOTE: Better lsp
-require("nvim.lsp.lspsaga")
 
 -- NOTE:  keymaps
 require("nvim.general.keymaps")

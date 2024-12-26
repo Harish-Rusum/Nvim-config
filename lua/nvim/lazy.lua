@@ -207,6 +207,9 @@ local plugins = {
 		end,
 		event = 'VeryLazy',
 	},
+	{
+		"matveyt/neoclip"
+	},
 }
 -- PERF: setting a rounded border
 

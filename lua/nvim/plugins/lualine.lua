@@ -1,13 +1,10 @@
 -- PERF: defining theme colors with Catppuccin blue/violet tones
 local colors = {
 	none = "none",
-	-- darkpurple = "none",
-	darkpurple = "#232232",
-	-- darkpurple = "#1f1f2c",
-	-- darkpurple = "#1c1c28",
+	darkpurple = "none",
+	-- darkpurple = "#232232",
 	skintone = "#eabdbb",
 	darkblue = "#2d3342",
-	-- darkviolet = "#2d3342",
 	darkviolet = "#2d2c3c",
 	grey = "#6c7086",
 	red = "#f38ba8",

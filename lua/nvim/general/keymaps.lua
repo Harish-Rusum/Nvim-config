@@ -185,7 +185,6 @@ end
 
 vim.api.nvim_set_keymap("n", "<leader>T", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent background" })
 
-ToggleTransparency()
 vim.keymap.set("n", "<leader><leader>p", function()
     local current_file = vim.api.nvim_buf_get_name(0)
     if current_file == "" then

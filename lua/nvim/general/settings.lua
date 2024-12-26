@@ -11,9 +11,6 @@ vim.cmd([[IBLDisableScope]])
 vim.cmd([[Lspsaga winbar_toggle]])
 vim.cmd[[set nowrap]]
 vim.opt.undofile = true
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
 -- PERF: set relative line numbers only in normal mode or command mode
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", {})
 local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = true })
@@ -67,9 +64,6 @@ require("notify").setup({
 })
 
 vim.g.have_nerd_font = false
-vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
-end)
 vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 250
@@ -83,3 +77,14 @@ vim.opt.list = true
 vim.opt.listchars = { tab = "▎ " }
 -- vim.api.nvim_set_hl(0, 'Whitespace', { ctermfg = 240, guifg = '#5c6370' })
 vim.cmd([[highlight Whitespace guifg=#303345 guibg=none]])
+vim.g.clipboard = {
+	name = 'OSC 52',
+	copy = {
+		['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+		['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+	},
+	paste = {
+		['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+		['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+	},
+}

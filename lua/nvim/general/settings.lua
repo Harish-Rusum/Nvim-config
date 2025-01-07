@@ -6,7 +6,6 @@ vim.cmd([[bufdo LspStart]])
 vim.cmd([[vnoremap > >gv]])
 vim.cmd([[vnoremap < <gv]])
 vim.cmd([[set splitright]])
-vim.cmd([[set cursorline]])
 vim.cmd([[IBLDisableScope]])
 vim.cmd([[Lspsaga winbar_toggle]])
 vim.cmd[[set nowrap]]
@@ -71,7 +70,6 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.inccommand = "split"
-vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.list = true
 vim.opt.listchars = { tab = "▎ " }

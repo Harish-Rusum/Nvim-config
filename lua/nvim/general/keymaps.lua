@@ -24,6 +24,13 @@ vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=
 -- PERF: Smart delete
 vim.keymap.set({"n","v"}, "<leader>d", [["_d]], {desc = 'Delete to unnamed reg'})
 
+-- PERF: Copilot
+vim.keymap.set('i', '<S-Tab>', 'copilot#Accept("\\<CR>")', {
+	expr = true,
+	replace_keycodes = false
+}, {silent = true})
+vim.g.copilot_no_tab_map = true
+
 -- PERF: lspsaga
 vim.keymap.set("n", "<leader>lr", "<cmd>Lspsaga finder ref ++normal<CR>", { desc = "Find References floating popup" })
 vim.keymap.set("n", "<leader>ld", "<cmd>Lspsaga finder def ++normal<CR>", { desc = "Find References floating popup" })

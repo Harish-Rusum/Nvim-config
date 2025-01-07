@@ -7,7 +7,6 @@ require("nvim.plugins.catppuccin")
 -- NOTE: lsp (language-server-protocol) and autocomplete
 require("nvim.lsp.lsp")
 require("nvim.lsp.none-ls")
-require("nvim.lsp.lsnip")
 require("nvim.lsp.completions")
 require("nvim.lsp.mason")
 require("nvim.plugins.conform")

@@ -77,14 +77,3 @@ vim.opt.list = true
 vim.opt.listchars = { tab = "▎ " }
 -- vim.api.nvim_set_hl(0, 'Whitespace', { ctermfg = 240, guifg = '#5c6370' })
 vim.cmd([[highlight Whitespace guifg=#303345 guibg=none]])
-vim.g.clipboard = {
-	name = 'OSC 52',
-	copy = {
-		['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-		['*'] = require('vim.ui.clipboard.osc52').copy('*'),
-	},
-	paste = {
-		['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-		['*'] = require('vim.ui.clipboard.osc52').paste('*'),
-	},
-}

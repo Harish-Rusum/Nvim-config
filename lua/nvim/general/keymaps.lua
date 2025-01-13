@@ -21,6 +21,9 @@ vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[Telescope builtin]
 vim.keymap.set("n", "<leader>fs", function() vim.cmd([[:Telescope colorscheme]]) end, { desc = "Colorscheme picker" })
 vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=~/.config/nvim/]]) end, { desc = "Find config files" })
 
+-- PERF: Run commands
+vim.keymap.set("n", "<leader>rc", function() vim.cmd([[RunCpp]]) end, { desc = "Compile and run C++" })
+
 -- PERF: Smart delete
 vim.keymap.set({"n","v"}, "<leader>d", [["_d]], {desc = 'Delete to unnamed reg'})
 

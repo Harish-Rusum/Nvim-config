@@ -45,5 +45,8 @@ require("nvim.plugins.filename")
 -- NOTE: Better lsp
 require("nvim.lsp.lspsaga")
 
+-- NOTE: Language running support
+require("lang.cpp.run")
+
 -- NOTE:  keymaps
 require("nvim.general.keymaps")

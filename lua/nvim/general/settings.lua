@@ -1,15 +1,23 @@
 -- PERF: Vim settings
-vim.cmd([[set guicursor=n-v-c:block,i:block]])
-vim.cmd([[set nu]])
-vim.cmd([[set rnu]])
-vim.cmd([[bufdo LspStart]])
-vim.cmd([[vnoremap > >gv]])
-vim.cmd([[vnoremap < <gv]])
-vim.cmd([[set splitright]])
-vim.cmd([[IBLDisableScope]])
-vim.cmd([[Lspsaga winbar_toggle]])
-vim.cmd[[set nowrap]]
+vim.opt.guicursor = "n-v-c:block,i:block"
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.splitright = true
+vim.opt.wrap = false
+vim.opt.showcmd = true
+vim.g.have_nerd_font = true
+vim.opt.smartcase = true
+vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.inccommand = "split"
+vim.opt.scrolloff = 10
+vim.opt.list = true
+vim.opt.listchars = { tab = "▎ " }
 vim.opt.undofile = true
+
 -- PERF: set relative line numbers only in normal mode or command mode
 local set_relativenumber_group = vim.api.nvim_create_augroup("set_relativenumber", {})
 local set_number_group = vim.api.nvim_create_augroup("set_number", { clear = true })
@@ -62,16 +70,8 @@ require("notify").setup({
 	background_colour = "#000000",
 })
 
-vim.g.have_nerd_font = false
-vim.opt.smartcase = true
-vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.inccommand = "split"
-vim.opt.scrolloff = 10
-vim.opt.list = true
-vim.opt.listchars = { tab = "▎ " }
+vim.cmd([[bufdo LspStart]])
+vim.cmd([[IBLDisableScope]])
+vim.cmd([[Lspsaga winbar_toggle]])
 -- vim.api.nvim_set_hl(0, 'Whitespace', { ctermfg = 240, guifg = '#5c6370' })
 vim.cmd([[highlight Whitespace guifg=#303345 guibg=none]])

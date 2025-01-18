@@ -197,6 +197,9 @@ local plugins = {
 	{
 		"matveyt/neoclip"
 	},
+	{
+		"echasnovski/mini.ai"
+	}
 }
 -- PERF: setting a rounded border
 

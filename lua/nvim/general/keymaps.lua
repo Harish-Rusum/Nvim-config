@@ -131,6 +131,8 @@ vim.keymap.set("n", "<leader>zd", function() vim.cmd([[set laststatus=2 | set nu
 vim.keymap.set("n", "<C-v>", "p")
 vim.keymap.set("v", "<C-p>", "p")
 vim.keymap.set("n", "<C-c>", "y")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("v", "<C-c>", "y")
 vim.api.nvim_set_keymap("n", "<S-Up>", "<Esc>V<Up>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", "<Esc>V<Down>", { noremap = true, silent = true })
@@ -145,6 +147,9 @@ vim.keymap.set("n", "<leader>w", function() vim.cmd([[w]]) end, { desc = "save f
 vim.keymap.set("n", "<leader>q", function() vim.cmd([[q!]]) end, { desc = "quit file" })
 vim.keymap.set("n", "<leader>cp", function() vim.cmd([[Glow %]]) end, { desc = "Preview markdown files" })
 vim.keymap.set("i", "<C-w>", "<C-o>diw", { desc = "Delete a word backwards in insert mode", silent = true })
+vim.keymap.set("v", ">", ">gv", { silent = true })
+vim.keymap.set("v", "<", "<gv", { silent = true })
+
 local is_transparent = true
 
 function ToggleTransparency()
@@ -206,4 +211,3 @@ vim.keymap.set("n", "<leader><leader>p", function()
     vim.api.nvim_set_current_dir(current_dir)
     print("Changed root directory to " .. current_dir)
 end, { desc = "Change root dir to this dir" })
-

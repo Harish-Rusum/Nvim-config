@@ -199,6 +199,11 @@ local plugins = {
 	},
 	{
 		"echasnovski/mini.ai"
+	},
+	{
+		'stevearc/oil.nvim',
+		opts = {},
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
 	}
 }
 -- PERF: setting a rounded border

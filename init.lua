@@ -12,6 +12,17 @@ require("nvim.lsp.mason")
 require("nvim.plugins.conform")
 -- require("nvim.lsp.lines")
 
+-- NOTE: search stuff
+require("nvim.plugins.telescope")
+require("nvim.plugins.oil")
+require("nvim.plugins.neo-tree")
+require("nvim.plugins.numb")
+require("nvim.plugins.harpoon")
+
+-- NOTE: git / github
+require("nvim.git.gitsigns")
+require("nvim.git.git")
+
 -- NOTE: UI plugins (interface)
 require("nvim.plugins.which-key")
 require("nvim.plugins.treesitter")

@@ -204,7 +204,10 @@ local plugins = {
 		'stevearc/oil.nvim',
 		opts = {},
 		dependencies = { { "echasnovski/mini.icons", opts = {} } },
-	}
+	},
+	{
+		"christoomey/vim-tmux-navigator",
+	},
 }
 -- PERF: setting a rounded border
 

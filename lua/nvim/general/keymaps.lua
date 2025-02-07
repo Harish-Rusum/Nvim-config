@@ -143,6 +143,8 @@ vim.api.nvim_set_keymap("v", "<S-Down>", "<Down>", { noremap = true, silent = tr
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
 vim.keymap.set("n", "<leader><leader>c", "i<C-r>=", { desc = "open calculator" })
+vim.keymap.set("n", "123", "<Esc>", { desc = "open calculator" })
+vim.keymap.set("i", "123", "<Esc>", { desc = "open calculator" })
 vim.keymap.set("n", "<leader>w", function() vim.cmd([[w]]) end, { desc = "save file" })
 vim.keymap.set("n", "<leader>q", function() vim.cmd([[q!]]) end, { desc = "quit file" })
 vim.keymap.set("n", "<leader>cp", function() vim.cmd([[Glow %]]) end, { desc = "Preview markdown files" })
@@ -150,7 +152,7 @@ vim.keymap.set("i", "<C-w>", "<C-o>diw", { desc = "Delete a word backwards in in
 vim.keymap.set("v", ">", ">gv", { silent = true })
 vim.keymap.set("v", "<", "<gv", { silent = true })
 
-local is_transparent = true
+local is_transparent = false
 
 function ToggleTransparency()
 	is_transparent = not is_transparent

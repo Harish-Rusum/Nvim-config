@@ -6,7 +6,7 @@ require("catppuccin").setup({
 		light = "latte",
 		dark = "mocha",
 	},
-	transparent_background = true,
+	transparent_background = false,
 	show_end_of_buffer = false,
 	integrations = {
 		cmp = true,

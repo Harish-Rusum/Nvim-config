@@ -13,9 +13,7 @@ require("nvim.plugins.conform")
 -- require("nvim.lsp.lines")
 
 -- NOTE: search stuff
-require("nvim.plugins.telescope")
 require("nvim.plugins.oil")
-require("nvim.plugins.neo-tree")
 require("nvim.plugins.numb")
 require("nvim.plugins.harpoon")
 
@@ -50,4 +48,3 @@ require("lang.cpp.run")
 
 -- NOTE:  keymaps
 require("nvim.general.keymaps")
-

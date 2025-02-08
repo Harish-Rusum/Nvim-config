@@ -66,10 +66,6 @@ setIndent("lua", 2, 2)
 setIndent("python", 4, 4)
 setIndent("cpp", 4, 4)
 
-require("notify").setup({
-	background_colour = "#000000",
-})
-
 vim.cmd([[bufdo LspStart]])
 vim.cmd([[IBLDisableScope]])
 vim.cmd([[Lspsaga winbar_toggle]])

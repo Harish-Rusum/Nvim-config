@@ -19,7 +19,6 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-	{ "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = { "nvim-lua/plenary.nvim" } },
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "stevearc/oil.nvim" },
 	{
@@ -81,15 +80,6 @@ local plugins = {
 		end,
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		opts = {},
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
@@ -148,39 +138,6 @@ local plugins = {
 	},
 	{'kevinhwang91/nvim-bqf'},
 	{"eandrju/cellular-automaton.nvim"},
-	{
-		'2kabhishek/octohub.nvim',
-		cmd = {
-			'OctoRepos',
-			'OctoRepo',
-			'OctoStats',
-			'OctoActivityStats',
-			'OctoContributionStats',
-			'OctoRepoStats',
-			'OctoProfile',
-			'OctoRepoWeb',
-		},
-		keys = {
-			'<leader>goa',
-			'<leader>goc',
-			'<leader>gof',
-			'<leader>gog',
-			'<leader>goh',
-			'<leader>goi',
-			'<leader>goo',
-			'<leader>gop',
-			'<leader>gor',
-			'<leader>gos',
-			'<leader>got',
-			'<leader>gou',
-			'<leader>gow',
-		},
-		dependencies = {
-			'2kabhishek/utils.nvim',
-			'nvim-telescope/telescope.nvim'
-		},
-		opts = {},
-	},
 	{ "mistricky/codesnap.nvim", build = "make" },
 	{
 		"ThePrimeagen/harpoon",
@@ -208,7 +165,32 @@ local plugins = {
 	{
 		"christoomey/vim-tmux-navigator",
 	},
+
+	{
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
+		opts = {
+			bigfile = { enabled = true },
+			dashboard = { enabled = false },
+			explorer = { enabled = true },
+			indent = { enabled = false },
+			input = { enabled = false },
+			notifier = { enabled = false },
+			picker = { enabled = true },
+			quickfile = { enabled = false },
+			scope = { enabled = false },
+			scroll = { enabled = false },
+			statuscolumn = { enabled = false },
+			words = { enabled = false },
+			styles = {
+				notification = {
+				}
+			}
+		},
+	},
 }
+
 -- PERF: setting a rounded border
 
 local opts = {

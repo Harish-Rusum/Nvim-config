@@ -12,15 +12,6 @@ vim.keymap.set("n", "<leader>;", function()
 	vim.cmd([[Alpha]])
 end, { desc = "Dashboard" })
 
--- PERF: Telescope keymaps
-vim.keymap.set("n", "<leader>ff", function() vim.cmd([[:Telescope fd]]) end, { desc = "Fuzzy find files" })
-vim.keymap.set("n", "<C-p>", function() vim.cmd([[:Telescope fd]]) end, { desc = "Find files" })
-vim.keymap.set("n", "<leader>fg", function() vim.cmd([[:Telescope live_grep]]) end, { desc = "Live grep (search for word)" })
-vim.keymap.set("n", "<leader>fb", function() vim.cmd([[:Telescope buffers]]) end, { desc = "Find open buffers" })
-vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[Telescope builtin]]) end, { desc = "open telescope(finder) builtin" })
-vim.keymap.set("n", "<leader>fs", function() vim.cmd([[:Telescope colorscheme]]) end, { desc = "Colorscheme picker" })
-vim.keymap.set("n", "<leader>fc", function() vim.cmd([[Telescope find_files cwd=~/.config/nvim/]]) end, { desc = "Find config files" })
-
 -- PERF: Run commands
 vim.keymap.set("n", "<leader>rc", function() vim.cmd([[RunCpp]]) end, { desc = "Compile and run C++" })
 
@@ -74,6 +65,32 @@ vim.keymap.set("n", "<leader>gap", function() vim.cmd([[G push]]) end, { desc = 
 vim.keymap.set("n", "<leader>gai", function() vim.cmd([[G init]]) end, { desc = "git init" })
 vim.keymap.set("n", "<leader>gai", function() vim.cmd([[G init]]) end, { desc = "git init" })
 
+-- PERF: Snacks: Tree
+vim.keymap.set("n", "<leader>e", function() vim.cmd[[lua Snacks.explorer()]] end, {desc = "File Explorer" })
+
+-- PERF: Snacks : Git
+vim.keymap.set( "n", "<leader>gb", function() vim.cmd[[lua Snacks.picker.git_branches()]] end, {desc = "Git Branches"})
+vim.keymap.set( "n", "<leader>gl", function() vim.cmd[[lua Snacks.picker.git_log()]] end, {desc = "Git Log" })
+vim.keymap.set( "n", "<leader>gs", function() vim.cmd[[lua Snacks.picker.git_status()]] end, {desc = "Git Status" })
+vim.keymap.set( "n", "<leader>gd", function() vim.cmd[[lua Snacks.picker.git_diff()]] end, {desc = "Git Diff (Hunk)s"})
+vim.keymap.set( "n", "<leader>gf", function() vim.cmd[[lua Snacks.picker.git_log_file()]] end, {desc = "Git Log File" })
+vim.keymap.set( "n", "<leader>gS", function() vim.cmd[[lua Snacks.picker.git_stash()]] end, {desc = "Git Stash" })
+
+-- PERF: Snacks : Registers
+vim.keymap.set( "n", '<leader>f"', function() vim.cmd[[lua Snacks.picker.registers()]] end, {desc = "Registers"} )
+
+-- PERF: Snacks: Find
+vim.keymap.set("n", "<leader>ff", function() vim.cmd[[lua Snacks.picker.files()]] end, { desc = "Fuzzy find files" })
+vim.keymap.set("n", "<leader>fs", function() vim.cmd[[lua Snacks.picker.colorschemes()]] end, { desc = "Color scheme picker" })
+vim.keymap.set("n", "<C-p>", function() vim.cmd([[lua Snacks.picker.files()]]) end, { desc = "Find files" })
+vim.keymap.set("n", "<leader>fg", function() vim.cmd([[lua Snacks.picker.grep()]]) end, { desc = "Live grep (search for word)" })
+vim.keymap.set("n", "<leader>fb", function() vim.cmd([[lua Snacks.picker.buffers()]]) end, { desc = "Live emoji picker" })
+vim.keymap.set("n", "<leader>fi", function() vim.cmd([[lua Snacks.picker.icons()]]) end, { desc = "Pick from icons" })
+vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[lua Snacks.picker()]]) end, { desc = "Pick from all available pickers" })
+
+-- PERF: Snacks : Man
+vim.keymap.set("n", "<leader>fm", function() vim.cmd[[lua Snacks.picker.man()]] end, {desc = "Find man Pages"} )
+
 -- PERF: harpoon
 vim.keymap.set("n", "<C-h>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
 vim.keymap.set("n", "<C-a>", function() require("harpoon"):list():add() end)
@@ -97,7 +114,6 @@ vim.keymap.set("n", "<leader>la", function() vim.cmd([[InspectTree]]) end, { des
 
 -- PERF: file explorer
 vim.keymap.set("n", "e", function() vim.cmd([[Oil]]) end, { desc = "Open parent directory" })
-vim.keymap.set("n", "<leader>e", function() vim.cmd([[Neotree toggle]]) end, { desc = "Open parent directory in tree format" })
 
 -- PERF: window resizing
 vim.keymap.set("n", ",", "<C-w>2>")
@@ -164,36 +180,6 @@ function ToggleTransparency()
 	vim.cmd([[highlight WinSeparator guifg=#383646 guibg=none]])
 	local colors = require("catppuccin.palettes").get_palette("mocha")
 
-	local function darken(color, percentage)
-		local r = tonumber(color:sub(2, 3), 16)
-		local g = tonumber(color:sub(4, 5), 16)
-		local b = tonumber(color:sub(6, 7), 16)
-		r = math.floor(r * (1 - percentage / 100))
-		g = math.floor(g * (1 - percentage / 100))
-		b = math.floor(b * (1 - percentage / 100))
-		return string.format("#%02x%02x%02x", r, g, b)
-	end
-
-	local darken_percentage = 1
-
-	local telescope_highlights = {
-		TelescopePromptTitle = { bg = colors.red, fg = darken(colors.mantle, darken_percentage) },
-		TelescopeResultsTitle = { fg = darken(colors.mantle, darken_percentage), bg = colors.green },
-		TelescopePreviewTitle = { bg = colors.teal, fg = darken(colors.mantle, darken_percentage) },
-		TelescopePromptPrefix = { bg = "none", fg = "#bec6e4", bold = true },
-		TelescopePromptNormal = { bg = "none", fg = "#bec6e4", bold = true },
-		TelescopeResultsNormal = { bg = "none", fg = "#bec6e4", bold = true },
-		TelescopeResultsBorder = { bg = "none", fg = "#89b5fa" },
-		TelescopePromptBorder = { bg = "none", fg = "#89b5fa" },
-		TelescopePreviewNormal = { bg = "none", fg = "#89b5fa" },
-		TelescopePreviewBorder = { bg = "none", fg = "#89b5fa" },
-		TelescopeMatching = { bg = "none", fg = "#7a9ee0" },
-		TelescopeSelection = { bg = "#26233a", fg = "#bec6e4", bold = true },
-	}
-
-	for hl, col in pairs(telescope_highlights) do
-		vim.api.nvim_set_hl(0, hl, col)
-	end
 	vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = "NONE", fg = "#FCFFC1" })
 	vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "NONE", fg = "#FCFFC1" })
 	vim.api.nvim_set_hl(0, "NoiceCmdlineIcon", { fg = "#FCFFC1" })

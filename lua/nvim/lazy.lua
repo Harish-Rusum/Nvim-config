@@ -18,6 +18,20 @@ vim.opt.rtp:prepend(lazypath)
 -- PERF: loadig in plugins
 local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "folke/tokyonight.nvim" },
+	{ "rebelot/kanagawa.nvim" },
+	{ "navarasu/onedark.nvim" },
+	{ "shaunsingh/nord.nvim" },
+	{ "AlexvZyl/nordic.nvim" },
+	{ "EdenEast/nightfox.nvim" },
+	{ "LunarVim/Colorschemes" },
+	{ "RRethy/base16-nvim" },
+	{ "stevearc/quicker.nvim" },
+	{
+		'vyfor/cord.nvim',
+		build = ':Cord update',
+		-- opts = {}
+	},
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{ "stevearc/oil.nvim" },

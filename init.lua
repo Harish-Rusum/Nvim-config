@@ -29,6 +29,7 @@ require("nvim.plugins.alpha")
 require("nvim.plugins.noice")
 require("nvim.plugins.lualine")
 require("nvim.plugins.bqf")
+require("nvim.plugins.quicker")
 
 -- NOTE: terminal plugin
 require("nvim.plugins.toggleterm")

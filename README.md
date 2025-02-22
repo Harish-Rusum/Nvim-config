@@ -2,7 +2,6 @@
 1. [Installation](#installation)
    - [Requirements](#requirements)
    - [How To Install](#how-to-install)
-   - [Note](#note)
    - [Credits](#credits)
 
 2. [Showcase](#showcase)
@@ -15,12 +14,12 @@
 
 ## Requirements
 -  git
+-  fd (for telecsope find files)
 - stylua (mason)
 - ripgrep (by package manager of choice)
 - xclip (by package manager of choice)
 - Yazi (File manager, https://yazi-rs.github.io/docs/installation)
-- A gemini/claude/anthropic/openai api key. (For the ai features), It is set to gemini by default but if you want to change it:
-- "~/.local/share/nvim/lazy/avante.nvim/lua/avante/config.lua" Change the provider on line `13` to whatever you want
+- A github acount (for "copilot auth")
 
 ## How To Install:
 <details><summary> Linux and Mac </summary>
@@ -47,23 +46,18 @@ git clone https://github.com/Harish-Rusum/Nivm-config.git "${env:LOCALAPPDATA}\n
 
 </details>
 
-### Note : 
-You also need to change line `4` in `lua/nvim/git/octohub.lua`. If you have an authenticated `gh` then when you open a repo using octohub.nvim, it will clone the projects into the dir specified in line 4 (`~/Projects` by default).
-
 # Showcase
-![image](https://github.com/user-attachments/assets/d70fa5ee-cde8-47ae-a731-776897612c24)
-![image](https://github.com/user-attachments/assets/50b9a8fc-4343-4973-8bfe-7a7b9a778b6a)
-![image](https://github.com/user-attachments/assets/9f974da1-9cc3-4bd3-9fdf-8272a5d8c0be)
-![image](https://github.com/user-attachments/assets/56533822-1955-4ab3-b8e0-b6637f505d97)
-![image](https://github.com/user-attachments/assets/56f0c63d-d8b1-4be8-aa28-c0d60da2bf40)
-![image](https://github.com/user-attachments/assets/02bbccda-4b3a-47e7-ba94-8ce2aabe7230)
-![image](https://github.com/user-attachments/assets/5411b98d-1ed1-48e1-a3ff-d5e48ee107a8)
-![image](https://github.com/user-attachments/assets/b64a04a9-ac35-403b-91c1-1cd65187b76b)
-![image](https://github.com/user-attachments/assets/88093ce2-62de-47f8-b8d6-362f9821dc3c)
-![image](https://github.com/user-attachments/assets/74dae176-cc44-40b5-bdf2-52445a1818b1)
-![image](https://github.com/user-attachments/assets/12928a70-57f0-4958-b46b-68a098920b58)
-![2025-02-22-180040_hyprshot](https://github.com/user-attachments/assets/14f8e031-92f5-4225-b260-e18a1d669157)
-![2025-02-22-180029_hyprshot](https://github.com/user-attachments/assets/94e73a6f-2b9a-47a8-8515-48f632039439)
+## Transparent terminal background
+![2025-02-22-212542_hyprshot](https://github.com/user-attachments/assets/de7c50be-d348-4eba-9b31-c55ee13b1362)
+![2025-02-22-212941_hyprshot](https://github.com/user-attachments/assets/93474257-db96-49e0-8b35-db6caef14fbd)
+![2025-02-22-213006_hyprshot](https://github.com/user-attachments/assets/06afc604-3f90-4c2d-a363-25076b460181)
+![2025-02-22-213038_hyprshot](https://github.com/user-attachments/assets/b6964d0b-38af-41ce-93f8-24e42f9496d4)
+## Non transparent terminal background
+![2025-02-22-213554_hyprshot](https://github.com/user-attachments/assets/8f180eee-68f4-427c-9ee6-a1bfdaeb660e)
+![2025-02-22-213527_hyprshot](https://github.com/user-attachments/assets/ae22bc4b-c11e-4da4-b0d6-d46b07aee4b9)
+![2025-02-22-213455_hyprshot](https://github.com/user-attachments/assets/a45f68dd-2954-43c6-8c93-c0d374d39ccf)
+![2025-02-22-213354_hyprshot](https://github.com/user-attachments/assets/eb2c39d4-84eb-4e42-ac66-e9446bcbc70e)
+
 
 
 # Credits

@@ -62,6 +62,8 @@ You also need to change line `4` in `lua/nvim/git/octohub.lua`. If you have an a
 ![image](https://github.com/user-attachments/assets/88093ce2-62de-47f8-b8d6-362f9821dc3c)
 ![image](https://github.com/user-attachments/assets/74dae176-cc44-40b5-bdf2-52445a1818b1)
 ![image](https://github.com/user-attachments/assets/12928a70-57f0-4958-b46b-68a098920b58)
+![2025-02-22-180040_hyprshot](https://github.com/user-attachments/assets/14f8e031-92f5-4225-b260-e18a1d669157)
+![2025-02-22-180029_hyprshot](https://github.com/user-attachments/assets/94e73a6f-2b9a-47a8-8515-48f632039439)
 
 
 # Credits

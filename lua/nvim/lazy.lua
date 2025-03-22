@@ -33,7 +33,101 @@ local plugins = {
 		-- opts = {}
 	},
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  {
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		opts = {
+
+			options = {
+				theme = customcat,
+				icons_enabled = true,
+				component_separators = '',
+				section_separators = '',
+				globalstatus = true,
+				refresh = {
+					tabline = 100,
+					statusline = 300,
+					winbar = 300,
+				}
+			},
+			sections = {
+
+				lualine_a = {
+					{
+						'mode',
+						separator = { left = '', right = '' },
+						padding = { left = 1, right = 1 }
+					},
+				},
+				lualine_b = {
+					{ 'branch', separator = { right = '' }, draw_empty = true, },
+				},
+				lualine_c = {
+					{
+						'filename',
+						path = 1,
+						symbols = {
+							modified = '[+]',
+							readonly = '[-]',
+							unnamed = '[No Name]',
+							newfile = '[New]',
+						}
+					},
+					{ 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' } },
+					'%=',
+					'diagnostics',
+				},
+
+				lualine_x = {
+					fileformat,
+					encoding,
+					'filetype',
+				},
+				lualine_y = {
+					{ 'progress', separator = { left = '' } },
+				},
+				lualine_z = {
+					{ 'location', separator = { left = '', right = '' } },
+				},
+
+			},
+			tabline = {
+
+				lualine_a = {
+					{ 'searchcount', separator = { left = '', right = '' } },
+					{
+						recording,
+						separator = { left = '', right = '' },
+						color = { fg = "white", bg = "red" }
+					}
+				},
+				lualine_b = {
+				},
+				lualine_c = { 'selectioncount' },
+				lualine_x = {},
+				lualine_y = {
+					{ lsp_name, separator = { left = '', }, draw_empty = true },
+				},
+				lualine_z = {
+					{
+						'buffers',
+						fmt = function(str) return str:sub(1, 4) end,
+						use_mode_colors = true,
+						symbols = {
+							modified = ' ●',
+							directory = ' ',
+							alternate_file = '',
+						},
+						separator = { left = '', right = '' },
+						component_separators = { right = '' },
+						section_separators = { left = '', right = '' },
+					},
+				}
+
+			},
+
+		},
+	},
 	{ "stevearc/oil.nvim" },
 	{
 		"folke/which-key.nvim",
@@ -157,13 +251,6 @@ local plugins = {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		requires = { {"nvim-lua/plenary.nvim"} }
-	},
-	{
-		'b0o/incline.nvim',
-		config = function()
-			require('incline').setup()
-		end,
-		event = 'VeryLazy',
 	},
 	{
 		"matveyt/neoclip"

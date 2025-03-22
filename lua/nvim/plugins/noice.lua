@@ -25,3 +25,7 @@ require("noice").setup({
 vim.defer_fn(function()
 	vim.cmd([[set cmdheight=1]])
 end, 100)
+
+vim.defer_fn(function()
+	vim.cmd[[Lspsaga winbar_toggle]]
+end, 200)

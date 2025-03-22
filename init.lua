@@ -38,9 +38,6 @@ require("nvim.plugins.toggleterm")
 require("nvim.general.styling")
 require("nvim.general.settings")
 
--- NOTE: Filename in the top right
-require("nvim.plugins.filename")
-
 -- NOTE: Better lsp
 require("nvim.lsp.lspsaga")
 
@@ -49,3 +46,4 @@ require("lang.cpp.run")
 
 -- NOTE:  keymaps
 require("nvim.general.keymaps")
+

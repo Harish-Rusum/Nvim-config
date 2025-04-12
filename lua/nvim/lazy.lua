@@ -1,3 +1,14 @@
+-- ------------------------------------------------------------------------ --
+--                             CUSTOM FUNCTIONS                             --
+-- ------------------------------------------------------------------------ --
+
+-- Recording Status
+local function recording()
+  local reg = vim.fn.reg_recording()
+  if reg == "" then return "" end -- not recording
+  return "󰑊 REC"
+end
+
 -- PERF: setting up lazypath
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 vim.keymap.set("n", "<leader>bn", function()
@@ -32,7 +43,9 @@ local plugins = {
 		build = ':Cord update',
 		-- opts = {}
 	},
+
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+
   {
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -63,24 +76,12 @@ local plugins = {
 					{ 'branch', separator = { right = '' }, draw_empty = true, },
 				},
 				lualine_c = {
-					{
-						'filename',
-						path = 1,
-						symbols = {
-							modified = '[+]',
-							readonly = '[-]',
-							unnamed = '[No Name]',
-							newfile = '[New]',
-						}
-					},
 					{ 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' } },
 					'%=',
 					'diagnostics',
 				},
 
 				lualine_x = {
-					fileformat,
-					encoding,
 					'filetype',
 				},
 				lualine_y = {
@@ -98,20 +99,18 @@ local plugins = {
 					{
 						recording,
 						separator = { left = '', right = '' },
-						color = { fg = "white", bg = "red" }
+						color = { fg = "white", bg = "#FF746C" }
 					}
 				},
+
 				lualine_b = {
 				},
 				lualine_c = { 'selectioncount' },
 				lualine_x = {},
-				lualine_y = {
-					{ lsp_name, separator = { left = '', }, draw_empty = true },
-				},
 				lualine_z = {
 					{
 						'buffers',
-						fmt = function(str) return str:sub(1, 4) end,
+						fmt = function(str) return str:sub(1, 20) end,
 						use_mode_colors = true,
 						symbols = {
 							modified = ' ●',
@@ -128,6 +127,7 @@ local plugins = {
 
 		},
 	},
+
 	{ "stevearc/oil.nvim" },
 	{
 		"folke/which-key.nvim",
@@ -273,6 +273,7 @@ local plugins = {
 		lazy = false,
 		opts = {
 			bigfile = { enabled = true },
+			scratch = { enabled = true },
 			dashboard = { enabled = false },
 			explorer = { enabled = true },
 			indent = { enabled = false },

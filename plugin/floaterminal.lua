@@ -11,7 +11,7 @@ local function create_floating_window(opts)
   local height = opts.height or math.floor(vim.o.lines * 0.8)
 
   local col = math.floor((vim.o.columns - width) / 2)
-  local row = math.floor((vim.o.lines - height) / 2)
+  local row = math.floor((vim.o.lines - height) / 2)-1
 
   local buf = nil
   if vim.api.nvim_buf_is_valid(opts.buf) then

@@ -23,7 +23,7 @@ require("noice").setup({
 })
 
 vim.defer_fn(function()
-	vim.cmd([[set cmdheight=1]])
+	vim.cmd([[set cmdheight=0]])
 end, 100)
 
 vim.defer_fn(function()

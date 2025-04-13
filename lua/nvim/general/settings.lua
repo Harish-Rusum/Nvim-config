@@ -67,7 +67,7 @@ setIndent("python", 4, 4)
 setIndent("cpp", 4, 4)
 
 vim.cmd([[bufdo LspStart]])
-vim.cmd([[IBLDisableScope]])
+-- vim.cmd([[IBLDisableScope]])
 vim.cmd([[Lspsaga winbar_toggle]])
 -- vim.api.nvim_set_hl(0, 'Whitespace', { ctermfg = 240, guifg = '#5c6370' })
 vim.cmd([[highlight Whitespace guifg=#303345 guibg=none]])

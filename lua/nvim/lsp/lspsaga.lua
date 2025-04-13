@@ -1,1 +1,1 @@
-vim.cmd[[Lspsaga winbar_toggle]]
+-- vim.cmd[[Lspsaga winbar_toggle]]

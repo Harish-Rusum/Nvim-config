@@ -7,9 +7,9 @@ end)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- PERF: Alpha
+-- PERF: Dashboard
 vim.keymap.set("n", "<leader>;", function()
-	vim.cmd([[Alpha]])
+	vim.cmd([[lua Snacks.dashboard()]])
 end, { desc = "Dashboard" })
 
 -- PERF: Run commands
@@ -52,7 +52,7 @@ vim.keymap.set("n", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal
 vim.keymap.set("t", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal size=20") end)
 
 -- PERF: setting up terminal keymaps
-vim.keymap.set("n", "<leader>is", function() vim.cmd([[IBLToggleScope]]) end, { desc = "Toggle highlighting scope" })
+-- vim.keymap.set("n", "<leader>is", function() vim.cmd([[IBLToggleScope]]) end, { desc = "Toggle highlighting scope" })
 
 -- PERF: git
 vim.keymap.set("n", "<leader>gaa", function() vim.cmd([[G add]]) end, { desc = "git add" })

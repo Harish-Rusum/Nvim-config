@@ -4,9 +4,11 @@
 
 -- Recording Status
 local function recording()
-  local reg = vim.fn.reg_recording()
-  if reg == "" then return "" end -- not recording
-  return "󰑊 REC"
+	local reg = vim.fn.reg_recording()
+	if reg == "" then
+		return ""
+	end -- not recording
+	return "󰑊 REC"
 end
 
 -- PERF: setting up lazypath
@@ -39,92 +41,90 @@ local plugins = {
 	{ "RRethy/base16-nvim" },
 	{ "stevearc/quicker.nvim" },
 	{
-		'vyfor/cord.nvim',
-		build = ':Cord update',
+		"vyfor/cord.nvim",
+		build = ":Cord update",
 		-- opts = {}
 	},
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-  {
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 
 			options = {
 				theme = customcat,
 				icons_enabled = true,
-				component_separators = '',
-				section_separators = '',
+				component_separators = "",
+				section_separators = "",
 				globalstatus = true,
 				refresh = {
 					tabline = 100,
 					statusline = 300,
 					winbar = 300,
-				}
+				},
 			},
 			sections = {
 
 				lualine_a = {
 					{
-						'mode',
-						separator = { left = '', right = '' },
-						padding = { left = 1, right = 1 }
+						"mode",
+						separator = { left = "", right = "" },
+						padding = { left = 1, right = 1 },
 					},
 				},
 				lualine_b = {
-					{ 'branch', separator = { right = '' }, draw_empty = true, },
+					{ "branch", separator = { right = "" }, draw_empty = true },
 				},
 				lualine_c = {
-					{ 'diff', symbols = { added = ' ', modified = ' ', removed = ' ' } },
-					'%=',
-					'diagnostics',
+					{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
+					"%=",
+					"diagnostics",
 				},
 
 				lualine_x = {
-					'filetype',
+					"filetype",
 				},
 				lualine_y = {
-					{ 'progress', separator = { left = '' } },
+					{ "progress", separator = { left = "" } },
 				},
 				lualine_z = {
-					{ 'location', separator = { left = '', right = '' } },
+					{ "location", separator = { left = "", right = "" } },
 				},
-
 			},
 			tabline = {
 
 				lualine_a = {
-					{ 'searchcount', separator = { left = '', right = '' } },
+					{ "searchcount", separator = { left = "", right = "" } },
 					{
 						recording,
-						separator = { left = '', right = '' },
-						color = { fg = "white", bg = "#FF746C" }
-					}
+						separator = { left = "", right = "" },
+						color = { fg = "white", bg = "#FF746C" },
+					},
 				},
 
-				lualine_b = {
-				},
-				lualine_c = { 'selectioncount' },
+				lualine_b = {},
+				lualine_c = { "selectioncount" },
 				lualine_x = {},
 				lualine_z = {
 					{
-						'buffers',
-						fmt = function(str) return str:sub(1, 20) end,
+						"buffers",
+						fmt = function(str)
+							return str:sub(1, 20)
+						end,
 						use_mode_colors = true,
 						symbols = {
-							modified = ' ●',
-							directory = ' ',
-							alternate_file = '',
+							modified = " ●",
+							directory = " ",
+							alternate_file = "",
 						},
-						separator = { left = '', right = '' },
-						component_separators = { right = '' },
-						section_separators = { left = '', right = '' },
+						separator = { left = "", right = "" },
+						component_separators = { right = "" },
+						section_separators = { left = "", right = "" },
 					},
-				}
-
+				},
 			},
-
 		},
 	},
 
@@ -175,7 +175,7 @@ local plugins = {
 	{ "nvim-treesitter/nvim-treesitter" },
 	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
-	{"tpope/vim-fugitive"},
+	{ "tpope/vim-fugitive" },
 	{ "brenoprata10/nvim-highlight-colors" },
 	{ "rcarriga/nvim-notify" },
 	{ "MunifTanjim/nui.nvim", event = "VimEnter" },
@@ -195,7 +195,26 @@ local plugins = {
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
-	{ "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons" } },
+	-- { "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons" } },
+  {
+    "echasnovski/mini.icons",
+    lazy = true,
+    opts = {
+      file = {
+        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+        ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
+      },
+      filetype = {
+        dotenv = { glyph = "", hl = "MiniIconsYellow" },
+      },
+    },
+    init = function()
+      package.preload["nvim-web-devicons"] = function()
+        require("mini.icons").mock_nvim_web_devicons()
+        return package.loaded["nvim-web-devicons"]
+      end
+    end,
+  },
 	{ "tpope/vim-surround" },
 	{
 		"Wansmer/treesj",
@@ -206,98 +225,163 @@ local plugins = {
 		end,
 	},
 	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			"folke/noice.nvim",
+			event = "VeryLazy",
+			opts = {
+				lsp = {
+					override = {
+						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+						["vim.lsp.util.stylize_markdown"] = true,
+						["cmp.entry.get_documentation"] = true,
+					},
+				},
+				routes = {
+				},
+				presets = {
+					bottom_search = true,
+					command_palette = true,
+					long_message_to_split = true,
+				},
+			},
 		},
-	},
-	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
-	{ "ThePrimeagen/vim-be-good" },
-	{ "rose-pine/neovim", name = "rose-pine" },
-	{
-		'nvimdev/lspsaga.nvim',
-		config = function()
-			require("lspsaga").setup({
-				breadcrumbs = {
-					enabled = false,
-				},
-				lightbulb = {
-					enable = false,
-				},
-				code_action = '',
-				diagnostic = {
-					jump_num = false,
-				},
-			})
-		end,
-	},
-	{'arkav/lualine-lsp-progress'},
-	{
-		"kylechui/nvim-surround",
-		version = "*",
-		event = "VeryLazy",
-		config = function()
-			require("nvim-surround").setup({
-			})
-		end
-	},
-	{'kevinhwang91/nvim-bqf'},
-	{"eandrju/cellular-automaton.nvim"},
-	{ "mistricky/codesnap.nvim", build = "make" },
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		requires = { {"nvim-lua/plenary.nvim"} }
-	},
-	{
-		"matveyt/neoclip"
-	},
-	{
-		"echasnovski/mini.ai"
-	},
-	{
-		'stevearc/oil.nvim',
-		opts = {},
-		dependencies = { { "echasnovski/mini.icons", opts = {} } },
-	},
-	{
-		"christoomey/vim-tmux-navigator",
-	},
-
-	{
-		"folke/snacks.nvim",
-		priority = 1000,
-		lazy = false,
-		opts = {
-			bigfile = { enabled = true },
-			scratch = { enabled = true },
-			dashboard = { enabled = false },
-			explorer = { enabled = true },
-			indent = { enabled = false },
-			input = { enabled = false },
-			notifier = { enabled = false },
-			picker = { enabled = true },
-			quickfile = { enabled = false },
-			scope = { enabled = false },
-			scroll = { enabled = false },
-			statuscolumn = { enabled = false },
-			words = { enabled = false },
-			styles = {
-				notification = {
-				}
-			}
+		{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" },
+		{ "ThePrimeagen/vim-be-good" },
+		{ "rose-pine/neovim", name = "rose-pine" },
+		{
+			"nvimdev/lspsaga.nvim",
+			config = function()
+				require("lspsaga").setup({
+					breadcrumbs = {
+						enabled = false,
+					},
+					lightbulb = {
+						enable = false,
+					},
+					code_action = "",
+					diagnostic = {
+						jump_num = false,
+					},
+				})
+			end,
 		},
-	},
-}
+		{ "arkav/lualine-lsp-progress" },
+		{
+			"kylechui/nvim-surround",
+			version = "*",
+			event = "VeryLazy",
+			config = function()
+				require("nvim-surround").setup({})
+			end,
+		},
+		{ "kevinhwang91/nvim-bqf" },
+		{ "eandrju/cellular-automaton.nvim" },
+		{ "mistricky/codesnap.nvim", build = "make" },
+		{
+			"ThePrimeagen/harpoon",
+			branch = "harpoon2",
+			requires = { { "nvim-lua/plenary.nvim" } },
+		},
+		{
+			"matveyt/neoclip",
+		},
+		{
+			"echasnovski/mini.ai",
+		},
+		{
+			"stevearc/oil.nvim",
+			opts = {},
+			dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		},
+		{
+			"christoomey/vim-tmux-navigator",
+		},
 
--- PERF: setting a rounded border
+		{
+			"folke/snacks.nvim",
+			priority = 1000,
+			lazy = false,
+			opts = {
+				bigfile = { enabled = true },
+				scratch = { enabled = true },
+				dashboard = {
+					preset = {
+						pick = function(cmd, opts)
+							return LazyVim.pick(cmd, opts)()
+						end,
+						-- header = [[
+						--      ██╗      █████╗ ███████╗██╗   ██╗██╗   ██╗██╗███╗   ███╗          Z
+						--      ██║     ██╔══██╗╚══███╔╝╚██╗ ██╔╝██║   ██║██║████╗ ████║      Z
+						--      ██║     ███████║  ███╔╝  ╚████╔╝ ██║   ██║██║██╔████╔██║   z
+						--      ██║     ██╔══██║ ███╔╝    ╚██╔╝  ╚██╗ ██╔╝██║██║╚██╔╝██║ z
+						--      ███████╗██║  ██║███████╗   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║
+						--      ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝
+						--      ]],
+						header = [[                           
+  ▄▄         ▄ ▄▄▄▄▄▄▄    
+▄▀███▄     ▄██ █████▀     
+██▄▀███▄   ███            
+███  ▀███▄ ███            
+███    ▀██ ███            
+███      ▀ ███            
+▀██ █████▄▀█▀▄██████▄     
+  ▀ ▀▀▀▀▀▀▀ ▀▀▀▀▀▀▀▀▀▀    
+         eovim           
+                         ]],
+						---@type snacks.dashboard.Item[]
+						keys = {
+							{
+								icon = " ",
+								key = "f",
+								desc = "Find File",
+								action = ":lua Snacks.dashboard.pick('files')",
+							},
+							{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+							{
+								icon = " ",
+								key = "g",
+								desc = "Find Text",
+								action = ":lua Snacks.dashboard.pick('live_grep')",
+							},
+							{
+								icon = " ",
+								key = "r",
+								desc = "Recent Files",
+								action = ":lua Snacks.dashboard.pick('oldfiles')",
+							},
+							{
+								icon = " ",
+								key = "c",
+								desc = "Config",
+								action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+							},
+							{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
+							{ icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+							{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+						},
+					},
+				},
+				explorer = { enabled = true },
+				indent = { enabled = false },
+				input = { enabled = false },
+				notifier = { enabled = true },
+				notify = { enabled = true },
+				picker = { enabled = true },
+				quickfile = { enabled = false },
+				scope = { enabled = false },
+				scroll = { enabled = false },
+				statuscolumn = { enabled = false },
+				words = { enabled = false },
+				styles = {
+					notification = {},
+				},
+			},
+		},
+	}
+	-- PERF: setting a rounded border
 
-local opts = {
-	ui = {
-		border = "rounded",
-	},
-}
-require("lazy").setup(plugins, opts)
+	local opts = {
+		ui = {
+			border = "rounded",
+		},
+	}
+	require("lazy").setup(plugins, opts)

@@ -26,7 +26,6 @@ require("nvim.plugins.which-key")
 require("nvim.plugins.treesitter")
 require("nvim.plugins.hicolors")
 require("nvim.plugins.noice")
-require("nvim.plugins.lualine")
 require("nvim.plugins.bqf")
 require("nvim.plugins.quicker")
 

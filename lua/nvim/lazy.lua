@@ -281,9 +281,6 @@ local plugins = {
 			requires = { { "nvim-lua/plenary.nvim" } },
 		},
 		{
-			"matveyt/neoclip",
-		},
-		{
 			"echasnovski/mini.ai",
 		},
 		{

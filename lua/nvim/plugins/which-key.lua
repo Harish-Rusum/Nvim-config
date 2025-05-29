@@ -1,21 +1,36 @@
 -- PERF: setting up the preview in the whcih key menu
 
-require("which-key").register({
-	["<leader>t"] = { name = "Transparent bg", _ = "which_key_ignore" },
-	["<leader>m"] = { name = "Split or Join Code Blocks", desc = "Split or Join Code Blocks" },
-	["<leader>f"] = { name = "Find", _ = "which_key_ignore" },
-	["<leader>s"] = { name = "Split pane", _ = "which_key_ignore" },
-	["<leader>l"] = { name = "Lsp", _ = "which_key_ignore" },
-	["<leader>b"] = { name = "Buffer", _ = "which_key_ignore" },
-	["<leader>c"] = { name = "Code", _ = "which_key_ignore" },
-	["<leader>z"] = { name = "Zen mode", _ = "which_key_ignore" },
-	["<leader>i"] = { name = "Indent lines", _ = "which_key_ignore" },
-	["<leader>g"] = { name = "Git", _ = "which_key_ignore" },
-	["<leader>p"] = { name = "Practice", _ = "which_key_ignore" },
-	["<leader>n"] = { name = "Notifications", _ = "which_key_ignore" },
-	["<leader>ga"] = { name = "Git action", _ = "which_key_ignore" },
-	["<leader><leader>"] = { name = "Other", _ = "which_key_ignore" },
-})
+require("which-key").register(
+  {
+    { "<leader><leader>", group = "Other" },
+    { "<leader><leader>_", hidden = true },
+    { "<leader>b", group = "Buffer" },
+    { "<leader>b_", hidden = true },
+    { "<leader>c", group = "Code" },
+    { "<leader>c_", hidden = true },
+    { "<leader>f", group = "Find" },
+    { "<leader>f_", hidden = true },
+    { "<leader>g", group = "Git" },
+    { "<leader>g_", hidden = true },
+    { "<leader>ga", group = "Git action" },
+    { "<leader>ga_", hidden = true },
+    { "<leader>i", group = "Indent lines" },
+    { "<leader>i_", hidden = true },
+    { "<leader>l", group = "Lsp" },
+    { "<leader>l_", hidden = true },
+    { "<leader>m", group = "Split or Join Code Blocks" },
+    { "<leader>n", group = "Notifications" },
+    { "<leader>n_", hidden = true },
+    { "<leader>p", group = "Practice" },
+    { "<leader>p_", hidden = true },
+    { "<leader>s", group = "Split pane" },
+    { "<leader>s_", hidden = true },
+    { "<leader>t", group = "Transparent bg" },
+    { "<leader>t_", hidden = true },
+    { "<leader>z", group = "Zen mode" },
+    { "<leader>z_", hidden = true },
+  }
+)
 
 -- PERF: making which key have a rounder border
 

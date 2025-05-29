@@ -173,7 +173,6 @@ local plugins = {
 	{ "nacro90/numb.nvim" },
 	{ "numToStr/Comment.nvim", opts = {}, lazy = false },
 	{ "nvim-treesitter/nvim-treesitter" },
-	{ "RRethy/vim-illuminate" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{ "tpope/vim-fugitive" },
 	{ "brenoprata10/nvim-highlight-colors" },

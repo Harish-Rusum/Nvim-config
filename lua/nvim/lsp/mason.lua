@@ -1,30 +1,29 @@
--- PERF: setting up mason with rouded borders
-
+-- PERF: setting up mason with rounded borders
 require("mason").setup({
-	ui = {
-		border = "rounded",
-	},
+    ui = {
+        border = "rounded",
+    },
 })
 
--- PERF: installing python,lua and c++ language servers
+-- PERF: mason-lspconfig installs servers but does NOT auto-attach them
+-- require("mason-lspconfig").setup({
+--     ensure_installed = { "pyright", "lua_ls", "clangd" },
+--     automatic_installation = false, -- important: prevents auto-setup
+-- })
 
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"pyright",
-		"lua_ls",
-		"clangd",
-}})
+-- PERF: manual setup of language servers
 
--- PERF: setting up the language servers
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require("lspconfig")
-lspconfig.pyright.setup({
-	capabilities = capabilities,
-})
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
-})
-lspconfig.clangd.setup({
-	capabilities = capabilities,
-})
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+-- Only attach lua_ls if there isn't already one for this root
+local already_attached = false
+for _, c in pairs(vim.lsp.get_active_clients()) do
+    if c.name == "lua_ls" and c.root_dir == vim.loop.cwd() then
+        already_attached = true
+    end
+end
+
+if not already_attached then
+    lspconfig.lua_ls.setup({ capabilities = capabilities })
+end

@@ -41,10 +41,26 @@ local plugins = {
 	{ "RRethy/base16-nvim" },
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-
+	{
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	opts = {
+		-- your configuration comes here
+		-- or leave it empty to use the default settings
+		-- refer to the configuration section below
+	},
+	keys = {
+		{
+			"<leader>?",
+			function()
+				require("which-key").show({ global = false })
+			end,
+			desc = "Buffer Local Keymaps (which-key)",
+		},
+	},
+	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 
 			options = {
@@ -138,7 +154,7 @@ local plugins = {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
 	{ "folke/trouble.nvim", opts = {}, cmd = "Trouble" },
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ "akinsho/bufferline.nvim", version = "*"},
 	{ "stevearc/dressing.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
 	{
@@ -174,31 +190,12 @@ local plugins = {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		opts = {},
-		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+		dependencies = { "nvim-treesitter/nvim-treesitter"},
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "j-hui/fidget.nvim", opts = {} },
 	-- { "goolord/alpha-nvim", dependencies = { "echasnovski/mini.icons" } },
-  {
-    "echasnovski/mini.icons",
-    lazy = true,
-    opts = {
-      file = {
-        [".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
-        ["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
-      },
-      filetype = {
-        dotenv = { glyph = "", hl = "MiniIconsYellow" },
-      },
-    },
-    init = function()
-      package.preload["nvim-web-devicons"] = function()
-        require("mini.icons").mock_nvim_web_devicons()
-        return package.loaded["nvim-web-devicons"]
-      end
-    end,
-  },
 	{ "tpope/vim-surround" },
 	{
 		"Wansmer/treesj",

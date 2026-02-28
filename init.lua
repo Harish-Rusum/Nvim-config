@@ -21,7 +21,6 @@ require("nvim.git.gitsigns")
 require("nvim.git.git")
 
 -- NOTE: UI plugins (interface)
-require("nvim.plugins.which-key")
 require("nvim.plugins.treesitter")
 require("nvim.plugins.noice")
 

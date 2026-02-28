@@ -2,7 +2,8 @@
 
 -- PERF: Vim appearance settings
 vim.api.nvim_create_augroup("nobg", { clear = true })
-vim.cmd.colorscheme("catppuccin")
+-- vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("tokyonight-night")
 vim.cmd([[highlight Visual guibg=#2f2f3f guifg=none]])
 vim.opt.showmode = false
 

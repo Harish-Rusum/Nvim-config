@@ -10,7 +10,7 @@ require("nvim.lsp.none-ls")
 require("nvim.lsp.completions")
 require("nvim.lsp.mason")
 require("nvim.plugins.conform")
--- require("nvim.lsp.lines")
+require("nvim.lsp.lines")
 
 -- NOTE: search stuff
 require("nvim.plugins.oil")

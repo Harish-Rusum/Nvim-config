@@ -91,19 +91,6 @@ vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[lua Snacks.picker(
 -- PERF: Snacks : Man
 vim.keymap.set("n", "<leader>fm", function() vim.cmd[[lua Snacks.picker.man()]] end, {desc = "Find man Pages"} )
 
--- PERF: harpoon
-vim.keymap.set("n", "<C-h>", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end)
-vim.keymap.set("n", "<C-a>", function() require("harpoon"):list():add() end)
-
-vim.keymap.set("n", "<leader>1", function() require("harpoon"):list():select(1) end, {desc = "Go to first harpoon item"})
-vim.keymap.set("n", "<leader>2", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
-vim.keymap.set("n", "<leader>3", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
-vim.keymap.set("n", "<leader>4", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
-vim.keymap.set("n", "<C-1>", function() require("harpoon"):list():select(1) end, {desc = "Go to first harpoon item"})
-vim.keymap.set("n", "<C-2>", function() require("harpoon"):list():select(2) end, {desc = "Go to second harpoon item"})
-vim.keymap.set("n", "<C-3>", function() require("harpoon"):list():select(3) end, {desc = "Go to third harpoon item"})
-vim.keymap.set("n", "<C-4>", function() require("harpoon"):list():select(4) end, {desc = "Go to fourth harpoon item"})
-
 -- PERF: setting up LSP actions
 vim.keymap.set("n", "<leader>cf", function() vim.cmd([[echo 'Formatted successfully' | Format]]) end, { desc = "Format buffer" })
 vim.keymap.set("n", "<leader>cg", function() vim.cmd([[lua vim.lsp.buf.definition()]]) end, { desc = "Go to file" })

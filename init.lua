@@ -15,7 +15,6 @@ require("nvim.plugins.conform")
 -- NOTE: search stuff
 require("nvim.plugins.oil")
 require("nvim.plugins.numb")
-require("nvim.plugins.harpoon")
 
 -- NOTE: git / github
 require("nvim.git.gitsigns")
@@ -24,10 +23,7 @@ require("nvim.git.git")
 -- NOTE: UI plugins (interface)
 require("nvim.plugins.which-key")
 require("nvim.plugins.treesitter")
-require("nvim.plugins.hicolors")
 require("nvim.plugins.noice")
-require("nvim.plugins.bqf")
-require("nvim.plugins.quicker")
 
 -- NOTE: terminal plugin
 require("nvim.plugins.toggleterm")

@@ -39,12 +39,6 @@ local plugins = {
 	{ "EdenEast/nightfox.nvim" },
 	{ "LunarVim/Colorschemes" },
 	{ "RRethy/base16-nvim" },
-	{ "stevearc/quicker.nvim" },
-	{
-		"vyfor/cord.nvim",
-		build = ":Cord update",
-		-- opts = {}
-	},
 
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
@@ -272,14 +266,8 @@ local plugins = {
 				require("nvim-surround").setup({})
 			end,
 		},
-		{ "kevinhwang91/nvim-bqf" },
 		{ "eandrju/cellular-automaton.nvim" },
 		{ "mistricky/codesnap.nvim", build = "make" },
-		{
-			"ThePrimeagen/harpoon",
-			branch = "harpoon2",
-			requires = { { "nvim-lua/plenary.nvim" } },
-		},
 		{
 			"echasnovski/mini.ai",
 		},

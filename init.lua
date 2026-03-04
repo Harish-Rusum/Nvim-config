@@ -4,9 +4,6 @@ require("config.lazy")
 -- PERF: settings
 require("config.settings")
 
--- PERF: styling
-require("config.styling")
-
 -- PERF: keymaps
 require("config.keymaps")
 

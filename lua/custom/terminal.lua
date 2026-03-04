@@ -89,7 +89,7 @@ vim.api.nvim_create_user_command("RunCpp", function()
 
   -- Modify flags here to your liking
   local compile_cmd = string.format(
-    "g++ %s -std=c++23 -O2 -Wall -Wextra -Wshadow -Wconversion -Wpedantic -fsanitize=address,undefined -DLOCAL -o %s && ./%s",
+    "g++ %s -std=c++23 -O2 -o output && ./output",
     file,
     exe,
     exe

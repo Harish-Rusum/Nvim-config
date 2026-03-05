@@ -38,6 +38,18 @@ vim.keymap.set("t", "<C-]>", function() vim.cmd("ToggleTerm direction=horizontal
 -- PERF: setting up terminal keymaps
 -- vim.keymap.set("n", "<leader>is", function() vim.cmd([[IBLToggleScope]]) end, { desc = "Toggle highlighting scope" })
 
+-- PERF: window movement
+vim.keymap.set("n", "<C-Left>",  "<C-w>h", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-Down>",  "<C-w>j", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-Up>",    "<C-w>k", { desc = "Move focus to the upper window" })
+
+
+-- PERF: window movement
+vim.keymap.set("n", "<leader>it", function() vim.cmd([[InlayHintsToggle]]) end, { desc = "Toggle Inlay hints" })
+vim.keymap.set("n", "<leader>id", function() vim.cmd([[InlayHintsDisable]]) end, { desc = "Inlay hints disable" })
+vim.keymap.set("n", "<leader>ie", function() vim.cmd([[InlayHintsEnable]]) end, { desc = "Inlay hints enable" })
+
 -- PERF: git
 vim.keymap.set("n", "<leader>gaa", function() vim.cmd([[G add]]) end, { desc = "git add" })
 vim.keymap.set("n", "<leader>gar", function() vim.cmd([[G reset]]) end, { desc = "git remove" })
@@ -67,10 +79,10 @@ vim.keymap.set( "n", '<leader>f"', function() vim.cmd[[lua Snacks.picker.registe
 vim.keymap.set("n", "<leader>ff", function() vim.cmd[[lua Snacks.picker.files()]] end, { desc = "Fuzzy find files" })
 vim.keymap.set("n", "<leader>fs", function() vim.cmd[[lua Snacks.picker.colorschemes()]] end, { desc = "Color scheme picker" })
 vim.keymap.set("n", "<C-p>", function() vim.cmd([[lua Snacks.picker.files()]]) end, { desc = "Find files" })
-vim.keymap.set("n", "<leader>fg", function() vim.cmd([[lua Snacks.picker.grep()]]) end, { desc = "Live grep (search for word)" })
+vim.keymap.set("n", "<leader>fg", function() vim.cmd([[lua Snacks.picker.grep()]]) end, { desc = "Live grep " })
+vim.keymap.set("n", "<leader><leader>", function() vim.cmd([[lua Snacks.picker.grep_buffers()]]) end, { desc = "Grep inside buffer" })
 vim.keymap.set("n", "<leader>fb", function() vim.cmd([[lua Snacks.picker.buffers()]]) end, { desc = "Live emoji picker" })
 vim.keymap.set("n", "<leader>fi", function() vim.cmd([[lua Snacks.picker.icons()]]) end, { desc = "Pick from icons" })
-vim.keymap.set("n", "<leader><leader>f", function() vim.cmd([[lua Snacks.picker()]]) end, { desc = "Pick from all available pickers" })
 
 -- PERF: Snacks : Man
 vim.keymap.set("n", "<leader>fm", function() vim.cmd[[lua Snacks.picker.man()]] end, {desc = "Find man Pages"} )
@@ -103,9 +115,6 @@ vim.keymap.set("n", "<leader>bc", function() vim.cmd([[bdelete]]) end, { desc = 
 vim.keymap.set("n", "<leader>bp", function() vim.cmd([[bprev]]) end, { desc = "Previous buffer" })
 vim.keymap.set("n", "<Tab>", function() vim.cmd([[bn]]) end, { desc = "Toggle buffer focus" })
 
--- PERF: Vim be good
-vim.keymap.set("n", "<leader>pv", function() vim.cmd([[VimBeGood]]) end, { desc = "Practice vim" })
-
 -- PERF: other terminal keybindings
 vim.keymap.set("t", "<C-w>", [[<C-\><C-n><C-w>]])
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
@@ -129,7 +138,6 @@ vim.api.nvim_set_keymap("v", "<S-Down>", "<Down>", { noremap = true, silent = tr
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
-vim.keymap.set("n", "<leader><leader>c", "i<C-r>=", { desc = "open calculator" })
 vim.keymap.set("n", "123", "<Esc>", { desc = "open calculator" })
 vim.keymap.set("i", "123", "<Esc>", { desc = "open calculator" })
 vim.keymap.set("n", "<leader>w", function() vim.cmd([[w]]) end, { desc = "save file" })
@@ -159,14 +167,14 @@ end
 
 vim.api.nvim_set_keymap("n", "<leader>T", ":lua ToggleTransparency()<CR>", { noremap = true, silent = true, desc = "Toggle transparent background" })
 
-vim.keymap.set("n", "<leader><leader>p", function()
-    local current_file = vim.api.nvim_buf_get_name(0)
-    if current_file == "" then
-        print("No file currently open")
-        return
-    end
-
-    local current_dir = vim.fn.fnamemodify(current_file, ":p:h")
-    vim.api.nvim_set_current_dir(current_dir)
-    print("Changed root directory to " .. current_dir)
-end, { desc = "Change root dir to this dir" })
+-- vim.keymap.set("n", "<leader><leader>p", function()
+--     local current_file = vim.api.nvim_buf_get_name(0)
+--     if current_file == "" then
+--         print("No file currently open")
+--         return
+--     end
+--
+--     local current_dir = vim.fn.fnamemodify(current_file, ":p:h")
+--     vim.api.nvim_set_current_dir(current_dir)
+--     print("Changed root directory to " .. current_dir)
+-- end, { desc = "Change root dir to this dir" })

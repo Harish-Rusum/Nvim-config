@@ -1,17 +1,21 @@
 local opt = vim.opt
 local g = vim.g
 
-opt.guicursor = "n-v-c:block,i:block"
+-- opt.guicursor = "n-v-c:block,i:block"
+
+vim.opt.guicursor =
+  "n-v-c-sm:block," ..
+  "i-ci-ve:ver100," ..
+  "r-cr-o:hor20"
 
 opt.number = true
 opt.relativenumber = true
-
 opt.splitright = true
 opt.splitbelow = true
-
 opt.wrap = false
 opt.showcmd = true
 opt.smartcase = true
+opt.ignorecase = true
 opt.signcolumn = "yes"
 opt.updatetime = 250
 opt.timeoutlen = 300
@@ -19,11 +23,11 @@ opt.inccommand = "split"
 opt.scrolloff = 10
 opt.showmode = false
 opt.cmdheight = 0
-
+opt.inccommand = "split"
 opt.list = true
-opt.listchars = { tab = "▎ " }
-
+opt.listchars = { tab = "▎ ", trail = "·", nbsp = "␣" }
 opt.undofile = true
+opt.cursorline = true
 
 g.mapleader = " "
 g.maplocalleader = " "
@@ -71,7 +75,6 @@ set_indent("lua", 2, 2)
 set_indent("python", 4, 4)
 set_indent("cpp", 4, 4)
 
-vim.cmd("IBLDisableScope")
 vim.cmd("Copilot disable")
 
 vim.api.nvim_create_autocmd("TextYankPost", {

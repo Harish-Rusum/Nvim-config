@@ -11,7 +11,7 @@ vim.api.nvim_create_user_command("Format", function(args)
 end, { range = true })
 
 return {
-	"stevearc/conform.nvim", opts = {},
+	"stevearc/conform.nvim",
 	config = function ()
 		require("conform").setup({
 			formatters_by_ft = {

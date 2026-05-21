@@ -138,8 +138,6 @@ vim.api.nvim_set_keymap("v", "<S-Down>", "<Down>", { noremap = true, silent = tr
 -- PERF: nice things to have
 vim.keymap.set("c", "W", "w")
 vim.keymap.set("c", "Q", "q")
-vim.keymap.set("n", "123", "<Esc>", { desc = "open calculator" })
-vim.keymap.set("i", "123", "<Esc>", { desc = "open calculator" })
 vim.keymap.set("n", "<leader>w", function() vim.cmd([[w]]) end, { desc = "save file" })
 vim.keymap.set("n", "<leader>q", function() vim.cmd([[q!]]) end, { desc = "quit file" })
 vim.keymap.set("n", "<leader>cp", function() vim.cmd([[Glow %]]) end, { desc = "Preview markdown files" })
